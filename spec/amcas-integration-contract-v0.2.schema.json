@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mosaic.amcas.integration-contract.v0.2",
+  "title": "Mosaic AMCAS Integration Contract v0.2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "integration_id", "application", "subject", "identities", "cm1", "cm2", "capabilities", "effects", "dependencies", "acceptance", "portability", "reporting", "integration_boundary", "realization_contract", "authority_ceiling", "contract_root"],
+  "properties": {
+    "schema": {"const": "mosaic.amcas.integration-contract.v0.2"},
+    "integration_id": {"type": "string", "minLength": 1},
+    "application": {"type": "object"}, "subject": {"type": "object"},
+    "identities": {"type": "object"}, "cm1": {"type": "object"},
+    "cm2": {"type": "object"}, "capabilities": {"type": "array"},
+    "effects": {"type": "array"}, "dependencies": {"type": "array"},
+    "acceptance": {"type": "array"}, "portability": {"type": "object"},
+    "reporting": {"type": "object"},
+    "integration_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["semantic_authority", "effect_executor", "identity_binding_status", "jurisdiction_binding_status", "gate_namespace", "control_plane_root"],
+      "properties": {
+        "semantic_authority": {"type": "string", "minLength": 1},
+        "effect_executor": {"type": "string", "minLength": 1},
+        "identity_binding_status": {"enum": ["UNBOUND", "PROPOSED", "BOUND"]},
+        "jurisdiction_binding_status": {"enum": ["UNBOUND", "PROPOSED", "BOUND"]},
+        "gate_namespace": {"const": "UCM.INTEGRATION"},
+        "control_plane_root": {"$ref": "#/$defs/root"}
+      }
+    },
+    "realization_contract": {"type": "object"},
+    "authority_ceiling": {"$ref": "#/$defs/ceiling"},
+    "contract_root": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {
+    "root": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "ceiling": {"type": "object", "additionalProperties": false, "required": ["standing", "authority_effect", "real_a5", "g0"], "properties": {"standing": {"const": "INFORMATION_ONLY"}, "authority_effect": {"const": "NONE"}, "real_a5": {"const": false}, "g0": {"const": "CLOSED"}}}
+  },
+  "description": "The Python validator in ucm.amcas is the normative executable validator; this schema is a portable structural surface."
+}

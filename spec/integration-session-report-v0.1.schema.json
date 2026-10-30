@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mosaic.ucm.session-integration-report.v0.1",
+  "title": "UCM cross-session integration report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "contract_root", "ir_root", "session_mosaic_id", "source_root_observed", "requirement_dispositions", "operation_summaries", "findings", "artifacts", "limitations", "standing", "authority_effect", "real_a5", "g0", "report_root"],
+  "properties": {
+    "schema": {"const": "mosaic.ucm.session-integration-report.v0.1"},
+    "contract_root": {"$ref": "#/$defs/root"}, "ir_root": {"$ref": "#/$defs/root"},
+    "session_mosaic_id": {"$ref": "#/$defs/root"}, "source_root_observed": {"$ref": "#/$defs/root"},
+    "requirement_dispositions": {"type": "array"}, "operation_summaries": {"type": "array"},
+    "findings": {"type": "array"}, "artifacts": {"type": "array"}, "limitations": {"type": "array"},
+    "standing": {"const": "INFORMATION_ONLY"}, "authority_effect": {"const": "NONE"},
+    "real_a5": {"const": false}, "g0": {"const": "CLOSED"}, "report_root": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {"root": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "UCM AMCAS Integration"
+  short_description: "Govern application integration and handoff"
+  default_prompt: "Use $ucm-amcas-integration to integrate this application under its exact UCM-AMCAS kit and return a verified journal archive."
+policy:
+  allow_implicit_invocation: true

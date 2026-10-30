@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mosaic.ucm.integration-journal-event.v0.1",
+  "title": "UCM durable integration journal event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "sequence", "predecessor", "event_id", "event_type", "actor", "payload", "standing", "authority_effect", "real_a5", "g0", "event_root"],
+  "properties": {
+    "schema": {"const": "mosaic.ucm.integration-journal-event.v0.1"}, "sequence": {"type": "integer", "minimum": 1},
+    "predecessor": {"$ref": "#/$defs/root"}, "event_id": {"type": "string", "minLength": 1},
+    "event_type": {"type": "string"}, "actor": {"type": "object"}, "payload": {"type": "object"},
+    "standing": {"const": "INFORMATION_ONLY"}, "authority_effect": {"const": "NONE"},
+    "real_a5": {"const": false}, "g0": {"const": "CLOSED"}, "event_root": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {"root": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

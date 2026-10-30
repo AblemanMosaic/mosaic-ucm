@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:mosaic:realization-space-contract:v0.1",
+  "title": "Mosaic Realization Space Contract v0.1 supported subset",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "contract_id", "contract_version", "subject", "possibility", "axes", "constraints", "capabilities", "selection", "lowering", "evidence", "authority"],
+  "properties": {
+    "schema": {"const": "mosaic.realization-space-contract.v0.1"},
+    "contract_id": {"$ref": "#/$defs/id"},
+    "contract_version": {"type": "string", "minLength": 1},
+    "description": {"type": "string"},
+    "subject": {"$ref": "#/$defs/subject"},
+    "possibility": {"$ref": "#/$defs/possibility"},
+    "axes": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/axis"}},
+    "constraints": {"type": "array", "items": {"$ref": "#/$defs/constraint"}},
+    "objectives": {"type": "array", "items": {"$ref": "#/$defs/objective"}},
+    "preferred_regions": {"type": "array", "maxItems": 0},
+    "capabilities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"enum": ["ENUMERATE", "VALIDATE", "NORMALIZE", "SELECT", "LOWER", "COMPARE", "EXPLAIN", "RECEIPT", "PROJECT", "TRACE"]}
+    },
+    "selection": {"$ref": "#/$defs/selection"},
+    "lowering": {"$ref": "#/$defs/lowering"},
+    "adaptation": {"$ref": "#/$defs/adaptation"},
+    "evidence": {"$ref": "#/$defs/evidence"},
+    "revision": {"$ref": "#/$defs/revision"},
+    "authority": {"$ref": "#/$defs/authority"},
+    "root": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_.:-]*$"},
+    "root": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "strings": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject_id", "subject_schema", "authority_owner", "source_roots", "preserved_identity", "forbidden_overrides"],
+      "properties": {
+        "subject_id": {"$ref": "#/$defs/id"},
+        "subject_schema": {"type": "string", "minLength": 1},
+        "authority_owner": {"$ref": "#/$defs/id"},
+        "source_roots": {"$ref": "#/$defs/strings"},
+        "coordinate_frame": {"type": "object"},
+        "preserved_identity": {"$ref": "#/$defs/strings"},
+        "forbidden_overrides": {"$ref": "#/$defs/strings"}
+      }
+    },
+    "possibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["intended_variation", "excluded_claims"],
+      "properties": {
+        "intended_variation": {"$ref": "#/$defs/strings"},
+        "excluded_claims": {"$ref": "#/$defs/strings"}
+      }
+    },
+    "axis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "value_type", "domain", "default", "ownership", "mutability", "continuity", "authority_effect"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "label": {"type": "string", "minLength": 1},
+        "description": {"type": "string"},
+        "value_type": {"enum": ["BOOLEAN", "INTEGER", "ENUM", "SEED", "ROOT"]},
+        "domain": {"type": "object"},
+        "default": true,
+        "unit": {"type": "string"},
+        "ownership": {"enum": ["AUTHORIAL", "USER", "ADAPTIVE", "RUNTIME", "DERIVED", "EVIDENCE_ONLY"]},
+        "mutability": {"enum": ["FROZEN", "INSTANCE", "SESSION", "FRAME", "EDIT", "DERIVED"]},
+        "continuity": {"enum": ["DISCRETE", "NOT_INTERPOLABLE"]},
+        "dependencies": {"$ref": "#/$defs/strings"},
+        "cost_metrics": {"$ref": "#/$defs/strings"},
+        "ui_hint": {"type": "string"},
+        "authority_effect": {"const": "NONE"}
+      }
+    },
+    "constraint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "severity", "operator", "terms", "explanation", "refusal_code"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "kind": {"enum": ["INVARIANT", "DEPENDENCY", "EXCLUSION", "COMPATIBILITY", "BUDGET", "CLAIM_BOUNDARY"]},
+        "severity": {"enum": ["HARD", "ADVISORY"]},
+        "operator": {"enum": ["EQUALS", "NOT_EQUALS", "IN", "RANGE", "REQUIRES", "FORBIDS_COMBINATION"]},
+        "terms": {"type": "object"},
+        "explanation": {"type": "string", "minLength": 1},
+        "refusal_code": {"$ref": "#/$defs/id"}
+      }
+    },
+    "objective": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["metric_id", "direction", "priority", "measurement", "scope"],
+      "properties": {
+        "metric_id": {"$ref": "#/$defs/id"},
+        "unit": {"type": "string"},
+        "direction": {"enum": ["MINIMIZE", "MAXIMIZE"]},
+        "priority": {"type": "integer", "minimum": 0},
+        "measurement": {"type": "string", "minLength": 1},
+        "scope": {"enum": ["PORTABLE", "HOST", "SCENE", "SESSION", "HUMAN_SUBJECTIVE"]}
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["default_policy", "seed_required_for_non_unique"],
+      "properties": {
+        "default_policy": {"enum": ["EXACT_DEFAULTS", "OBJECTIVE_PRIORITY", "LEXICOGRAPHIC_CONFIGURATION_ROOT"]},
+        "policies": {"type": "array", "uniqueItems": true, "items": {"enum": ["EXACT_DEFAULTS", "OBJECTIVE_PRIORITY", "LEXICOGRAPHIC_CONFIGURATION_ROOT"]}},
+        "seed_required_for_non_unique": {"type": "boolean"},
+        "seed": {"type": "integer", "minimum": 0},
+        "fallback_policy": {"enum": ["REFUSE", "DECLARED_ONLY"]}
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_id", "adapter_version", "required_capabilities", "preservation_criteria", "known_losses", "fallbacks"],
+      "properties": {
+        "target_id": {"$ref": "#/$defs/id"},
+        "runtime_family": {"$ref": "#/$defs/id"},
+        "adapter_version": {"type": "string", "minLength": 1},
+        "required_capabilities": {"$ref": "#/$defs/strings"},
+        "optional_capabilities": {"$ref": "#/$defs/strings"},
+        "preservation_criteria": {"$ref": "#/$defs/strings"},
+        "known_losses": {"$ref": "#/$defs/strings"},
+        "fallbacks": {"$ref": "#/$defs/strings"}
+      }
+    },
+    "lowering": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["targets", "allowed_results"],
+      "properties": {
+        "targets": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/target"}},
+        "allowed_results": {"type": "array", "uniqueItems": true, "items": {"enum": ["EXACT", "BOUNDED", "FALLBACK", "LOSSY", "REFUSED"]}}
+      }
+    },
+    "adaptation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "policies"],
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "policies": {"type": "array", "maxItems": 0}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_roots", "required_fields", "non_claims"],
+      "properties": {
+        "required_roots": {"$ref": "#/$defs/strings"},
+        "required_fields": {"$ref": "#/$defs/strings"},
+        "metrics": {"$ref": "#/$defs/strings"},
+        "non_claims": {"$ref": "#/$defs/strings"}
+      }
+    },
+    "revision": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "predecessor_root": {"$ref": "#/$defs/root"},
+        "trigger_evidence_roots": {"$ref": "#/$defs/strings"},
+        "migration": {"type": "string"},
+        "unresolved_questions": {"$ref": "#/$defs/strings"}
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["standing", "authority_effect", "self_admission", "release_gate", "track_a_dependency"],
+      "properties": {
+        "standing": {"type": "string", "minLength": 1},
+        "authority_effect": {"const": "NONE"},
+        "self_admission": {"const": false},
+        "release_gate": {"const": false},
+        "track_a_dependency": {"const": "NONE"},
+        "claim_boundary": {"type": "string"}
+      }
+    }
+  }
+}

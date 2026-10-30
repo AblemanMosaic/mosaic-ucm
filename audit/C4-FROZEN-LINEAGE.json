@@ -1,0 +1,15 @@
+{
+  "schema": "mosaic.ucm.frozen-lineage.v0.1",
+  "predecessor": "UCL-UCM-OPERATIONAL-CANONICAL-c4",
+  "source_root": "16bd76dca7477bb46c861347b1995585341c69adac3e422851a76fa840b97cf9",
+  "qualification_root": "d94874ea5bdd97691298c6102782430b7f2a5da906546461056dac99e5fef5b8",
+  "cold_boot_sha256": "57fd3f59283322d49a93b84dc6871b6439bca5d15c8943e364f3d1a02acbcf41",
+  "evidence_sha256": "2570f9d03663b14f561b1c2cc902a9b3bee3855dec28aae58efc4669a03c7243",
+  "review_transport_sha256": "8454928185007967b8e9c0d62ede4583598398be9e343feab5fba4fcdd4104c2",
+  "tier1_evidence_sha256": "87e1164a9ed3af03b26f9e557dff9ce6c7557954f99fbf65cf7e984cf4fd87ed",
+  "wsl_qualification_evidence_sha256": "773dbc1dbac42e803d33c594df9d46abf448d02366eb579830fc77e61f320c1e",
+  "standing": "INFORMATION_ONLY",
+  "authority_effect": "NONE",
+  "real_a5": false,
+  "g0": "CLOSED"
+}

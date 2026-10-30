@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mosaic-ucm"
+version = "0.1.0"
+description = "Universal Constitutional Machine: deterministic constitutional computation, proof, custody, and agent workbench infrastructure."
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+license = {text = "Apache-2.0"}
+authors = [{name = "Ableman Mosaic"}]
+keywords = ["constitutional-computing", "deterministic-computing", "agents", "proof", "custody"]
+classifiers = [
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+
+[project.optional-dependencies]
+qualification = [
+  "blake3>=1,<2",
+  "cryptography>=46,<51",
+  "cffi>=2,<3",
+  "pycparser>=3,<4",
+  "PyYAML>=6,<7",
+]
+
+[project.scripts]
+ucm = "ucm.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["ucm*", "uclop*", "uclsh*"]
+
+[tool.setuptools.package-data]
+uclsh = ["resources/*.json"]
+

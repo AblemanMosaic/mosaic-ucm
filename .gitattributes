@@ -1,0 +1,10 @@
+* text=auto eol=lf
+*.zip binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+compatibility/spec/WORKBENCH-C1-HISTORICAL-MANIFEST.json -text
+compatibility/spec/WORKBENCH-C4-HOST-BOOTSTRAP.json -text
+

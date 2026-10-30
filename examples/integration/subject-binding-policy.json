@@ -1,0 +1,1 @@
+{"allow_symlinks":false,"exclude":[".git/**",".venv/**","__pycache__/**","dist/**"],"git_observation":"OPTIONAL","include":["**/*"],"mode":"IMMUTABLE_SNAPSHOT","schema":"mosaic.ucm.subject-binding-policy.v0.1","subject_id":"EXAMPLE.APPLICATION"}
