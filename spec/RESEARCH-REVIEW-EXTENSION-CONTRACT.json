@@ -1,0 +1,28 @@
+{
+  "schema": "mosaic.research.review-extension-contract.v0.1",
+  "ownership": {
+    "pippi": ["EXACT_CUSTODY", "LOCAL_REPLAY", "RETURN_BINDING", "PUBLICATION_HOLD"],
+    "subject_application": ["LENS_MEANING", "FINDING_MEANING", "ADJUDICATION_MEANING", "SATURATION_INTERPRETATION"]
+  },
+  "record_schemas": [
+    "mosaic.research.finding-adjudication.v0.1",
+    "mosaic.research.review-finding.v0.1",
+    "mosaic.research.review-lens-pack.v0.1",
+    "mosaic.research.saturation-assessment.v0.1",
+    "mosaic.research.successor-ledger.v0.1"
+  ],
+  "invariants": [
+    "A_DETERMINISTIC_RUNNER_DOES_NOT_SUPPLY_SCHOLARLY_JUDGMENT",
+    "ADJUDICATION_DOES_NOT_MANUFACTURE_AUTHOR_STANDING",
+    "NO_SUCCESSOR_IS_RECORDED_EXPLICITLY",
+    "PUBLICATION_REQUIRES_A_SEPARATE_EXPLICIT_GATE",
+    "SATURATION_IS_RELATIVE_TO_THE_DECLARED_LENS_SET_AND_THRESHOLDS"
+  ],
+  "publication_authorized": false,
+  "external_research_authorized": false,
+  "remote_dispatch_authorized": false,
+  "standing": "INFORMATION_ONLY",
+  "authority_effect": "NONE",
+  "real_a5": false,
+  "g0": "CLOSED"
+}

@@ -1,0 +1,102 @@
+{
+  "authority_effect": "NONE",
+  "label": "Ink and paper",
+  "provenance": "Library family from v2 preview (Print-safe, near monochrome); derived roles by rule",
+  "schema": "mosaic.ui.std.theme.v0.2",
+  "scheme": "light",
+  "standing": "LOCAL_CANDIDATE",
+  "theme_id": "INK-PAPER",
+  "tokens": {
+    "colors": {
+      "accent": "#1d3d6b",
+      "accent_hover": "#1b375f",
+      "border": "#b9bec4",
+      "border_strong": "#979ca2",
+      "canvas": "#e6e9ec",
+      "field": "#f0f2f3",
+      "focus": "#1d3d6b",
+      "info": "#2967a5",
+      "on_accent": "#ffffff",
+      "on_refused": "#ffffff",
+      "pending": "#7a5200",
+      "refused": "#a3262f",
+      "selection": "#dde5f0",
+      "success": "#1d6b45",
+      "surface": "#fbfbfa",
+      "surface_hover": "#e7e8e9",
+      "surface_raised": "#f0f1f2",
+      "text": "#111418",
+      "text_quiet": "#50565d"
+    },
+    "elevation": {
+      "flat": {
+        "alpha": 0,
+        "blur": 0,
+        "y": 0
+      },
+      "overlay": {
+        "alpha": 0.15,
+        "blur": 40,
+        "y": 16
+      },
+      "raised": {
+        "alpha": 0.1,
+        "blur": 28,
+        "y": 8
+      }
+    },
+    "guardrails": {
+      "extra_pairs": [],
+      "minimum_text_contrast": 4.5
+    },
+    "motion": {
+      "easing": "cubic-bezier(0.2,0.7,0.2,1)",
+      "medium_ms": 240,
+      "reduced_motion": "none",
+      "short_ms": 120
+    },
+    "radii": {
+      "lg": 4,
+      "md": 2,
+      "none": 0,
+      "sm": 0
+    },
+    "spacing": {
+      "lg": 20,
+      "md": 12,
+      "sm": 8,
+      "xl": 28,
+      "xs": 4
+    },
+    "typography": {
+      "roles": {
+        "body": {
+          "font": "source-sans-3",
+          "size": 14,
+          "weight": 400
+        },
+        "heading": {
+          "font": "source-sans-3",
+          "size": 18,
+          "weight": 600
+        },
+        "metric": {
+          "font": "source-sans-3",
+          "size": 32,
+          "weight": 600
+        },
+        "mono": {
+          "font": "ibm-plex-mono",
+          "size": 13,
+          "weight": 400
+        },
+        "title": {
+          "font": "source-sans-3",
+          "size": 29,
+          "weight": 600
+        }
+      },
+      "unit": "logical_px_character_height"
+    }
+  }
+}

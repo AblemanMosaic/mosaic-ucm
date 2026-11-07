@@ -1,0 +1,73 @@
+{
+ "schema": "reviewer.r024.findings.v1",
+ "subject": "UCM v0.1 r024 portability and determinism",
+ "identity_observed": {
+  "transport_sha256": "241ba777cd620daf8ed2a39b41f20f1cd0f5a56f969446e944b8a917f01ff179",
+  "revision": "r024",
+  "release_root": "b75285baf68dc938837acf29c1361e394e55dc268550ae0652065c300c3b4eb4",
+  "qualification_root": "852fa36e834eb03634f9be9eb81add2972ec215ebedabad291a1a5338cf36d16",
+  "runtime_sha256": "03b340f4b2e4ecbe4f576dc4431a45fb540aaf162680cacb4707f23e43b003d2",
+  "source_root": "bde77dbbd4e494756fe2ff35063a6a38669e87318d06d87bf5814864868ab4a3",
+  "expected_values_supplied": false,
+  "predecessor": "r023 90442801/c3bb27e8 (matches reviewed r023)"
+ },
+ "standing": "INFORMATION_ONLY",
+ "authority_effect": "NONE",
+ "real_a5": false,
+ "g0": "CLOSED",
+ "verdict": "HOLD_FOR_REPAIR",
+ "verdict_basis": "R24-01 (MED, reproducibility): build_pippi_adaptive_contracts --check REFUSED 11/12 on both interpreters; shipped cold boot carries r023 surface registry, completions and mediation library lacking all r024 portability surfaces and rules; untested. Work order: HOLD for any reproducibility failure.",
+ "findings": [
+  {
+   "id": "R24-01",
+   "severity": "MED",
+   "class": "reproducibility",
+   "status": "OPEN",
+   "title": "Generated P/PPI contracts not regenerated for r024; cold boot ships r023 surface registry, completions and mediation library",
+   "evidence": [
+    "tier2/build_pippi_adaptive_contracts-3.12.out",
+    "tier2/build_pippi_adaptive_contracts-3.13.out",
+    "tier2/portability/live-outputs-3.12.out"
+   ],
+   "repair": "Regenerate with --write, rebuild cold boot, add contracts --check to qualification."
+  },
+  {
+   "id": "R24-02",
+   "severity": "INFO",
+   "status": "OPEN",
+   "title": "PORTABILITY-SOURCE-MANIFEST.json stale: one row (tests/test_pippi_release_packaging.py) matches neither copy; root 9ebe7ef9 != source bde77dbb; nothing binds it"
+  },
+  {
+   "id": "R24-03",
+   "severity": "INFO",
+   "status": "OPEN",
+   "items": [
+    "3 of 5 witness outputs read stored roots, platform-invariant by construction",
+    "witnesses are caller declarations; both legs builder-run",
+    "case sensitivity assumed by platform name, not probed",
+    "turn guidance caller-selected; rule triggers not enforced against scenario",
+    "source-doctor test covers 9 fixed files; 35 unkeyed path sorts remain in tools/"
+   ]
+  },
+  {
+   "id": "R24-04",
+   "severity": "INFO",
+   "status": "OPEN",
+   "items": [
+    "R21-01 secondary items",
+    "sim.add shape at evaluation only",
+    "r022 PASS kit c277ad3d undelivered",
+    "R20-01 unchanged",
+    "predecessor-bound cases",
+    "r015-r017 unreviewed",
+    "patch-version receipt; two Windows-only tests"
+   ]
+  }
+ ],
+ "dispositions": {
+  "R23-01": "CLOSED",
+  "R23-02": "CLOSED",
+  "R23-03": "CLOSED",
+  "R23-04": "carried in R24-04"
+ }
+}

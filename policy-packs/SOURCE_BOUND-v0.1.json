@@ -1,0 +1,1 @@
+{"pack_id":"SOURCE_BOUND_V1","pack_root":"fa9e9f3a9619681c8e715b56b13aa0acffab8f3a0ccf808c1a6bafc0a18dfd1e","requirements":[{"applicability":"REQUIRED","evidence_required":true,"id":"SOURCE_BOUND","kind":"EVIDENCE","statement":"Every result binds the exact subject source root.","verifier":"AMCAS_SOURCE_BINDING_V1"}],"schema":"mosaic.ucm.amcas-policy-pack.v0.1","version":"0.1.0"}

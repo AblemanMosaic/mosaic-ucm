@@ -1,0 +1,284 @@
+{
+  "application_id": "MOSAIC.MEDIA_CENTER",
+  "authority_effect": "NONE",
+  "capability_projections": [
+    {
+      "capability_id": "MMC_MEMORY_VAULT_ARCHIVE_COMPOSE",
+      "case_ids": [
+        "MMC.ARCHIVE_COMPOSE.EXACT.BACKUP",
+        "MMC.ARCHIVE_COMPOSE.SUBJECT_MISMATCH.REFUSAL"
+      ],
+      "control_plane_disposition": "ADAPT",
+      "effect_class": "LOCAL_ARTIFACT_PREPARATION",
+      "input_schema_root": "68054b37c4a7412ea7cedef441c7c146ad64968de4e385d04920cf8abb2fd5ae",
+      "native_route": "mmc_registry.portability.DataPortability.export_backup",
+      "output_schema_root": "8098219376995463c4d300fafd48a086d7acb951d9846d18aacb06f2b5ce60af",
+      "ucm_projection": "UCM.SHADOW.MOSAIC.MEDIA_CENTER.MEMORY_VAULT.ARCHIVE_COMPOSE"
+    },
+    {
+      "capability_id": "MMC_MEMORY_VAULT_ARCHIVE_REPLAY",
+      "case_ids": [
+        "MMC.ARCHIVE_REPLAY.VERIFIED.DRY_RUN",
+        "MMC.ARCHIVE_REPLAY.UNAUTHORIZED_RESTORE.REFUSAL"
+      ],
+      "control_plane_disposition": "ADAPT",
+      "effect_class": "PURE_COMPUTATION",
+      "input_schema_root": "79e2963fac1d972466a85e98550d33b6d0a504ec626d183da2fcbeebb6df374d",
+      "native_route": "mmc_registry.portability.DataPortability.verify_bundle + DataPortability.import_profile(dry_run=True)",
+      "output_schema_root": "adbefaf9fb08b812a5c44a8b6f8d85bd94a269f6a263005da419db6cfa815516",
+      "ucm_projection": "UCM.SHADOW.MOSAIC.MEDIA_CENTER.MEMORY_VAULT.ARCHIVE_REPLAY_DRY_RUN"
+    },
+    {
+      "capability_id": "MMC_MEMORY_VAULT_READ_EVIDENCE",
+      "case_ids": [
+        "MMC.READ_EVIDENCE.EXACT.READ_ONLY",
+        "MMC.READ_EVIDENCE.TAMPER.REFUSAL"
+      ],
+      "control_plane_disposition": "ADAPT",
+      "effect_class": "READ_ONLY",
+      "input_schema_root": "3e0da9b6b06fbc27df851192325148e40c885505b825c48924cb11f36c51a5bb",
+      "native_route": "mmc_registry.portability.DataPortability.inspect + MMC_QUALIFY + UGK_HEADLESSRUNNER",
+      "output_schema_root": "777b27109600eb3fe647515520e0e3318a80db741cbeedf3020b41b50f282656",
+      "ucm_projection": "UCM.SHADOW.MOSAIC.MEDIA_CENTER.MEMORY_VAULT.READ_EVIDENCE"
+    },
+    {
+      "capability_id": "MMC_MEMORY_VAULT_VAULT_CUSTODY",
+      "case_ids": [
+        "MMC.VAULT_CUSTODY.LOCAL_ENVELOPE",
+        "MMC.VAULT_CUSTODY.HASH_MISMATCH.REFUSAL"
+      ],
+      "control_plane_disposition": "ADAPT",
+      "effect_class": "LOCAL_ARTIFACT_PREPARATION",
+      "input_schema_root": "9f401fb33ceb03181ddf0db76eed8e0865d37073df21096de889cc2d234b96f0",
+      "native_route": "MMC_REPAIR exact-artifact staging + UGK_HEADLESSRUNNER receipt custody",
+      "output_schema_root": "7dc4c0ae1ba491c8a4f927304bf16627366d29de3698e14cf8f31390c12073ca",
+      "ucm_projection": "UCM.SHADOW.MOSAIC.MEDIA_CENTER.MEMORY_VAULT.VAULT_CUSTODY_ENVELOPE"
+    }
+  ],
+  "composition_requested": false,
+  "correspondence_cases": [
+    {
+      "capability_id": "MMC_MEMORY_VAULT_ARCHIVE_COMPOSE",
+      "evidence_requirements": [
+        "EXACT_STAGE_I1_SUBJECT_ROOT",
+        "MMC_DATA_PORTABILITY_CONTRACT_ROOT",
+        "BACKUP_MANIFEST_ROOT",
+        "SECRET_SCAN_PASS",
+        "MOSAIC_MEDIA_CENTER_REMAINS_SEMANTIC_AUTHORITY",
+        "MMC_REPAIR_REMAINS_EFFECT_EXECUTOR",
+        "NO_CROSS_APPLICATION_CONNECTION",
+        "NO_EFFECT_EXECUTED"
+      ],
+      "expected_equivalence": true,
+      "expected_native_decision": "PASS",
+      "expected_native_result_root": "17bc729775646e2963be2078404547e484d37c1dbd2b6bb24828e3d0aebbf703",
+      "expected_ucm_decision": "PASS",
+      "expected_ucm_result_root": "17bc729775646e2963be2078404547e484d37c1dbd2b6bb24828e3d0aebbf703",
+      "id": "MMC.ARCHIVE_COMPOSE.EXACT.BACKUP",
+      "input_root": "328160ac384e166403951f7dd1945785ca44f96704436a65935880c0bf002b22"
+    },
+    {
+      "capability_id": "MMC_MEMORY_VAULT_ARCHIVE_COMPOSE",
+      "evidence_requirements": [
+        "EXPECTED_SUBJECT_ROOT",
+        "OBSERVED_MISMATCHED_SUBJECT_ROOT",
+        "TYPED_REFUSAL_CODE",
+        "NO_ARTIFACT_PREPARED",
+        "NO_EFFECT_EXECUTED"
+      ],
+      "expected_equivalence": true,
+      "expected_native_decision": "REFUSED",
+      "expected_native_result_root": "b1bd8e73d3ceb69864f9fbcc397f7eb2dbe82940ee42b1f9ca5285ca85db912e",
+      "expected_ucm_decision": "REFUSED",
+      "expected_ucm_result_root": "b1bd8e73d3ceb69864f9fbcc397f7eb2dbe82940ee42b1f9ca5285ca85db912e",
+      "id": "MMC.ARCHIVE_COMPOSE.SUBJECT_MISMATCH.REFUSAL",
+      "input_root": "b48616f926873e6d5b9d6739b70ba207c12f67e375cdd7bb3080b98483de4c05"
+    },
+    {
+      "capability_id": "MMC_MEMORY_VAULT_ARCHIVE_REPLAY",
+      "evidence_requirements": [
+        "EXACT_BUNDLE_ROOT",
+        "BUNDLE_VERIFICATION_ROOT",
+        "DRY_RUN_MERGE_PLAN_ROOT",
+        "RESTORE_AUTHORIZED_FALSE",
+        "RESTORE_EXECUTED_FALSE",
+        "MMC_REPAIR_REMAINS_EFFECT_EXECUTOR"
+      ],
+      "expected_equivalence": true,
+      "expected_native_decision": "PASS",
+      "expected_native_result_root": "27a16d19b9473d0f4175156b084c2316a966bea44a6bd684afd24ce5076e46d3",
+      "expected_ucm_decision": "PASS",
+      "expected_ucm_result_root": "27a16d19b9473d0f4175156b084c2316a966bea44a6bd684afd24ce5076e46d3",
+      "id": "MMC.ARCHIVE_REPLAY.VERIFIED.DRY_RUN",
+      "input_root": "7956ebe58ae6cdd79492915d0eade9ca34c1aeba63577e317399ce019677900b"
+    },
+    {
+      "capability_id": "MMC_MEMORY_VAULT_ARCHIVE_REPLAY",
+      "evidence_requirements": [
+        "EXACT_BUNDLE_ROOT",
+        "RESTORE_REQUEST_ROOT",
+        "SEPARATE_USER_AUTHORITY_ABSENT",
+        "MMC_REPAIR_ADMISSION_ABSENT",
+        "TYPED_REFUSAL_CODE",
+        "RESTORE_EXECUTED_FALSE"
+      ],
+      "expected_equivalence": true,
+      "expected_native_decision": "REFUSED",
+      "expected_native_result_root": "6ce5bc0858f5bd60b715d051f7659c7b519ba50608efb31d1b5294abe43ee073",
+      "expected_ucm_decision": "REFUSED",
+      "expected_ucm_result_root": "6ce5bc0858f5bd60b715d051f7659c7b519ba50608efb31d1b5294abe43ee073",
+      "id": "MMC.ARCHIVE_REPLAY.UNAUTHORIZED_RESTORE.REFUSAL",
+      "input_root": "bfb02d84c922fd1157a8f0d9a93a657988de8fe646becf8821d650891694b352"
+    },
+    {
+      "capability_id": "MMC_MEMORY_VAULT_READ_EVIDENCE",
+      "evidence_requirements": [
+        "CUSTODY_RECEIPT_ROOT",
+        "EXACT_ARTIFACT_ROOT",
+        "READ_ONLY_EVIDENCE_SUMMARY_ROOT",
+        "UGK_VERIFICATION_RECEIPT_ROOT",
+        "NO_EFFECT_EXECUTED"
+      ],
+      "expected_equivalence": true,
+      "expected_native_decision": "PASS",
+      "expected_native_result_root": "1d50819568f183a9323cfdb24323e8e30ea879903a4f18952fe6909e3c0131e9",
+      "expected_ucm_decision": "PASS",
+      "expected_ucm_result_root": "1d50819568f183a9323cfdb24323e8e30ea879903a4f18952fe6909e3c0131e9",
+      "id": "MMC.READ_EVIDENCE.EXACT.READ_ONLY",
+      "input_root": "fdf2cad330d7480b79bf402b3fc032492c259f6f718e4fb364d62868b9678c8d"
+    },
+    {
+      "capability_id": "MMC_MEMORY_VAULT_READ_EVIDENCE",
+      "evidence_requirements": [
+        "CUSTODY_RECEIPT_ROOT",
+        "OBSERVED_ARTIFACT_ROOT",
+        "EXPECTED_ARTIFACT_ROOT",
+        "TYPED_REFUSAL_CODE",
+        "NO_EVIDENCE_ACCEPTED",
+        "NO_EFFECT_EXECUTED"
+      ],
+      "expected_equivalence": true,
+      "expected_native_decision": "REFUSED",
+      "expected_native_result_root": "4d8d1ea5134103191f11ebe413ffea2657ec81335c4b78eefc69a875c130ed0e",
+      "expected_ucm_decision": "REFUSED",
+      "expected_ucm_result_root": "4d8d1ea5134103191f11ebe413ffea2657ec81335c4b78eefc69a875c130ed0e",
+      "id": "MMC.READ_EVIDENCE.TAMPER.REFUSAL",
+      "input_root": "153eff3784f5fa019dfc369c9c7d25579d7d22dcd2cba568e045c50aa22a869f"
+    },
+    {
+      "capability_id": "MMC_MEMORY_VAULT_VAULT_CUSTODY",
+      "evidence_requirements": [
+        "EXACT_ARTIFACT_SET_ROOT",
+        "EXACT_MANIFEST_ROOT",
+        "LOCAL_CUSTODY_ENVELOPE_ROOT",
+        "CONNECTION_AUTHORIZED_FALSE",
+        "CUSTODY_EFFECT_EXECUTED_FALSE",
+        "MMC_REPAIR_REMAINS_EFFECT_EXECUTOR"
+      ],
+      "expected_equivalence": true,
+      "expected_native_decision": "PASS",
+      "expected_native_result_root": "a3b24371b5cb774984c7edb88c9ec941d6255c239e3087a3eb3b1a0aec5a89ea",
+      "expected_ucm_decision": "PASS",
+      "expected_ucm_result_root": "a3b24371b5cb774984c7edb88c9ec941d6255c239e3087a3eb3b1a0aec5a89ea",
+      "id": "MMC.VAULT_CUSTODY.LOCAL_ENVELOPE",
+      "input_root": "e102b91c991ca5b2e964cea8b85cc6fb8ac255e17ed508d8c6bcaa00e8b8fe0a"
+    },
+    {
+      "capability_id": "MMC_MEMORY_VAULT_VAULT_CUSTODY",
+      "evidence_requirements": [
+        "EXACT_MANIFEST_ROOT",
+        "OBSERVED_ARTIFACT_HASH",
+        "EXPECTED_ARTIFACT_HASH",
+        "TYPED_REFUSAL_CODE",
+        "CONNECTION_OPENED_FALSE",
+        "CUSTODY_EFFECT_EXECUTED_FALSE"
+      ],
+      "expected_equivalence": true,
+      "expected_native_decision": "REFUSED",
+      "expected_native_result_root": "b48422ccba17bb21ac6e380a45cfc3c304c0a44fbaab8840b8a2486a5047da9d",
+      "expected_ucm_decision": "REFUSED",
+      "expected_ucm_result_root": "b48422ccba17bb21ac6e380a45cfc3c304c0a44fbaab8840b8a2486a5047da9d",
+      "id": "MMC.VAULT_CUSTODY.HASH_MISMATCH.REFUSAL",
+      "input_root": "e5736e63b864479b0c707af3e3900647123aca65575ec46902dd8ed635279aec"
+    }
+  ],
+  "exclusions": [
+    "NO_APPLICATION_EXECUTION",
+    "NO_CROSS_APPLICATION_CONNECTION",
+    "NO_CAPABILITY_GRANT",
+    "NO_DEPLOYMENT",
+    "NO_ARCHIVE_WRITE",
+    "NO_REPLAY_OR_RESTORE_EFFECT",
+    "NO_VAULT_CUSTODY_EFFECT",
+    "NO_NATIVE_AUTHORITY_REPLACEMENT",
+    "NO_IDENTITY_OR_JURISDICTION_BINDING"
+  ],
+  "g0": "CLOSED",
+  "holds": [
+    "IDENTITY_UNBOUND",
+    "JURISDICTION_UNBOUND",
+    "AOK_STANDING_UNBOUND",
+    "SHADOW_EXECUTION_REQUIRES_SEPARATE_STAGE_AUTHORIZATION",
+    "ARCHIVE_REPLAY_EFFECT_REQUIRES_SEPARATE_USER_AUTHORITY_AND_MMC_REPAIR_ADMISSION"
+  ],
+  "instruction_root": "866a8e02b805423a5c4309811931860f08f0e7a9015b81b220814306de0a0c14",
+  "native_effect_executors_preserved": true,
+  "native_semantic_authority_preserved": true,
+  "next_action": "RETURN_FOR_STAGE_I3_SHADOW_REVIEW_WITH_NATIVE_AUTHORITY_AND_EFFECT_HOLDS_UNCHANGED",
+  "plan_root": "179649f290072df1780bf881f1401b592e9305e7fc7b3fbd132087a5826024bf",
+  "plan_status": "READY_FOR_SHADOW_REVIEW",
+  "real_a5": false,
+  "relation_dispositions": [
+    {
+      "disposition": "PLAN",
+      "interface_id": "MOSAIC.MEMORY_VAULT.ARCHIVE_COMPOSE.V1",
+      "provider_application_id": "MOSAIC.MEMORY_VAULT",
+      "reason": "Plan an information-only comparison of exact MMC backup-envelope composition while retaining MMC semantic authority and MMC_REPAIR effect authority.",
+      "schema_root": "e4707cabdc4c33e6c6907ab12e7044aded5e733f4d9a3c27a66f3d35a3c2a715"
+    },
+    {
+      "disposition": "PLAN",
+      "interface_id": "MOSAIC.MEMORY_VAULT.ARCHIVE_REPLAY.V1",
+      "provider_application_id": "MOSAIC.MEMORY_VAULT",
+      "reason": "Plan verified dry-run replay correspondence only; any restore remains excluded pending separate user authority and MMC_REPAIR admission.",
+      "schema_root": "e4707cabdc4c33e6c6907ab12e7044aded5e733f4d9a3c27a66f3d35a3c2a715"
+    },
+    {
+      "disposition": "PLAN",
+      "interface_id": "MOSAIC.MEMORY_VAULT.READ_EVIDENCE.V1",
+      "provider_application_id": "MOSAIC.MEMORY_VAULT",
+      "reason": "Plan read-only rooted evidence comparison through MMC_QUALIFY and UGK receipt verification without accepting Memory Vault as MMC semantic authority.",
+      "schema_root": "e4707cabdc4c33e6c6907ab12e7044aded5e733f4d9a3c27a66f3d35a3c2a715"
+    },
+    {
+      "disposition": "PLAN",
+      "interface_id": "MOSAIC.MEMORY_VAULT.VAULT_CUSTODY.V1",
+      "provider_application_id": "MOSAIC.MEMORY_VAULT",
+      "reason": "Plan local exact-artifact custody-envelope preparation only; no vault connection or custody effect is authorized.",
+      "schema_root": "e4707cabdc4c33e6c6907ab12e7044aded5e733f4d9a3c27a66f3d35a3c2a715"
+    }
+  ],
+  "required_evidence_roots": [
+    "15868d2c95b929df7e30e0a91f0d24663bac60566350120160f34e22fc48f455",
+    "22cc5ca9f33e0f2182e5c67778c7d130571396b381a2d28dd20b2761bb894f88",
+    "33e48bd775b0bc68f265678fce3d1c69fa9825fef894e8eb9944688c0b81e65e",
+    "4b0e784cc581104889be1447649ca7432a9d8948b11c30c131f90e5785847fcc",
+    "515975a38ffbd9f13515b943c1e5c9d6026e9afaa8d02f1c63a8fd253dfcb645",
+    "572fff3d60cebb159f3a22882f3f059cdcfbd5834faf5dcb9e0c108f3e704b5e",
+    "5aab0371e4b1098f4fe9e2a0aaf543cb4d8436f36a22ba54b0af42ca4c59394b",
+    "7371c2de4e77d032b32a0c00f9bf9550b4f45a25edb103030eb122167de41476",
+    "86372ed67c54c46135b81dc20db92989bfe13e94d242a8bfcb321781e83e9e7a",
+    "8a7e35f3af5f9d00bc0cd97389890d4673b5fabe60c14ea10e64cd085af73c0b",
+    "9fc82fffc2b76270bbd07f3db5ab578638beb345a0cdcee04629a4946ba2eec2",
+    "a72b082962ea656f3688a208eae2bcceba7f31c2eff7f6b027ef093b36b71354",
+    "af94fff01955c66554835a7cdf54992eae923e56c8b64d2b2113218889286280",
+    "baaa613bc5633d8bc11cd51e0c3cc966a85ddb1f3fa7eadf271e96efd52d5832",
+    "ce2f475b7f9da7b414e5b0730dee491c47079f77568d438fa60c34b3bf99c54e",
+    "e4707cabdc4c33e6c6907ab12e7044aded5e733f4d9a3c27a66f3d35a3c2a715"
+  ],
+  "schema": "mosaic.ucm.stage-i3-shadow-plan.v0.1",
+  "shadow_execution_requested": false,
+  "stage_i1_artifact_sha256": "5f14a6e9597aae0a0560529e6235ca01eff20579b067fd0a32c3818e25ebe73b",
+  "stage_i2_artifact_sha256": "9c4735d7ae753c9b8c7b7cc687821c34815e3c0c2ace481fe4147ae5e45066a7",
+  "standing": "INFORMATION_ONLY"
+}

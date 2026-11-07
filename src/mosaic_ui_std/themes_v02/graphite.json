@@ -1,0 +1,102 @@
+{
+  "authority_effect": "NONE",
+  "label": "Graphite",
+  "provenance": "Library family from v2 preview (Neutral instrument); derived roles by rule",
+  "schema": "mosaic.ui.std.theme.v0.2",
+  "scheme": "dark",
+  "standing": "LOCAL_CANDIDATE",
+  "theme_id": "GRAPHITE",
+  "tokens": {
+    "colors": {
+      "accent": "#5b9dff",
+      "accent_hover": "#6fa8fc",
+      "border": "#2c3138",
+      "border_strong": "#51555c",
+      "canvas": "#0b0c0e",
+      "field": "#0e1013",
+      "focus": "#9cc3ff",
+      "info": "#5293d4",
+      "on_accent": "#04122b",
+      "on_refused": "#1b0507",
+      "pending": "#f0b429",
+      "refused": "#ff6b6b",
+      "selection": "#14284a",
+      "success": "#3ecf8e",
+      "surface": "#121418",
+      "surface_hover": "#23262b",
+      "surface_raised": "#1b1e23",
+      "text": "#e3e6ea",
+      "text_quiet": "#8f96a1"
+    },
+    "elevation": {
+      "flat": {
+        "alpha": 0,
+        "blur": 0,
+        "y": 0
+      },
+      "overlay": {
+        "alpha": 0.5,
+        "blur": 48,
+        "y": 18
+      },
+      "raised": {
+        "alpha": 0.35,
+        "blur": 30,
+        "y": 10
+      }
+    },
+    "guardrails": {
+      "extra_pairs": [],
+      "minimum_text_contrast": 4.5
+    },
+    "motion": {
+      "easing": "cubic-bezier(0.2,0.7,0.2,1)",
+      "medium_ms": 240,
+      "reduced_motion": "none",
+      "short_ms": 120
+    },
+    "radii": {
+      "lg": 5,
+      "md": 3,
+      "none": 0,
+      "sm": 1
+    },
+    "spacing": {
+      "lg": 20,
+      "md": 12,
+      "sm": 8,
+      "xl": 28,
+      "xs": 4
+    },
+    "typography": {
+      "roles": {
+        "body": {
+          "font": "ibm-plex-sans",
+          "size": 12,
+          "weight": 400
+        },
+        "heading": {
+          "font": "ibm-plex-sans",
+          "size": 16,
+          "weight": 600
+        },
+        "metric": {
+          "font": "ibm-plex-sans",
+          "size": 29,
+          "weight": 600
+        },
+        "mono": {
+          "font": "ibm-plex-mono",
+          "size": 12,
+          "weight": 400
+        },
+        "title": {
+          "font": "ibm-plex-sans",
+          "size": 26,
+          "weight": 600
+        }
+      },
+      "unit": "logical_px_character_height"
+    }
+  }
+}

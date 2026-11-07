@@ -1,0 +1,95 @@
+{
+  "authority_effect": "NONE",
+  "claim_boundary": "FROZEN_LOCAL_CANDIDATE_CONTRACT_NOT_RELEASE_ADMISSION",
+  "commitment": "c3968c17c9f2bdd74912d9364958f561da44191c74d6c240014cb97b14427556",
+  "compatibility": {
+    "application_profile_schema": "mosaic.ui.std.catalog-profile.v0.2",
+    "breaking_change": "NEW_CONTRACT_ID_AND_EXPLICIT_MIGRATION_REQUIRED",
+    "legacy_catalog_root": "7f0cd503b452125706efe12c0e55cc6fbf2b22d57e17b97b3ee8a9577caca35a",
+    "migration_document": "MOSAIC-UI-1.0-MIGRATION-AND-COMPATIBILITY.md",
+    "unknown_component_kind": "REFUSE",
+    "unknown_protocol": "REFUSE"
+  },
+  "component_contract": {
+    "catalog_id": "MOSAIC-UI-STD-RUNTIME-0.11.0-R1",
+    "catalog_root": "382ebeb6e89d2fe5b5fa5920433ebec1c9ef2b399406ef6fe34d6c5756057995",
+    "kinds": [
+      "WINDOW",
+      "LABEL",
+      "BUTTON",
+      "TEXT_FIELD",
+      "SELECT",
+      "CHECKBOX",
+      "SEGMENTED",
+      "TAB_BAR",
+      "PROGRESS",
+      "STATUS",
+      "TABLE",
+      "PANEL",
+      "DIALOG",
+      "TOOLTIP",
+      "BADGE",
+      "KEY_VALUE",
+      "STEPPER",
+      "COMBOBOX",
+      "DATA_GRID",
+      "LIST",
+      "MENU",
+      "NAVIGATION",
+      "NOTIFICATION",
+      "RADIO_GROUP",
+      "TREE"
+    ],
+    "realizers": [
+      "HEADLESS",
+      "BROWSER",
+      "WIN32"
+    ],
+    "schema": "mosaic.ui.std.catalog.v0.2",
+    "states": [
+      "IDLE",
+      "HOVER",
+      "FOCUSED",
+      "PRESSED",
+      "DISABLED",
+      "PENDING",
+      "REFUSED"
+    ]
+  },
+  "contract_id": "MOSAIC-UI-PUBLIC-1.0-RC1",
+  "protocols": {
+    "lifecycle": "mosaic.ui.std.lifecycle-binding.v0.1",
+    "localization": "mosaic.ui.localization.v0.1",
+    "realizer": "mosaic.ui.realizer-protocol.v0.1"
+  },
+  "release_scope": {
+    "excluded_optional_pathways": [
+      "PLAY_2D",
+      "PLAY_ADAPTERS",
+      "PLAY_RUNTIME_QUALIFICATION",
+      "SPATIAL_3D"
+    ],
+    "pathway": "RELEASE",
+    "resolved_pathways": [
+      "ACCESSIBILITY",
+      "ADOPTION",
+      "ARCHITECTURE",
+      "BUILDER",
+      "FOUNDRY",
+      "PERFORMANCE",
+      "PILOT",
+      "PROBE",
+      "REALIZER_PROTOCOL",
+      "RELEASE",
+      "RUNTIME",
+      "SESSION_CUSTODY",
+      "SIGNATURE_PROFILE",
+      "SUFFICIENCY",
+      "VISUAL_CERTIFICATION",
+      "VISUAL_GATE"
+    ],
+    "track_a_requires_track_b": false
+  },
+  "schema": "mosaic.ui.public-contract.v1",
+  "standing": "FROZEN_1_0_RC1_CANDIDATE"
+}

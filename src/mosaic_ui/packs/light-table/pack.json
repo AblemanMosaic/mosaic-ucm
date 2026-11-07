@@ -1,0 +1,46 @@
+{
+  "authority_effect": "NONE",
+  "base": [
+    "components.css",
+    "disclosure.css"
+  ],
+  "batch": "ATOMIC SET_DISPOSITION_BATCH via per-tile checkbox (L4b-R3, L4b-R4)",
+  "court_states": [
+    "foundation.color",
+    "component.button",
+    "component.data-grid",
+    "surface.data-workspace"
+  ],
+  "designed_scrollers": [
+    ".conditions",
+    ".statebar",
+    ".tabs",
+    "#catalog",
+    ".demo table",
+    ".g-summary-hint",
+    ".thumb",
+    ".thumb *"
+  ],
+  "hex_allowlist": {
+    "#0000002e": "shadow tint under the active segmented-control item (base)",
+    "#fff": "swatch label fallback when a specimen omits --label (base)"
+  },
+  "invariants": [
+    "shell script byte-identical",
+    "binding manifest satisfied",
+    "governed sizing never overridden",
+    "colors via role variables only",
+    "thumbnails are inert and hidden from assistive technology",
+    "batch decisions are atomic"
+  ],
+  "job": "Compare",
+  "name": "Light table",
+  "pack_id": "light-table",
+  "schema": "mosaic.ui.review-pack.v0.1",
+  "standing": "LOCAL_CANDIDATE",
+  "supported_realizers": [
+    "BROWSER_REVIEW_SHELL"
+  ],
+  "thumbnails": "LIVE_SPECIMEN_THUMBNAILS at each subject's own default value, sanitized and inert (L4b-R2); representative glyph as fallback",
+  "version": "1.1.0"
+}

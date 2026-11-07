@@ -1,0 +1,102 @@
+{
+  "authority_effect": "NONE",
+  "label": "High Contrast dark",
+  "provenance": "Migrated from v0.1 high-contrast-dark; fixes per L1-SPEC \u00a74; derived roles by rule",
+  "schema": "mosaic.ui.std.theme.v0.2",
+  "scheme": "dark",
+  "standing": "LOCAL_CANDIDATE",
+  "theme_id": "HIGH-CONTRAST-DARK",
+  "tokens": {
+    "colors": {
+      "accent": "#ffdf00",
+      "accent_hover": "#fff06a",
+      "border": "#f5f5f5",
+      "border_strong": "#f7f7f7",
+      "canvas": "#000000",
+      "field": "#0a0a0a",
+      "focus": "#00e5ff",
+      "info": "#66ccff",
+      "on_accent": "#000000",
+      "on_refused": "#000000",
+      "pending": "#ff9f1c",
+      "refused": "#ff4d6d",
+      "selection": "#14255c",
+      "success": "#39c680",
+      "surface": "#111111",
+      "surface_hover": "#292929",
+      "surface_raised": "#1f1f1f",
+      "text": "#ffffff",
+      "text_quiet": "#d0d0d0"
+    },
+    "elevation": {
+      "flat": {
+        "alpha": 0,
+        "blur": 0,
+        "y": 0
+      },
+      "overlay": {
+        "alpha": 0.5,
+        "blur": 48,
+        "y": 18
+      },
+      "raised": {
+        "alpha": 0.35,
+        "blur": 30,
+        "y": 10
+      }
+    },
+    "guardrails": {
+      "extra_pairs": [],
+      "minimum_text_contrast": 4.5
+    },
+    "motion": {
+      "easing": "cubic-bezier(0.2,0.7,0.2,1)",
+      "medium_ms": 240,
+      "reduced_motion": "none",
+      "short_ms": 120
+    },
+    "radii": {
+      "lg": 8,
+      "md": 6,
+      "none": 0,
+      "sm": 4
+    },
+    "spacing": {
+      "lg": 18,
+      "md": 12,
+      "sm": 8,
+      "xl": 26,
+      "xs": 4
+    },
+    "typography": {
+      "roles": {
+        "body": {
+          "font": "inter",
+          "size": 15,
+          "weight": 400
+        },
+        "heading": {
+          "font": "inter",
+          "size": 17,
+          "weight": 600
+        },
+        "metric": {
+          "font": "inter",
+          "size": 30,
+          "weight": 600
+        },
+        "mono": {
+          "font": "jetbrains-mono",
+          "size": 13,
+          "weight": 400
+        },
+        "title": {
+          "font": "inter",
+          "size": 27,
+          "weight": 600
+        }
+      },
+      "unit": "logical_px_character_height"
+    }
+  }
+}

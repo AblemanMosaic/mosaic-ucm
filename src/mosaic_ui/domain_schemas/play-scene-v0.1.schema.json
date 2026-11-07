@@ -1,0 +1,23 @@
+{
+  "$id": "https://mosaic.invalid/schema/play-scene-v0.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "actions": {"type": "array"},
+    "assets": {"type": "array"},
+    "authority_effect": {"const": "NONE"},
+    "bounds": {"items": {"type": "integer"}, "maxItems": 2, "minItems": 2, "type": "array"},
+    "budgets": {"additionalProperties": false, "properties": {"max_entities": {"minimum": 0, "type": "integer"}, "max_assets": {"minimum": 0, "type": "integer"}, "max_asset_bytes": {"minimum": 0, "type": "integer"}, "max_actions": {"minimum": 0, "type": "integer"}}, "required": ["max_entities", "max_assets", "max_asset_bytes", "max_actions"], "type": "object"},
+    "entities": {"type": "array"},
+    "persistence": {"additionalProperties": false, "properties": {"keys": {"items": {"enum": ["entities", "paused", "selected_entity_id"]}, "type": "array", "uniqueItems": true}, "maximum_bytes": {"minimum": 0, "type": "integer"}}, "required": ["keys", "maximum_bytes"], "type": "object"},
+    "scene_id": {"minLength": 1, "type": "string"},
+    "schema": {"const": "mosaic.play.scene.v0.1"},
+    "units": {"const": "MILLI_PIXEL"}
+  },
+  "required": ["schema", "scene_id", "units", "bounds", "budgets", "assets", "entities", "actions", "persistence", "authority_effect"],
+  "title": "Mosaic Play 2D Scene v0.1",
+  "type": "object",
+  "x-mosaic-action-types": ["MOVE", "PAUSE", "SAVE", "SELECT", "TOGGLE_VISIBILITY"],
+  "x-mosaic-authority-effect": "NONE",
+  "x-mosaic-compatibility-policy": "EXACT_SCHEMA_ID"
+}

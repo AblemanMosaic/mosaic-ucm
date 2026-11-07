@@ -1,0 +1,34 @@
+{
+  "archive_default_enabled": true,
+  "authority_effect": "NONE",
+  "backends": [
+    "LOCAL_CONTENT_STORE",
+    "MEMORY_VAULT"
+  ],
+  "custody_prefixes": [
+    "review/",
+    "operator/",
+    "operator-kits/",
+    "integration/session-returns/",
+    "integration/successor-returns/",
+    "integration/audit-returns/",
+    "integration/repair-returns/"
+  ],
+  "g0": "CLOSED",
+  "profile_rules": {
+    "REVIEW": ["REFERENCE_ONLY", "SELF_CONTAINED_CUSTODY"],
+    "RUNTIME": "REFERENCE_ONLY",
+    "SDK": "REFERENCE_ONLY"
+  },
+  "real_a5": false,
+  "reconstruction_rule": "EVERY_REFERENCE_MUST_RESOLVE_TO_EXACT_SHA256_BEFORE_MATERIALIZATION",
+  "required_commitments": [
+    "semantic_root",
+    "state_root",
+    "metadata_root",
+    "governance_root"
+  ],
+  "schema": "mosaic.ucm.pippi-transtemporal-archive-policy.v0.1",
+  "standing": "INFORMATION_ONLY",
+  "unavailable_object_disposition": "HOLD_FOR_ARCHIVE_AVAILABILITY"
+}

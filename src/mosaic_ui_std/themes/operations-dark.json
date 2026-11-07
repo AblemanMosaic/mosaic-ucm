@@ -1,0 +1,67 @@
+{
+  "authority_effect": "NONE",
+  "schema": "mosaic.ui.std.theme.v0.1",
+  "standing": "LOCAL_CANDIDATE",
+  "theme_id": "OPERATIONS-DARK",
+  "tokens": {
+    "colors": {
+      "accent": "#69d7ad",
+      "accent_hover": "#86e2c0",
+      "border": "#383f47",
+      "canvas": "#141618",
+      "field": "#1b1e21",
+      "focus": "#a3c9fa",
+      "info": "#91bdf2",
+      "pending": "#e0bc72",
+      "refused": "#ed8e93",
+      "selection": "#254b40",
+      "surface": "#1b1e21",
+      "surface_hover": "#2e343a",
+      "surface_raised": "#25292e",
+      "text": "#eef0f3",
+      "text_quiet": "#9ba5b1"
+    },
+    "radii": {
+      "md": 6,
+      "none": 0,
+      "sm": 4
+    },
+    "spacing": {
+      "lg": 18,
+      "md": 12,
+      "sm": 8,
+      "xl": 26,
+      "xs": 4
+    },
+    "typography": {
+      "roles": {
+        "body": {
+          "family": "Segoe UI",
+          "size": 15,
+          "weight": 400
+        },
+        "heading": {
+          "family": "Segoe UI",
+          "size": 17,
+          "weight": 600
+        },
+        "metric": {
+          "family": "Segoe UI",
+          "size": 30,
+          "weight": 600
+        },
+        "mono": {
+          "family": "Consolas",
+          "size": 13,
+          "weight": 400
+        },
+        "title": {
+          "family": "Segoe UI",
+          "size": 27,
+          "weight": 600
+        }
+      },
+      "unit": "logical_px_character_height"
+    }
+  }
+}

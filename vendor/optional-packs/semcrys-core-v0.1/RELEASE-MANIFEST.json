@@ -1,0 +1,83 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1080827,
+      "path": "semcrys-core-0.1.0-source.zip",
+      "role": "SOURCE_REPOSITORY",
+      "sha256": "24b6f8069968b27e29b7304f80feb8b491b13cf092178313fe15b117b8df2bc4"
+    },
+    {
+      "bytes": 314846,
+      "path": "semcrys-core-0.1.0.pyz",
+      "role": "STDLIB_ZIPAPP",
+      "sha256": "0f81a0279fc54acd89208df51b671cba302dbca2de452c416dd1a237e7e65809"
+    },
+    {
+      "bytes": 324902,
+      "path": "semcrys_core-0.1.0-py3-none-any.whl",
+      "role": "PURE_PYTHON_WHEEL",
+      "sha256": "1ce1b5aa45d1cfcce5fe16b754aec1aaf821fcb75b6afb045028f1432578ffd4"
+    },
+    {
+      "bytes": 358129,
+      "path": "semcrys_core-0.1.0-py3-none-win_amd64.whl",
+      "role": "NATIVE_WHEEL",
+      "sha256": "9c27c1526ef52b706285c1d399f946f65cd46ddc56c8704b001d360cf7facdba"
+    },
+    {
+      "bytes": 37938721,
+      "path": "semcrys-0.1.0-windows-x64.zip",
+      "role": "STANDALONE_WINDOWS_X64",
+      "sha256": "e690b485696ec952edb96fd44d098bb3fb01ebf5b9f080d1ba6b73d3defe072b"
+    },
+    {
+      "bytes": 37908069,
+      "path": "semcrys-0.1.0-linux-x64.tar.gz",
+      "role": "STANDALONE_LINUX_X64",
+      "sha256": "06df9d91be8b8733c85386d864ff4f5c9b1b22a20a01850c909210f80af39df9"
+    },
+    {
+      "bytes": 22939848,
+      "path": "ULTRA_FAMILY.crys",
+      "role": "ULTRA_RELEASE_ASSET",
+      "sha256": "859f1160b2c61620fc582d6d420294d91d6d68106f67e97ac14930e69bbb4e71"
+    }
+  ],
+  "authority_effect": "NONE",
+  "formal_external_certification": "NOT_CLAIMED",
+  "manifest_root": "871644018e68d946af048fb414dd6acb4c75eacc4a894d87427fd13ac03a6bc8",
+  "native_acceleration": {
+    "abi_version": 2,
+    "bundled_platforms": [
+      "win_amd64"
+    ],
+    "optional": true,
+    "pure_python_fallback": true
+  },
+  "publication_authorized": true,
+  "runtime_dependencies": {
+    "base": [],
+    "native_profile": [],
+    "secure_profile": [
+      "cryptography>=42"
+    ]
+  },
+  "schema": "semcrys.release-manifest.v0.2",
+  "standalone_qualification": {
+    "linux": "9a4c371041c5360ee51fbb13a92e68eadd0e89cf303c734d457d1a2da58b799b",
+    "linux_glibc_floor": "2.38",
+    "windows": "0883306375ecd7ae9ef20d4be12420ea1bf2a6d92fd9b8976f1ecc833d06cf77"
+  },
+  "standard_cli": {
+    "default_profile": "STANDARD_V1",
+    "entry_point": "semcrys",
+    "path_first_pack": true,
+    "standalone_platforms": [
+      "windows_x86_64",
+      "linux_x86_64"
+    ]
+  },
+  "standing": "PUBLIC_RELEASE_AUTHORIZED",
+  "verification_status": "SELF_VERIFYING_AND_INDEPENDENTLY_REPRODUCED",
+  "version": "0.1.0"
+}

@@ -1,0 +1,146 @@
+{
+  "authority_effect": "NONE",
+  "components": [
+    {
+      "component_id": "window",
+      "kind": "WINDOW"
+    },
+    {
+      "component_id": "label",
+      "kind": "LABEL"
+    },
+    {
+      "component_id": "button",
+      "kind": "BUTTON"
+    },
+    {
+      "component_id": "text-field",
+      "kind": "TEXT_FIELD"
+    },
+    {
+      "component_id": "select",
+      "kind": "SELECT"
+    },
+    {
+      "component_id": "checkbox",
+      "kind": "CHECKBOX"
+    },
+    {
+      "component_id": "segmented",
+      "kind": "SEGMENTED"
+    },
+    {
+      "component_id": "tab-bar",
+      "kind": "TAB_BAR"
+    },
+    {
+      "component_id": "progress",
+      "kind": "PROGRESS"
+    },
+    {
+      "component_id": "status",
+      "kind": "STATUS"
+    },
+    {
+      "component_id": "table",
+      "kind": "TABLE"
+    },
+    {
+      "component_id": "panel",
+      "kind": "PANEL"
+    },
+    {
+      "component_id": "dialog",
+      "kind": "DIALOG"
+    },
+    {
+      "component_id": "tooltip",
+      "kind": "TOOLTIP"
+    },
+    {
+      "component_id": "badge",
+      "kind": "BADGE"
+    },
+    {
+      "component_id": "key-value",
+      "kind": "KEY_VALUE"
+    },
+    {
+      "component_id": "stepper",
+      "kind": "STEPPER"
+    }
+  ],
+  "library_id": "MOSAIC-NATIVE-OPERATIONS-DARK",
+  "schema": "mosaic.ui.component-library.v0.1",
+  "standing": "LOCAL_CANDIDATE",
+  "states": [
+    "IDLE",
+    "HOVER",
+    "FOCUSED",
+    "PRESSED",
+    "DISABLED",
+    "PENDING",
+    "REFUSED"
+  ],
+  "tokens": {
+    "colors": {
+      "accent": "#69d7ad",
+      "accent_hover": "#86e2c0",
+      "border": "#383f47",
+      "canvas": "#141618",
+      "field": "#1b1e21",
+      "focus": "#a3c9fa",
+      "info": "#91bdf2",
+      "pending": "#e0bc72",
+      "refused": "#ed8e93",
+      "selection": "#254b40",
+      "surface": "#1b1e21",
+      "surface_hover": "#2e343a",
+      "surface_raised": "#25292e",
+      "text": "#eef0f3",
+      "text_quiet": "#9ba5b1"
+    },
+    "radii": {
+      "md": 6,
+      "none": 0,
+      "sm": 4
+    },
+    "spacing": {
+      "lg": 18,
+      "md": 12,
+      "sm": 8,
+      "xl": 26,
+      "xs": 4
+    },
+    "typography": {
+      "roles": {
+        "body": {
+          "family": "Segoe UI",
+          "size": 15,
+          "weight": 400
+        },
+        "heading": {
+          "family": "Segoe UI",
+          "size": 17,
+          "weight": 600
+        },
+        "metric": {
+          "family": "Segoe UI",
+          "size": 30,
+          "weight": 600
+        },
+        "mono": {
+          "family": "Consolas",
+          "size": 13,
+          "weight": 400
+        },
+        "title": {
+          "family": "Segoe UI",
+          "size": 27,
+          "weight": 600
+        }
+      },
+      "unit": "logical_px_character_height"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "authority_effect": "NONE",
+  "domains": {
+    "PLAY_2D": {
+      "accepted_document_schemas": ["mosaic.play.scene.v0.1"],
+      "migration": "EXPLICIT_ADAPTER_REQUIRED_FOR_ANY_OTHER_SCHEMA",
+      "writer_schema": "mosaic.play.scene.v0.1"
+    },
+    "SPATIAL_3D": {
+      "accepted_document_schemas": ["mosaic.spatial.scene.v0.1"],
+      "migration": "EXPLICIT_ADAPTER_REQUIRED_FOR_ANY_OTHER_SCHEMA",
+      "writer_schema": "mosaic.spatial.scene.v0.1"
+    }
+  },
+  "forward_compatibility": "REFUSE_UNKNOWN_SCHEMA",
+  "schema": "mosaic.ui.domain-schema-compatibility.v0.1",
+  "standing": "LOCAL_CANDIDATE"
+}

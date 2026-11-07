@@ -1,0 +1,27 @@
+{
+  "name": "@mosaic-ui/contrib-framework-adapters",
+  "version": "1.0.0-rc.1",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    "./react": "./react.js",
+    "./vue": "./vue.js",
+    "./svelte": "./svelte.js"
+  },
+  "peerDependencies": {
+    "@mosaic-ui/web": "1.0.0-rc.1",
+    "react": ">=18",
+    "svelte": ">=4",
+    "vue": ">=3"
+  },
+  "peerDependenciesMeta": {
+    "react": {"optional": true},
+    "svelte": {"optional": true},
+    "vue": {"optional": true}
+  },
+  "mosaic": {
+    "standing": "OPTIONAL_COMPATIBILITY_CONTRIB",
+    "authority_effect": "NONE",
+    "canonical_runtime": false
+  }
+}

@@ -1,0 +1,299 @@
+{
+  "authority_effect": "NONE",
+  "components": {
+    "BADGE": "mosaic_ui/components/badge.py",
+    "BUTTON": "mosaic_ui/components/button.py",
+    "CHECKBOX": "mosaic_ui/components/checkbox.py",
+    "COMBOBOX": "mosaic_ui/components/combobox.py",
+    "DATA_GRID": "mosaic_ui/components/data_grid.py",
+    "DIALOG": "mosaic_ui/components/dialog.py",
+    "KEY_VALUE": "mosaic_ui/components/key_value.py",
+    "LABEL": "mosaic_ui/components/label.py",
+    "LIST": "mosaic_ui/components/list.py",
+    "MENU": "mosaic_ui/components/menu.py",
+    "NAVIGATION": "mosaic_ui/components/navigation.py",
+    "NOTIFICATION": "mosaic_ui/components/notification.py",
+    "PANEL": "mosaic_ui/components/panel.py",
+    "PROGRESS": "mosaic_ui/components/progress.py",
+    "RADIO_GROUP": "mosaic_ui/components/radio_group.py",
+    "SEGMENTED": "mosaic_ui/components/segmented.py",
+    "SELECT": "mosaic_ui/components/select.py",
+    "STATUS": "mosaic_ui/components/status.py",
+    "STEPPER": "mosaic_ui/components/stepper.py",
+    "TABLE": "mosaic_ui/components/table.py",
+    "TAB_BAR": "mosaic_ui/components/tab_bar.py",
+    "TEXT_FIELD": "mosaic_ui/components/text_field.py",
+    "TOOLTIP": "mosaic_ui/components/tooltip.py",
+    "TREE": "mosaic_ui/components/tree.py",
+    "WINDOW": "mosaic_ui/components/window.py"
+  },
+  "pathways": {
+    "HEADLESS": [
+      "mosaic_ui/__init__.py",
+      "mosaic_ui/canonical.py",
+      "mosaic_ui/model.py",
+      "mosaic_ui/localization.py",
+      "mosaic_ui/layout.py",
+      "mosaic_ui/headless.py",
+      "mosaic_ui/components/__init__.py",
+      "mosaic_ui/components/base.py",
+      "mosaic_ui/components/dependencies.json",
+      "mosaic_ui/components/registry.py",
+      "mosaic_ui_std/__init__.py",
+      "mosaic_ui_std/catalog.py",
+      "mosaic_ui_std/lifecycle.py"
+    ],
+    "BROWSER": [
+      "mosaic_ui/browser_realizer.py",
+      "mosaic_ui/browser_session_store.py",
+      "mosaic_ui/browser_host.py",
+      "mosaic_ui/web_distribution.py",
+      "mosaic_ui/web/core.js",
+      "mosaic_ui/web/index.d.ts",
+      "mosaic_ui/web/package.json"
+    ],
+    "WIN32": [
+      "mosaic_ui/native_realizer.py",
+      "mosaic_ui/win32.py",
+      "mosaic_ui/win32_accessibility.py",
+      "mosaic_ui/win32_image.py",
+      "mosaic_ui/win32_vector.py",
+      "mosaic_ui_std/theme.py"
+    ]
+  },
+  "optional_pathways": {
+    "VISUAL_SYSTEM_V02": {
+      "modules": [
+        "mosaic_ui/theme_payload.py",
+        "mosaic_ui_std/theme_v02.py",
+        "mosaic_ui_std/fonts/registry.json",
+        "mosaic_ui_std/fonts/ibm-plex-mono-latin-400-normal.woff2",
+        "mosaic_ui_std/fonts/ibm-plex-mono-latin-500-normal.woff2",
+        "mosaic_ui_std/fonts/ibm-plex-sans-latin-400-normal.woff2",
+        "mosaic_ui_std/fonts/ibm-plex-sans-latin-500-normal.woff2",
+        "mosaic_ui_std/fonts/ibm-plex-sans-latin-600-normal.woff2",
+        "mosaic_ui_std/fonts/IBMPlexMono-OFL-1.1.txt",
+        "mosaic_ui_std/fonts/IBMPlexSans-OFL-1.1.txt",
+        "mosaic_ui_std/fonts/inter-latin-wght-normal.woff2",
+        "mosaic_ui_std/fonts/Inter-OFL-1.1.txt",
+        "mosaic_ui_std/fonts/jetbrains-mono-latin-wght-normal.woff2",
+        "mosaic_ui_std/fonts/JetBrainsMono-OFL-1.1.txt",
+        "mosaic_ui_std/fonts/manrope-latin-wght-normal.woff2",
+        "mosaic_ui_std/fonts/Manrope-OFL-1.1.txt",
+        "mosaic_ui_std/fonts/source-sans-3-latin-wght-normal.woff2",
+        "mosaic_ui_std/fonts/SourceSans3-OFL-1.1.txt"
+      ],
+      "requires": ["FOUNDRY", "SIGNATURE_PROFILE"]
+    },
+    "REVIEW_PACKS": {
+      "modules": [
+        "mosaic_ui/review_shell.py",
+        "mosaic_ui/review_library.py",
+        "mosaic_ui/review_binding.json",
+        "mosaic_ui/packs/_base/components.css",
+        "mosaic_ui/packs/_base/disclosure.css",
+        "mosaic_ui/packs/_shell/head.html",
+        "mosaic_ui/packs/_shell/script.html",
+        "mosaic_ui/packs/g2-stage/body.html",
+        "mosaic_ui/packs/g2-stage/grammar.css",
+        "mosaic_ui/packs/g2-stage/pack.json",
+        "mosaic_ui/packs/light-table/body.html",
+        "mosaic_ui/packs/light-table/grammar.css",
+        "mosaic_ui/packs/light-table/pack.json"
+      ],
+      "requires": ["VISUAL_SYSTEM_V02", "WORKBENCH"]
+    },
+    "EVIDENCE_GATES": {
+      "modules": [
+        "mosaic_ui/evidence_gates.py",
+        "mosaic_ui/evidence_gates.json",
+        "mosaic_ui/review_courts.py",
+        "mosaic_ui/sampling.py",
+        "mosaic_ui/visual_certification_v02.py",
+        "mosaic_ui/source/visual-baseline-v02.json"
+      ],
+      "requires": ["REVIEW_PACKS", "VISUAL_CERTIFICATION"]
+    },
+    "FRAMEWORK_ADAPTERS": {
+      "modules": [
+        "mosaic_ui/framework_bindings.py",
+        "mosaic_ui/contrib/web_adapters/index.d.ts",
+        "mosaic_ui/contrib/web_adapters/package.json",
+        "mosaic_ui/contrib/web_adapters/react.js",
+        "mosaic_ui/contrib/web_adapters/svelte.js",
+        "mosaic_ui/contrib/web_adapters/vue.js"
+      ],
+      "requires": []
+    },
+    "FUNCTIONAL_REVIEW": {
+      "modules": ["mosaic_ui/signature_review.py", "mosaic_ui/signature_review_host.py"],
+      "requires": ["RUNTIME", "SIGNATURE_PROFILE"]
+    },
+    "CLI": {
+      "modules": ["mosaic_ui/cli.py"],
+      "requires": ["BUILDER", "EVIDENCE_GATES", "FUNCTIONAL_REVIEW", "PLAY_ADAPTERS", "PLAY_RUNTIME_QUALIFICATION", "RELEASE", "WORKBENCH"]
+    },
+    "BUILDER": {
+      "modules": ["mosaic_ui/ablate.py", "mosaic_ui/builder_bridge.py", "mosaic_ui/equivalence.py"],
+      "requires": ["FOUNDRY", "PROBE"]
+    },
+    "ADOPTION": {
+      "modules": [
+        "mosaic_ui/adoption.py",
+        "mosaic_ui/consumer_lifecycle.py",
+        "mosaic_ui/source/application-manifest.json"
+      ],
+      "requires": ["BUILDER", "REALIZER_PROTOCOL"]
+    },
+    "ACCESSIBILITY": {
+      "modules": ["mosaic_ui/accessibility.py", "mosaic_ui/browser_realizer.py", "mosaic_ui/browser_session_store.py"],
+      "requires": ["PILOT", "SUFFICIENCY"]
+    },
+    "ARCHITECTURE": {
+      "modules": ["mosaic_ui/architecture.py"],
+      "requires": ["ACCESSIBILITY", "PERFORMANCE", "REALIZER_PROTOCOL", "RUNTIME", "SESSION_CUSTODY", "SUFFICIENCY"]
+    },
+    "CAPTURE": {
+      "modules": ["mosaic_ui/native_capture.py"],
+      "requires": []
+    },
+    "CONFORMANCE": {
+      "modules": ["mosaic_ui/conformance_app.py"],
+      "requires": ["CAPTURE"]
+    },
+    "FOUNDRY": {
+      "modules": ["mosaic_ui/foundry.py", "mosaic_ui/source/component-library.json", "mosaic_ui/source/specification.json"],
+      "requires": []
+    },
+    "PILOT": {
+      "modules": ["mosaic_ui/pilot.py"],
+      "requires": ["FOUNDRY", "RUNTIME"]
+    },
+    "PILOT_NATIVE": {
+      "modules": ["mosaic_ui/pilot_native.py"],
+      "requires": ["CAPTURE", "PILOT"]
+    },
+    "PROBE": {
+      "modules": ["mosaic_ui/probe.py"],
+      "requires": []
+    },
+    "REVIEW": {
+      "modules": [
+        "mosaic_ui/native_review_workbench.py",
+        "mosaic_ui/review_gallery.py",
+        "mosaic_ui/review_ontology.py",
+        "mosaic_ui/review_specimens.py",
+        "mosaic_ui/review_session.py",
+        "mosaic_ui/signature_review.py"
+      ],
+      "requires": ["CAPTURE", "SIGNATURE_PROFILE"]
+    },
+    "REALIZER_PROTOCOL": {
+      "modules": ["mosaic_ui/realizer.py"],
+      "requires": []
+    },
+    "RELEASE": {
+      "modules": [
+        "mosaic_ui/ablate.py",
+        "mosaic_ui/human_review.py",
+        "mosaic_ui/public_contract.py",
+        "mosaic_ui/release.py",
+        "mosaic_ui/release_acceptance.py",
+        "mosaic_ui/source/public-contract-1.0-rc1.json",
+        "mosaic_ui/source/release-policy.json"
+      ],
+      "requires": ["ADOPTION", "ARCHITECTURE", "PERFORMANCE", "PILOT", "PROBE", "REALIZER_PROTOCOL", "VISUAL_CERTIFICATION"]
+    },
+    "RUNTIME": {
+      "modules": ["mosaic_ui/runtime.py", "mosaic_ui/receipt_ledger.py"],
+      "requires": []
+    },
+    "SESSION_CUSTODY": {
+      "modules": ["mosaic_ui/session_custody.py"],
+      "requires": ["SUFFICIENCY"]
+    },
+    "SIGNATURE_PROFILE": {
+      "modules": [
+        "mosaic_ui/signature_profile.py",
+        "mosaic_ui_std/signature.py",
+        "mosaic_ui_std/visual_profile.py",
+        "mosaic_ui_std/theme.py",
+        "mosaic_ui_std/profiles/mosaic-signature.json",
+        "mosaic_ui_std/profiles/mosaic-signature-visual.json",
+        "mosaic_ui_std/densities/comfortable.json",
+        "mosaic_ui_std/densities/compact.json",
+        "mosaic_ui_std/themes/signature-light.json",
+        "mosaic_ui_std/themes/signature-dark.json",
+        "mosaic_ui_std/themes/high-contrast-dark.json"
+      ],
+      "requires": ["FOUNDRY", "SUFFICIENCY"]
+    },
+    "PERFORMANCE": {
+      "modules": ["mosaic_ui/performance.py", "mosaic_ui/source/performance-policy.json"],
+      "requires": ["PILOT"]
+    },
+    "PLAY_2D": {
+      "modules": [
+        "mosaic_ui/domain_protocol.py",
+        "mosaic_ui/domain_schemas/compatibility-v0.1.json",
+        "mosaic_ui/domain_schemas/play-scene-v0.1.schema.json",
+        "mosaic_ui/play.py"
+      ],
+      "requires": []
+    },
+    "PLAY_ADAPTERS": {
+      "modules": ["mosaic_ui/adapter_sdk.py", "mosaic_ui/play_adapters.py", "mosaic_ui/source/play-adapter-candidates.json"],
+      "requires": ["PLAY_2D"]
+    },
+    "PLAY_RUNTIME_QUALIFICATION": {
+      "modules": [
+        "mosaic_ui/play_runtime_qualification.py",
+        "mosaic_ui/source/play-runtime-policy.json",
+        "mosaic_ui/visual_gate.py"
+      ],
+      "requires": ["PLAY_ADAPTERS"]
+    },
+    "SPATIAL_3D": {
+      "modules": [
+        "mosaic_ui/domain_protocol.py",
+        "mosaic_ui/domain_schemas/compatibility-v0.1.json",
+        "mosaic_ui/domain_schemas/spatial-scene-v0.1.schema.json",
+        "mosaic_ui/spatial.py"
+      ],
+      "requires": []
+    },
+    "SEMANTIC_DEMO": {
+      "modules": ["mosaic_ui/semantic_demo.py"],
+      "requires": ["CAPTURE"]
+    },
+    "SUFFICIENCY": {
+      "modules": ["mosaic_ui/sufficiency.py", "mosaic_ui_std/sufficiency-catalog.json"],
+      "requires": []
+    },
+    "UGK_WITNESS": {
+      "modules": ["mosaic_ui/ugk_witness.py"],
+      "requires": ["PROBE"]
+    },
+    "VISUAL_GATE": {
+      "modules": ["mosaic_ui/visual_gate.py"],
+      "requires": []
+    },
+    "VISUAL_CERTIFICATION": {
+      "modules": ["mosaic_ui/visual_certification.py"],
+      "requires": ["REALIZER_PROTOCOL", "SIGNATURE_PROFILE", "VISUAL_GATE"]
+    },
+    "WORKBENCH": {
+      "modules": [
+        "mosaic_ui/authoring.py",
+        "mosaic_ui/review_ontology.py",
+        "mosaic_ui/review_specimens.py",
+        "mosaic_ui/review_session.py",
+        "mosaic_ui/review_workbench.py",
+        "mosaic_ui/workbench.py"
+      ],
+      "requires": ["PILOT", "SIGNATURE_PROFILE"]
+    }
+  },
+  "schema": "mosaic.ui.component-dependency-graph.v0.2",
+  "standing": "LOCAL_CANDIDATE"
+}

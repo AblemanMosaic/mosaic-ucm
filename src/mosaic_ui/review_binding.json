@@ -1,0 +1,63 @@
+{
+  "attribute_selectors": [
+    "[data-disposition]",
+    "[data-mode]"
+  ],
+  "authority_effect": "NONE",
+  "commitment": "e97a85336d57cd736e720cffcdeded427f1b625f2326aa6644e02f0401705e17",
+  "governed_style": [
+    {
+      "id": "frame",
+      "property": "maxWidth"
+    },
+    {
+      "id": "runner",
+      "property": "color"
+    },
+    {
+      "id": "specimen",
+      "property": "minHeight"
+    }
+  ],
+  "ids": [
+    "catalog",
+    "check-summary",
+    "conditions",
+    "coverage-detail",
+    "coverage-receipt",
+    "coverage-result",
+    "frame",
+    "frame-meta",
+    "inspector",
+    "interaction",
+    "next",
+    "ontology-root",
+    "previous",
+    "review-note",
+    "review-progress",
+    "review-progress-label",
+    "review-question",
+    "review-question-title",
+    "runner",
+    "search",
+    "snapshot",
+    "specimen",
+    "specimen-title",
+    "statebar",
+    "subject-path",
+    "subject-title",
+    "tabs",
+    "target-chip",
+    "toast"
+  ],
+  "optional_ids": [
+    "batch-bar",
+    "batch-clear",
+    "batch-count"
+  ],
+  "optional_selectors": [
+    "[data-batch-disposition]"
+  ],
+  "schema": "mosaic.ui.review-binding.v0.2",
+  "standing": "LOCAL_CANDIDATE"
+}

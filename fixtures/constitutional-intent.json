@@ -1,0 +1,53 @@
+{
+  "acceptance": [
+    "Return an eligibility result with a replayable witness",
+    "Preserve every CRU obligation through compilation",
+    "Result must be eligible"
+  ],
+  "actors": [
+    "HUMAN_GOVERNOR",
+    "EXPERIMENTAL_CODING_AGENT",
+    "DETERMINISTIC_CHECKER"
+  ],
+  "constraints": [
+    "Use only edges carrying every required label",
+    "Reserve the declared resource envelope before traversal",
+    "Retain exact intent and jurisdiction roots"
+  ],
+  "exclusions": [
+    "ADMISSION",
+    "EXTERNAL_EFFECTS",
+    "G0_OPEN",
+    "PRODUCTION",
+    "PUBLICATION",
+    "REAL_A5",
+    "RELEASE"
+  ],
+  "intent_id": "constitutional-eligibility-demo-v1",
+  "jurisdiction": "LOCAL_EXPERIMENTAL_WORKSPACE",
+  "objective": "Determine whether a qualified local path exists while preserving constitutional obligations.",
+  "problem": {
+    "edges": [
+      {"from": "A", "id": "e1", "labels": ["qualified", "local"], "to": "B"},
+      {"from": "B", "id": "e2", "labels": ["qualified", "local"], "to": "D"},
+      {"from": "A", "id": "e3", "labels": ["unqualified"], "to": "C"},
+      {"from": "C", "id": "e4", "labels": ["qualified"], "to": "D"}
+    ],
+    "max_visits": 8,
+    "nodes": ["A", "B", "C", "D"],
+    "required_labels": ["qualified", "local"],
+    "schema": "ucl.op.eligibility_problem.v1",
+    "source": "A",
+    "target": "D"
+  },
+  "resource_budget": {
+    "memory_bytes": 1048576,
+    "solver_calls": 4,
+    "steps": 1000,
+    "tool_invocations": 4
+  },
+  "schema": "ucl.hlir.intent.v1",
+  "source_refs": [
+    "fixture:constitutional-intent"
+  ]
+}

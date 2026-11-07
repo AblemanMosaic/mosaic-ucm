@@ -1,0 +1,111 @@
+{
+ "authority_effect": "NONE",
+ "fonts": {
+  "ibm-plex-mono": {
+   "family": "IBM Plex Mono",
+   "files": [
+    {
+     "bytes": 14708,
+     "file": "ibm-plex-mono-latin-400-normal.woff2",
+     "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+     "weight": "400"
+    },
+    {
+     "bytes": 14888,
+     "file": "ibm-plex-mono-latin-500-normal.woff2",
+     "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22",
+     "weight": "500"
+    }
+   ],
+   "license_file": "IBMPlexMono-OFL-1.1.txt",
+   "license_sha256": "23b0a9d0c6d3f140a0b77e483c5cfa6bba574325ef5cb189ed9f2fec4884533f",
+   "source": "npm @fontsource/ibm-plex-mono@5.3.0"
+  },
+  "ibm-plex-sans": {
+   "family": "IBM Plex Sans",
+   "files": [
+    {
+     "bytes": 22588,
+     "file": "ibm-plex-sans-latin-400-normal.woff2",
+     "sha256": "3b646991d30055a93a4ecc499713d4347953a74a947ecab435ab72070cbdab0e",
+     "weight": "400"
+    },
+    {
+     "bytes": 24184,
+     "file": "ibm-plex-sans-latin-500-normal.woff2",
+     "sha256": "0717336fb31fcdcde4b8deb3675bb4a0f7f6d484864afcd6751ac29975962203",
+     "weight": "500"
+    },
+    {
+     "bytes": 24252,
+     "file": "ibm-plex-sans-latin-600-normal.woff2",
+     "sha256": "8960851d691c054ed38e259bdcf1a6190d157b4203ed5bb32c632a863fb8ec2f",
+     "weight": "600"
+    }
+   ],
+   "license_file": "IBMPlexSans-OFL-1.1.txt",
+   "license_sha256": "d0283623ef57e722fd0eb688a8041589670c608ab780cd3612d06ba6f153d3fd",
+   "source": "npm @fontsource/ibm-plex-sans@5.3.0"
+  },
+  "inter": {
+   "family": "Inter",
+   "files": [
+    {
+     "bytes": 48256,
+     "file": "inter-latin-wght-normal.woff2",
+     "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+     "weight": "100 900"
+    }
+   ],
+   "license_file": "Inter-OFL-1.1.txt",
+   "license_sha256": "3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345",
+   "source": "npm @fontsource-variable/inter@5.3.0"
+  },
+  "jetbrains-mono": {
+   "family": "JetBrains Mono",
+   "files": [
+    {
+     "bytes": 40404,
+     "file": "jetbrains-mono-latin-wght-normal.woff2",
+     "sha256": "18be452724bfdc236c074ca94a249a7f41a86752c7d04ab258ce9ed5651f6a7e",
+     "weight": "100 800"
+    }
+   ],
+   "license_file": "JetBrainsMono-OFL-1.1.txt",
+   "license_sha256": "403581b69dac5cff4079205e01c6b467e56af449ecbd7247693ddb1baafa005b",
+   "source": "npm @fontsource-variable/jetbrains-mono@5.3.0"
+  },
+  "manrope": {
+   "family": "Manrope",
+   "files": [
+    {
+     "bytes": 24836,
+     "file": "manrope-latin-wght-normal.woff2",
+     "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+     "weight": "200 800"
+    }
+   ],
+   "license_file": "Manrope-OFL-1.1.txt",
+   "license_sha256": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30",
+   "source": "npm @fontsource-variable/manrope@5.3.0"
+  },
+  "source-sans-3": {
+   "family": "Source Sans 3",
+   "files": [
+    {
+     "bytes": 28740,
+     "file": "source-sans-3-latin-wght-normal.woff2",
+     "sha256": "7a19a7027e125257d310c6dbd78ae3a30b5ea1e3794d60b12bb28227a003bfda",
+     "weight": "200 900"
+    }
+   ],
+   "license_file": "SourceSans3-OFL-1.1.txt",
+   "license_sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3",
+   "source": "npm @fontsource-variable/source-sans-3@5.3.0"
+  }
+ },
+ "license": "OFL-1.1",
+ "schema": "mosaic.ui.std.font-registry.v0.1",
+ "standing": "LOCAL_CANDIDATE",
+ "subset": "latin"
+}

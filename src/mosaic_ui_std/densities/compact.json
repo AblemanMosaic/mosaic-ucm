@@ -1,0 +1,9 @@
+{
+  "authority_effect": "NONE",
+  "control_height": 30,
+  "density_id": "compact",
+  "schema": "mosaic.ui.density.v0.1",
+  "spacing": {"lg": 14, "md": 9, "sm": 6, "xl": 20, "xs": 3},
+  "standing": "LOCAL_CANDIDATE",
+  "typography_sizes": {"body": 13, "heading": 16, "metric": 25, "mono": 12, "title": 23}
+}

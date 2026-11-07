@@ -1,0 +1,30 @@
+{
+  "authority_effect": "NONE",
+  "invariants": [
+    "SEMANTIC_TREE_CONTAINS_NO_EFFECTFUL_CALLBACKS",
+    "STABLE_NODE_ID_REQUIRED",
+    "ACCESSIBLE_ROLE_AND_NAME_REQUIRED",
+    "UNKNOWN_OPERATION_REFUSED",
+    "UI_REALIZATION_CANNOT_GRANT_AUTHORITY",
+    "NO_BROWSER_INTERMEDIARY",
+    "NO_NETWORK_OR_RUNTIME_PACKAGE_ACQUISITION"
+  ],
+  "schema": "mosaic.ui.substrate-specification.v0.1",
+  "semantic_intents": [
+    "REQUEST_ACTIVATION",
+    "REQUEST_SELECTION_CHANGE",
+    "REQUEST_TEXT_COMMIT",
+    "REQUEST_DIALOG_DECISION"
+  ],
+  "specification_id": "MOSAIC-SOVEREIGN-NATIVE-UI-WIN32-V0.1",
+  "standing": "LOCAL_CANDIDATE",
+  "states": [
+    "IDLE",
+    "HOVER",
+    "FOCUSED",
+    "PRESSED",
+    "DISABLED",
+    "PENDING",
+    "REFUSED"
+  ]
+}

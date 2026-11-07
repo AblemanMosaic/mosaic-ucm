@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mosaic.ui.application-manifest.v0.1",
+  "additionalProperties": false,
+  "properties": {
+    "application": {"type": "string"},
+    "authority_effect": {"const": "NONE"},
+    "budgets": {
+      "additionalProperties": false,
+      "properties": {
+        "max_archive_bytes": {"type": ["integer", "null"]},
+        "max_runtime_source_bytes": {"type": ["integer", "null"]},
+        "max_wheel_bytes": {"type": ["integer", "null"]}
+      },
+      "required": ["max_archive_bytes", "max_runtime_source_bytes", "max_wheel_bytes"],
+      "type": "object"
+    },
+    "pathways": {"items": {"type": "string"}, "type": "array"},
+    "realizers": {"items": {"enum": ["HEADLESS", "BROWSER", "WIN32"]}, "type": "array"},
+    "retain_kinds": {"items": {"type": "string"}, "type": "array"},
+    "schema": {"const": "mosaic.ui.application-manifest.v0.1"},
+    "standing": {"const": "LOCAL_CANDIDATE"},
+    "themes": {"items": {"type": "string"}, "type": "array"}
+  },
+  "required": ["schema", "application", "realizers", "pathways", "themes", "retain_kinds", "budgets", "standing", "authority_effect"],
+  "title": "Mosaic UI application package manifest",
+  "type": "object"
+}

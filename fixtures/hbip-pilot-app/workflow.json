@@ -1,0 +1,1 @@
+{"steps":["read_health","render_status","record_receipt"],"effects":["READ_LOCAL","WRITE_LOCAL"],"network":"DENY"}

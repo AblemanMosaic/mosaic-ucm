@@ -1,0 +1,25 @@
+{
+  "$id": "https://mosaic.invalid/schema/spatial-scene-v0.1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "actions": {"type": "array"},
+    "assets": {"type": "array"},
+    "authority_effect": {"const": "NONE"},
+    "bounds": {"items": {"type": "integer"}, "maxItems": 6, "minItems": 6, "type": "array"},
+    "budgets": {"additionalProperties": false, "properties": {"max_objects": {"minimum": 0, "type": "integer"}, "max_assets": {"minimum": 0, "type": "integer"}, "max_asset_bytes": {"minimum": 0, "type": "integer"}, "max_actions": {"minimum": 0, "type": "integer"}, "max_triangles": {"minimum": 0, "type": "integer"}, "max_texture_bytes": {"minimum": 0, "type": "integer"}, "max_shader_units": {"minimum": 0, "type": "integer"}}, "required": ["max_objects", "max_assets", "max_asset_bytes", "max_actions", "max_triangles", "max_texture_bytes", "max_shader_units"], "type": "object"},
+    "camera": {"type": "object"},
+    "coordinate_system": {"const": "RIGHT_HANDED_Y_UP"},
+    "objects": {"type": "array"},
+    "scene_id": {"minLength": 1, "type": "string"},
+    "schema": {"const": "mosaic.spatial.scene.v0.1"},
+    "units": {"const": "MILLIMETER"}
+  },
+  "required": ["schema", "scene_id", "coordinate_system", "units", "bounds", "budgets", "assets", "objects", "camera", "actions", "authority_effect"],
+  "title": "Mosaic Spatial 3D Scene v0.1",
+  "type": "object",
+  "x-mosaic-action-types": ["NAVIGATE", "PERSIST", "SELECT", "TRANSLATE"],
+  "x-mosaic-authority-effect": "NONE",
+  "x-mosaic-compatibility-policy": "EXACT_SCHEMA_ID",
+  "x-mosaic-pixel-equality-required": false
+}

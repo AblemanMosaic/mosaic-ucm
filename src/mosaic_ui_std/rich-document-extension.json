@@ -1,0 +1,23 @@
+{
+  "authority_effect": "NONE",
+  "catalog_id": "MOSAIC-UI-STD-RICH-DOCUMENT-0.2.0-RC1",
+  "components": [
+    {
+      "component_id": "rich-document",
+      "evidence": [
+        "rich_document.py: exact-source-preserving non-executing projection",
+        "components/rich_document.py: shared semantic handler",
+        "win32.py: native RICHEDIT50W realization",
+        "test_rich_document.py: parser, catalog, headless, and native correspondence"
+      ],
+      "kind": "RICH_DOCUMENT",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    }
+  ],
+  "schema": "mosaic.ui.std.catalog-extension.rich-document.v0.1",
+  "standing": "LOCAL_SUCCESSOR_CANDIDATE",
+  "tier_basis": "ADDITIVE_NATIVE_DOCUMENT_COMPONENT_WITH_EXACT_SOURCE_CUSTODY_AND_NO_BROWSER_EXECUTION"
+}

@@ -1,0 +1,40 @@
+{
+  "schema": "aok.court.execution_manifest.v1.candidate",
+  "attempt_id": "AMCAS-V1-BUILD-001",
+  "objective": "Build and verify a portable provisional Ableman Mosaic Constitutional Application Standard v1 and a source-bound AOK Courthouse reference application.",
+  "authority": {
+    "source": "DIRECT_GOVERNOR_REQUEST",
+    "exact_request": "ok do that build now as your goal",
+    "effect_ceiling": "WRITE_PROVISIONAL_WORKSPACE_AND_RUN_LOCAL_DETERMINISTIC_TESTS",
+    "standing": "INFORMATION_ONLY",
+    "standing_change": false
+  },
+  "runner": {
+    "executable": "C:/Users/New Admin/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+    "working_directory": "C:/Users/New Admin/Documents/Codex/2026-08-11/cons",
+    "commands": [
+      "tools/mosaic_standard.py build",
+      "python -m unittest discover -s tests -v",
+      "tools/mosaic_standard.py verify --sources",
+      "tools/mosaic_standard.py replay"
+    ]
+  },
+  "write_set": [
+    "work/GOVERNOR-ARCHITECTURE-PERFORMANCE/ableman-mosaic-constitutional-application-standard-v1"
+  ],
+  "protected_write_set": [],
+  "external_effects": [],
+  "model_calls": 0,
+  "canonical_mutations": 0,
+  "evidence_directory": "evidence/AMCAS-V1-BUILD-001",
+  "stop_conditions": [
+    "SOURCE_PIN_DRIFT",
+    "REGISTRY_IDENTITY_COLLISION",
+    "UNBOUND_RELATION_ENDPOINT",
+    "AUTHORITY_ROLE_COLLAPSE",
+    "SEMANTIC_PARTIALITY_OVERCLAIM",
+    "NONDETERMINISTIC_REPLAY",
+    "WRITE_OUTSIDE_DECLARED_PROVISIONAL_ROOT"
+  ],
+  "claim_ceiling": "PROVISIONAL_SOURCE_BOUND_PORTABLE_STANDARD_AND_REFERENCE_APPLICATION_CORRESPONDENCE_ONLY"
+}

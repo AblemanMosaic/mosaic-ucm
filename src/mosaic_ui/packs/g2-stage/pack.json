@@ -1,0 +1,45 @@
+{
+  "authority_effect": "NONE",
+  "base": [
+    "components.css",
+    "disclosure.css"
+  ],
+  "court_states": [
+    "foundation.color",
+    "component.button",
+    "foundation.typography",
+    "component.data-grid",
+    "surface.data-workspace"
+  ],
+  "designed_scrollers": [
+    ".conditions",
+    ".statebar",
+    ".tabs",
+    ".g-pop-panel .conditions",
+    "#catalog",
+    ".catalog",
+    ".g-rail",
+    ".demo table",
+    ".g-summary-hint"
+  ],
+  "hex_allowlist": {
+    "#0000002e": "shadow tint under the active segmented-control item (base)",
+    "#0000004d": "verdict bar shadow tint (grammar)",
+    "#fff": "swatch label fallback when a specimen omits --label (base)"
+  },
+  "invariants": [
+    "shell script byte-identical",
+    "binding manifest satisfied",
+    "governed sizing never overridden",
+    "colors via role variables only"
+  ],
+  "job": "Review one thing",
+  "name": "Specimen stage",
+  "pack_id": "g2-stage",
+  "schema": "mosaic.ui.review-pack.v0.1",
+  "standing": "LOCAL_CANDIDATE",
+  "supported_realizers": [
+    "BROWSER_REVIEW_SHELL"
+  ],
+  "version": "1.0.0"
+}

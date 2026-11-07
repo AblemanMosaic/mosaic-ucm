@@ -1,0 +1,14 @@
+{
+  "archive_backend": {"default_enabled": true, "preferred": "MEMORY_VAULT", "fallback": "LOCAL_CONTENT_STORE", "retained_in_pippi": "CAUSAL_ROOTS_ONLY"},
+  "authority_boundary": {"courthouse": "REMOTE_OR_CROSS_JURISDICTION_CORRESPONDENCE", "pippi": "LOCAL_PROJECT_PROCESS_COORDINATION", "ucm_gateway": "GOVERNED_LOCAL_EFFECTS"},
+  "credential_policy": {"public_identity_material": "ALLOWED", "provider_reference": "ALLOWED", "raw_secrets": "REFUSED"},
+  "g0": "CLOSED",
+  "identity": {"agent_session_id": "REQUIRED_PER_SESSION", "mosaic_id": "OPTIONAL_PERSISTENT_USER_ID", "dkn_public_key": "OPTIONAL_PUBLIC_NAMESPACE_ANCHOR"},
+  "mediation_channels": ["MODEL_INPUT", "MODEL_DRAFT", "VISIBLE_OUTPUT", "TOOL_PROPOSAL", "TOOL_DISPATCH", "TOOL_RESULT", "JOURNAL_WRITE"],
+  "real_a5": false,
+  "schema": "mosaic.ucm.pippi-global-hub-contract.v0.1",
+  "standing": "INFORMATION_ONLY",
+  "authority_effect": "NONE",
+  "version_policy": {"implicit_version_bumps": "REFUSED", "public_version": "v0.1.0", "revision_pattern": "r[0-9]{3}", "version_change_requires_governor": true}
+}
+

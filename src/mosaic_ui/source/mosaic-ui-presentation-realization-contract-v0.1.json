@@ -1,0 +1,69 @@
+{
+  "schema": "mosaic.realization-space-contract.v0.1",
+  "contract_id": "MOSAIC-UI-PRESENTATION-REALIZATION-V0.1",
+  "contract_version": "0.1.0-local-fixture",
+  "description": "Local fixture for effect-free UI presentation selection.",
+  "subject": {
+    "subject_id": "MOSAIC-UI-SEMANTIC-TREE",
+    "subject_schema": "mosaic.ui.semantic-tree.v0.1",
+    "authority_owner": "MOSAIC-UI-APPLICATION",
+    "source_roots": ["LOCAL-FIXTURE"],
+    "preserved_identity": ["SEMANTIC_TREE_ROOT", "NODE_IDS"],
+    "forbidden_overrides": ["APPLICATION_OPERATIONS", "APPLICATION_STATE", "HOST_AUTHORITY"]
+  },
+  "possibility": {
+    "intended_variation": ["theme", "density"],
+    "excluded_claims": ["application authority", "pixel identity", "release admission"]
+  },
+  "axes": [
+    {
+      "id": "UI.PRESENTATION.THEME",
+      "label": "Theme",
+      "value_type": "ENUM",
+      "domain": {"values": ["DARK", "LIGHT", "HIGH_CONTRAST"]},
+      "default": "DARK",
+      "ownership": "USER",
+      "mutability": "SESSION",
+      "continuity": "DISCRETE",
+      "state_effect": "PRESENTATION",
+      "effect_owner": "MOSAIC-UI-PRESENTATION",
+      "apply_mode": "FRAME_BOUNDARY",
+      "persistence_effect": "PROFILE",
+      "replay_effect": "PRESENTATION_ONLY",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "UI.PRESENTATION.DENSITY",
+      "label": "Density",
+      "value_type": "ENUM",
+      "domain": {"values": ["COMFORTABLE", "COMPACT"]},
+      "default": "COMFORTABLE",
+      "ownership": "USER",
+      "mutability": "SESSION",
+      "continuity": "DISCRETE",
+      "state_effect": "PRESENTATION",
+      "effect_owner": "MOSAIC-UI-PRESENTATION",
+      "apply_mode": "FRAME_BOUNDARY",
+      "persistence_effect": "PROFILE",
+      "replay_effect": "PRESENTATION_ONLY",
+      "authority_effect": "NONE"
+    }
+  ],
+  "constraints": [],
+  "capabilities": ["ENUMERATE", "VALIDATE", "SELECT", "LOWER", "EXPLAIN", "RECEIPT"],
+  "selection": {"default_policy": "EXACT-DEFAULTS", "seed_required_for_non_unique": true},
+  "lowering": {"targets": [], "allowed_results": ["EXACT", "BOUNDED", "REFUSED"]},
+  "evidence": {
+    "required_roots": ["CONTRACT", "SUBJECT", "CONFIGURATION"],
+    "required_fields": ["THEME", "DENSITY"],
+    "non_claims": ["APPLICATION_AUTHORITY", "PIXEL_IDENTITY", "RELEASE_ADMISSION"]
+  },
+  "authority": {
+    "standing": "LOCAL_CROSS_DOMAIN_FIXTURE",
+    "authority_effect": "NONE",
+    "self_admission": false,
+    "release_gate": false,
+    "track_a_dependency": "NONE",
+    "claim_boundary": "CONTROL_MODEL_TEST_FIXTURE_ONLY"
+  }
+}

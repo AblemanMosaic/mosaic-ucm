@@ -1,0 +1,28 @@
+{
+  "schema": "mosaic.ucm.amcas-bounded-correction-contract.v0.1",
+  "amcas_element": "ARTIFACT_CUSTODY",
+  "lifecycle": [
+    "BEGIN",
+    "PATCH_BOUND",
+    "SEALED",
+    "RESTORED",
+    "VERIFIED"
+  ],
+  "invariants": [
+    "complete_pre_source_envelope_is_immutable",
+    "patch_is_bound_before_source_effect",
+    "only_declared_members_may_change",
+    "rollback_success_requires_complete_pre_source_root",
+    "progress_is_nonsemantic",
+    "semantic_receipts_are_append_only_and_hash_chained"
+  ],
+  "progress": {
+    "stream": "PROGRESS.jsonl",
+    "projection": "STATUS.json",
+    "semantic": false
+  },
+  "standing": "INFORMATION_ONLY",
+  "authority_effect": "NONE",
+  "real_a5": false,
+  "g0": "CLOSED"
+}

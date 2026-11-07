@@ -1,0 +1,16 @@
+{
+  "name": "@mosaic-ui/web",
+  "version": "1.0.0-rc.1",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {"types": "./index.d.ts", "default": "./core.js"}
+  },
+  "dependencies": {},
+  "peerDependencies": {},
+  "mosaic": {
+    "interface": "WEB_COMPONENT_AND_STANDARD_ES_MODULE",
+    "canonical_runtime": true,
+    "authority_effect": "NONE"
+  }
+}

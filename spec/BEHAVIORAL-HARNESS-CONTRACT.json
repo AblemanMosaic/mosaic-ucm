@@ -1,0 +1,25 @@
+{
+  "schema": "mosaic.ucm.behavioral-harness-contract.v0.1",
+  "standing": "INFORMATION_ONLY",
+  "authority_effect": "NONE",
+  "real_a5": false,
+  "g0": "CLOSED",
+  "controlled_dimensions": [
+    "TIME",
+    "RNG",
+    "FILESYSTEM",
+    "NETWORK",
+    "PROCESS",
+    "ENVIRONMENT"
+  ],
+  "executor": "EXTERNAL",
+  "receipt_requirements": [
+    "pre_state_root",
+    "action_root",
+    "post_state_root",
+    "observed_controls",
+    "observed_writes",
+    "executor_root"
+  ],
+  "pass_rule": "ALL_REQUIRED_CONTROLS_OBSERVED_AND_ALL_WRITES_ALLOWED"
+}

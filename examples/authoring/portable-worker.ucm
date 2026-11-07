@@ -1,0 +1,9 @@
+# Constrained writer profile; compile to canonical realization JSON.
+contract_id=EXAMPLE.PORTABLE_WORKER
+subject_id=EXAMPLE.WORKER
+subject_root=1111111111111111111111111111111111111111111111111111111111111111
+description=An unbound portable worker with no network effects.
+axis.NETWORK=ENUM:DISABLED|LOCAL_ONLY:DISABLED
+axis.REPRODUCIBLE=BOOLEAN:true
+require.NETWORK_DISABLED=NETWORK==DISABLED
+require.REPRODUCIBLE_REQUIRED=REPRODUCIBLE==true

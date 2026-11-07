@@ -1,0 +1,18 @@
+{
+  "allowed_action_types": ["MOVE", "PAUSE", "SAVE", "SELECT", "TOGGLE_VISIBILITY"],
+  "allowed_asset_media_kinds": ["SPRITE", "TILEMAP"],
+  "asset_mode": "DECLARED_HASH_REFERENCES_ONLY_NO_RUNTIME_FETCH",
+  "authority_effect": "NONE",
+  "input_mode": "UPSTREAM_HEADLESS_TRANSITIONS_PROJECTION_ONLY",
+  "maximum_artifact_bytes": {"DOM": 262144, "HTML": 65536, "PNG": 1048576},
+  "maximum_scene_asset_bytes": 1048576,
+  "maximum_scene_assets": 16,
+  "minimum_major_version": 120,
+  "network_mode": "FILE_ARTIFACT_WITH_EXTERNAL_NAME_RESOLUTION_DISABLED",
+  "process_runs": 2,
+  "process_timeout_seconds": 30,
+  "runtime_family": "CHROMIUM_CANVAS_2D",
+  "schema": "mosaic.play.external-runtime-policy.v0.1",
+  "standing": "LOCAL_CANDIDATE",
+  "viewport": [640, 360]
+}
