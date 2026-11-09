@@ -1,0 +1,67 @@
+{
+  "application_id": "MOSAIC_TERMINAL_UI",
+  "architecture_candidate_root": "4444444444444444444444444444444444444444444444444444444444444444",
+  "architecture_contract_root": "3333333333333333333333333333333333333333333333333333333333333333",
+  "authority_ceiling": {
+    "authority_effect": "NONE",
+    "execution_authority_owner": "COURTHOUSE_VNEXT_EXTERNAL",
+    "g0": "CLOSED",
+    "real_a5": false,
+    "standing": "INFORMATION_ONLY"
+  },
+  "campaign_root": "1111111111111111111111111111111111111111111111111111111111111111",
+  "cm1_obligations": [
+    {
+      "evidence_kind": "STATIC_CHECK",
+      "obligation_id": "ARCHITECTURE_FIDELITY",
+      "obligation_root": "6666666666666666666666666666666666666666666666666666666666666666",
+      "required": true
+    },
+    {
+      "evidence_kind": "TEST_RECEIPT",
+      "obligation_id": "CROSS_PLATFORM_TESTS",
+      "obligation_root": "7777777777777777777777777777777777777777777777777777777777777777",
+      "required": true
+    }
+  ],
+  "cm2_preferences": [
+    {
+      "objective_root": "8888888888888888888888888888888888888888888888888888888888888888",
+      "preference_id": "MINIMIZE_ARTIFACT_SIZE",
+      "priority": 0
+    }
+  ],
+  "expected_journal_head": {
+    "head": "GENESIS",
+    "sequence": 0
+  },
+  "identity_binding": {
+    "courthouse_identity_root": "4444444444444444444444444444444444444444444444444444444444444444",
+    "courthouse_protocol_root": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "jurisdiction_root": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "requester_mosaic_id_root": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "session_mosaic_id_root": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+  },
+  "objective": "Build deterministic Windows and Linux artifacts.",
+  "operation_id": "BUILD_WINDOWS_AND_LINUX",
+  "policy_pack_roots": [
+    "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  ],
+  "request_id": "TERMINAL_UI_BUILD_001",
+  "request_root": "e62358a0df4f26b4b0336f72cb72ffbc8fe9973046c0954700a440be99774c3b",
+  "requested_capabilities": [
+    {
+      "budget_root": "9999999999999999999999999999999999999999999999999999999999999999",
+      "capability_id": "FILESYSTEM_BUILD",
+      "effect_class": "WRITE_WORKSPACE"
+    },
+    {
+      "budget_root": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "capability_id": "PROCESS_TEST",
+      "effect_class": "PROCESS"
+    }
+  ],
+  "schema": "mosaic.ucm.courthouse-workflow-request.v0.1",
+  "subject_root": "2222222222222222222222222222222222222222222222222222222222222222",
+  "work_package_root": "5555555555555555555555555555555555555555555555555555555555555555"
+}

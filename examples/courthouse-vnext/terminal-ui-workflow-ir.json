@@ -1,0 +1,164 @@
+{
+  "application_id": "MOSAIC_TERMINAL_UI",
+  "authority_effect": "NONE",
+  "campaign_root": "1111111111111111111111111111111111111111111111111111111111111111",
+  "capability_ir": {
+    "capability_ir_root": "9222b48c8dc08d7de1c92829b986b6404f7f0cd62f5ec8086b1dd2ddf470ce3c",
+    "requested_capabilities": [
+      {
+        "budget_root": "9999999999999999999999999999999999999999999999999999999999999999",
+        "capability_id": "FILESYSTEM_BUILD",
+        "effect_class": "WRITE_WORKSPACE"
+      },
+      {
+        "budget_root": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "capability_id": "PROCESS_TEST",
+        "effect_class": "PROCESS"
+      }
+    ],
+    "resolution_owner": "COURTHOUSE_VNEXT",
+    "schema": "aok.workflow.capability-ir.v0.1",
+    "unresolved_capabilities_refuse": true
+  },
+  "ccba_lattice_binding": {
+    "binding_owner": "COURTHOUSE_VNEXT",
+    "binding_status": "EXTERNAL_RESOLUTION_REQUIRED",
+    "ccba_lattice_binding_root": "9a89384bc474ca395e113a766af9a0b9d17a6ab79ca619806a94d2586852da6b",
+    "required_units": [
+      "AOK:CRU:WORKFLOW_CAPABILITY_IR:OBJECTIVE_IR",
+      "AOK:CRU:WORKFLOW_CAPABILITY_IR:WORKFLOW_IR",
+      "AOK:CRU:WORKFLOW_CAPABILITY_IR:CAPABILITY_IR",
+      "AOK:CRU:WORKFLOW_CAPABILITY_IR:CCBA_LATTICE_BINDING",
+      "AOK:CRU:WORKFLOW_CAPABILITY_IR:REALIZATION_ROUTE",
+      "AOK:CRU:WORKFLOW_CAPABILITY_IR:EFFECT_COVENANT",
+      "AOK:CRU:UGK:ADMISSIBILITY_GATE",
+      "AOK:CRU:UGK:RECEIPT_LEDGER",
+      "AOK:CRU:UWK:EVIDENCE_RECEIPT"
+    ],
+    "schema": "aok.workflow.ccba-lattice-binding.v0.1"
+  },
+  "effect_covenant": {
+    "allowed_effect_classes": [
+      "PROCESS",
+      "WRITE_WORKSPACE"
+    ],
+    "authority_effect": "NONE",
+    "capability_budget_roots": [
+      "9999999999999999999999999999999999999999999999999999999999999999",
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    ],
+    "effect_covenant_root": "7e5e74096119d0ecd2727af75879308c13182945ac7c0aaf464731d4308c9552",
+    "external_authority_required": true,
+    "schema": "aok.workflow.effect-covenant.v0.1",
+    "three_gate_receipts_required": [
+      "G1_SENTINEL",
+      "G2_WITNESS",
+      "G3_DIAGNOSTIC"
+    ]
+  },
+  "g0": "CLOSED",
+  "identity_binding": {
+    "courthouse_identity_root": "4444444444444444444444444444444444444444444444444444444444444444",
+    "courthouse_protocol_root": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "jurisdiction_root": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "requester_mosaic_id_root": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "session_mosaic_id_root": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+  },
+  "non_claims": [
+    "NOT_EXECUTION",
+    "NOT_AUTHORITY_GRANT",
+    "NOT_EXECUTOR_SELECTION",
+    "NOT_COURTHOUSE_DISPOSITION"
+  ],
+  "objective_ir": {
+    "architecture_contract_root": "3333333333333333333333333333333333333333333333333333333333333333",
+    "objective": "Build deterministic Windows and Linux artifacts.",
+    "objective_id": "BUILD_WINDOWS_AND_LINUX",
+    "objective_ir_root": "66bcb755945fd368896beaf4d6e4dbbb9e93747f95cb0a8aaa6c6f9b42187993",
+    "schema": "aok.workflow.objective-ir.v0.1",
+    "subject_root": "2222222222222222222222222222222222222222222222222222222222222222"
+  },
+  "obligation_contract": {
+    "architecture_candidate_root": "4444444444444444444444444444444444444444444444444444444444444444",
+    "cm1": [
+      {
+        "evidence_kind": "STATIC_CHECK",
+        "obligation_id": "ARCHITECTURE_FIDELITY",
+        "obligation_root": "6666666666666666666666666666666666666666666666666666666666666666",
+        "required": true
+      },
+      {
+        "evidence_kind": "TEST_RECEIPT",
+        "obligation_id": "CROSS_PLATFORM_TESTS",
+        "obligation_root": "7777777777777777777777777777777777777777777777777777777777777777",
+        "required": true
+      }
+    ],
+    "cm1_precedes_cm2": true,
+    "cm2": [
+      {
+        "objective_root": "8888888888888888888888888888888888888888888888888888888888888888",
+        "preference_id": "MINIMIZE_ARTIFACT_SIZE",
+        "priority": 0
+      }
+    ],
+    "obligation_contract_root": "7f758f83e3d2a2a95f309ad12d05dfedb30f7b04ee9b3cf44bfa1ff7604d9a21",
+    "policy_pack_roots": [
+      "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    ],
+    "schema": "mosaic.ucm.workflow-obligation-contract.v0.1",
+    "work_package_root": "5555555555555555555555555555555555555555555555555555555555555555"
+  },
+  "ownership": {
+    "courthouse_vnext": [
+      "CAPABILITY_RESOLUTION",
+      "AUTHORITY",
+      "EXECUTOR_SELECTION",
+      "EFFECT_CUSTODY",
+      "ADJUDICATION"
+    ],
+    "shared_boundary": "WORKFLOW_IR_AND_THREE_GATE_RECEIPTS",
+    "ucm": [
+      "ARCHITECTURE_CONTRACT",
+      "CM1",
+      "CM2",
+      "EVIDENCE_OBLIGATIONS",
+      "IMPORT_VALIDATION"
+    ]
+  },
+  "protocol": "UCM_AOK_VNEXT_WORKFLOW_IR_V0_1",
+  "real_a5": false,
+  "realization_route": {
+    "realization_route_root": "f72b56732efe3c757385d7d21f2310d30dff0744c2c3e1f355f02c543e9e7765",
+    "schema": "aok.workflow.realization-route.v0.1",
+    "selected_executor_root": null,
+    "selected_realization_root": null,
+    "selector_owner": "COURTHOUSE_VNEXT",
+    "status": "UNRESOLVED"
+  },
+  "request_root": "e62358a0df4f26b4b0336f72cb72ffbc8fe9973046c0954700a440be99774c3b",
+  "schema": "mosaic.ucm.aok-vnext-workflow-ir.v0.1",
+  "standing": "INFORMATION_ONLY",
+  "workflow_ir": {
+    "durable_intent_before_effect": true,
+    "expected_journal_head": {
+      "head": "GENESIS",
+      "sequence": 0
+    },
+    "ordered_steps": [
+      "ORIENT",
+      "RESOLVE_CAPABILITIES",
+      "ADJUDICATE_PREFLIGHT",
+      "DURABLY_RECORD_INTENT",
+      "EXECUTE_EXTERNALLY",
+      "WITNESS_EFFECTS",
+      "DIAGNOSE_RESULT",
+      "ADJUDICATE_DISPOSITION"
+    ],
+    "redispatch_after_uncertain": false,
+    "schema": "aok.workflow.workflow-ir.v0.1",
+    "uncertain_requires_reconciliation": true,
+    "workflow_ir_root": "ccf81a736cab3639a7de69d838ddc9af71864edcdf754f4757a2a5226675f264"
+  },
+  "workflow_root": "f1fa6304eba33f96c1413490b436edd843a4e617a5265e394c624d94651ff8b3"
+}

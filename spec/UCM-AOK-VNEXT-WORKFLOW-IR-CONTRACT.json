@@ -1,0 +1,59 @@
+{
+  "authority_effect": "NONE",
+  "cm_order": [
+    "CM1_ADMISSIBILITY",
+    "CM2_OPTIMIZATION"
+  ],
+  "contract_root": "b30753bfa06714278abaa7544ace88a2c404313c321ea743629769e1c8bb5e71",
+  "courthouse_result_schema": "mosaic.ucm.aok-vnext-workflow-result.v0.1",
+  "courthouse_vnext_owns": [
+    "CAPABILITY_RESOLUTION",
+    "AUTHORITY",
+    "EXECUTOR_SELECTION",
+    "EFFECT_CUSTODY",
+    "ADJUDICATION"
+  ],
+  "g0": "CLOSED",
+  "gates": [
+    "G1_SENTINEL",
+    "G2_WITNESS",
+    "G3_DIAGNOSTIC"
+  ],
+  "progress_is_evidence": false,
+  "protocol_id": "UCM_AOK_VNEXT_WORKFLOW_IR_V0_1",
+  "real_a5": false,
+  "redispatch_after_uncertain": false,
+  "required_vnext_units": [
+    "AOK:CRU:WORKFLOW_CAPABILITY_IR:OBJECTIVE_IR",
+    "AOK:CRU:WORKFLOW_CAPABILITY_IR:WORKFLOW_IR",
+    "AOK:CRU:WORKFLOW_CAPABILITY_IR:CAPABILITY_IR",
+    "AOK:CRU:WORKFLOW_CAPABILITY_IR:CCBA_LATTICE_BINDING",
+    "AOK:CRU:WORKFLOW_CAPABILITY_IR:REALIZATION_ROUTE",
+    "AOK:CRU:WORKFLOW_CAPABILITY_IR:EFFECT_COVENANT",
+    "AOK:CRU:UGK:ADMISSIBILITY_GATE",
+    "AOK:CRU:UGK:RECEIPT_LEDGER",
+    "AOK:CRU:UWK:EVIDENCE_RECEIPT"
+  ],
+  "schema": "mosaic.ucm.aok-vnext-workflow-ir-protocol.v0.1",
+  "standing": "INFORMATION_ONLY",
+  "ucm_import_schema": "mosaic.ucm.courthouse-result-import.v0.1",
+  "ucm_input_schema": "mosaic.ucm.courthouse-workflow-request.v0.1",
+  "ucm_owns": [
+    "ARCHITECTURE_CONTRACT",
+    "CM1",
+    "CM2",
+    "EVIDENCE_OBLIGATIONS",
+    "IMPORT_VALIDATION"
+  ],
+  "workflow_schema": "mosaic.ucm.aok-vnext-workflow-ir.v0.1",
+  "workflow_steps": [
+    "ORIENT",
+    "RESOLVE_CAPABILITIES",
+    "ADJUDICATE_PREFLIGHT",
+    "DURABLY_RECORD_INTENT",
+    "EXECUTE_EXTERNALLY",
+    "WITNESS_EFFECTS",
+    "DIAGNOSE_RESULT",
+    "ADJUDICATE_DISPOSITION"
+  ]
+}

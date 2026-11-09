@@ -1,0 +1,105 @@
+{
+  "schema": "mosaic.ucm.pippi-process-governance-contract.v0.1",
+  "contract_id": "PIPPI.PROCESS.GOVERNANCE.V0.1",
+  "purpose": "Bind observable agent work to an exact project baseline, milestones, evidence, acceptance, replanning, locality and portable journal custody.",
+  "records": [
+    "mosaic.ucm.process-locality-binding.v0.1",
+    "mosaic.ucm.exact-execution-capsule.v0.1",
+    "mosaic.ucm.process-baseline.v0.1",
+    "mosaic.ucm.process-milestone.v0.1",
+    "mosaic.ucm.process-milestone-assessment.v0.1",
+    "mosaic.ucm.process-milestone-decision.v0.1",
+    "mosaic.ucm.process-checkpoint.v0.1",
+    "mosaic.ucm.process-replan.v0.1",
+    "mosaic.ucm.process-standards-schedule.v0.1",
+    "mosaic.ucm.process-observatory.v0.1",
+    "mosaic.ucm.thr-cas-manifest.v0.1"
+  ],
+  "lifecycle": {
+    "states": [
+      "PROPOSED",
+      "READY",
+      "ACTIVE",
+      "BLOCKED",
+      "AWAITING_ACCEPTANCE",
+      "ACCEPTED",
+      "SUPERSEDED"
+    ],
+    "rules": [
+      "COMPLETED_WORK_DOES_NOT_IMPLY_ACCEPTED_MILESTONE",
+      "ACCEPTANCE_REQUIRES_A_FRESH_EXTERNAL_SIGNED_APPROVAL",
+      "BLOCKED_REQUIRES_AN_EXPLICIT_HOLD",
+      "REPLAN_PRESERVES_THE_COMPLETE_UNRESOLVED_WORK_DENOMINATOR",
+      "SUPERSEDED_RECORDS_REMAIN_CONTENT_ADDRESSED"
+    ]
+  },
+  "commitment_ownership": {
+    "H_s": "exact record paths and bytes",
+    "H_c": "architecture, AMCAS, standards, policies, acceptance and authority ceiling",
+    "H_m": "objective, requirements, milestone meaning and declared interpretation profile",
+    "H_j": "DKN-compatible locality, user identity, session identity and namespace declarations",
+    "H_r": "journal, check evidence, witness, review and approval receipts",
+    "h_body": "complete envelope integrity"
+  },
+  "metadata_roles": {
+    "SEMANTIC": "changes may alter H_m",
+    "GOVERNANCE": "changes may alter H_c",
+    "CUSTODY": "changes alter H_s and may alter H_r",
+    "PRESENTATION": "changes alter exact state but do not imply semantic equivalence"
+  },
+  "dkn_locality_profile": {
+    "profile_id": "DKN.AUTHORITY_KEYED_DIMENSION.UTF8_RAW_ED25519.V1",
+    "dimension_formula": "BLAKE3(UTF8(phase_code)||raw_authority_pubkey)",
+    "non_claims": [
+      "DIMENSION_HASH_DOES_NOT_GRANT_NAMESPACE_AUTHORITY",
+      "PASSPORT_DOES_NOT_GRANT_PERMISSION",
+      "LOCAL_ADMISSION_REQUIRES_EXTERNAL_VERIFICATION"
+    ]
+  },
+  "execution_capsule": {
+    "required_identity_inputs": [
+      "executable_root",
+      "runner_root",
+      "argv",
+      "normalized_cwd",
+      "environment_projection",
+      "dependency_manifest_root",
+      "missing_dependency_ids",
+      "dependency_closure_status",
+      "exact_input_roots",
+      "policy_root",
+      "profile_root",
+      "authority_root",
+      "jurisdiction_root",
+      "effect_class",
+      "expected_write_paths",
+      "transaction_history_paths",
+      "adapter_root"
+    ],
+    "reuse_rule": "ANY_BOUND_INPUT_CHANGE_REQUIRES_NEW_OPERATION_IDENTITY",
+    "incomplete_rule": "DEPENDENCY_ENVELOPE_INCOMPLETE_IS_NOT_REUSABLE",
+    "artifact_binding_field": "producer_operation_root",
+    "same_operation_divergence_rule": "SAME_OPERATION_DIFFERENT_BYTES_REFUSE",
+    "successor_rule": "NEW_OPERATION_IDENTITY_AND_PREDECESSOR_HISTORY_REQUIRED"
+  },
+  "standards_policy": "EVENT_TRIGGERED_CONTEXT_SELECTIVE_NOT_PERIODIC",
+  "courthouse_boundary": {
+    "ucm_pippi_owns": [
+      "portable process contracts",
+      "proposal and project records",
+      "exact commitments",
+      "human, agent and forensic projections"
+    ],
+    "courthouse_owns": [
+      "admitted executor identity",
+      "effect authorization",
+      "budgets and protected execution",
+      "native G1 G2 G3 receipts",
+      "terminal effect custody"
+    ]
+  },
+  "standing": "INFORMATION_ONLY",
+  "authority_effect": "NONE",
+  "real_a5": false,
+  "g0": "CLOSED"
+}

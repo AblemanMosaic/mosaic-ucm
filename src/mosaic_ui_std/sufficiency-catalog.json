@@ -1,0 +1,57 @@
+{
+  "authority_effect": "NONE",
+  "catalog_id": "MOSAIC-UI-STD-RUNTIME-0.11.0-R1",
+  "components": [
+    {
+      "component_id": "combobox",
+      "evidence": ["headless governed selection", "browser_realizer semantic combobox", "native COMBOBOX governed selection"],
+      "kind": "COMBOBOX",
+      "realized_by": ["HEADLESS", "BROWSER", "WIN32"]
+    },
+    {
+      "component_id": "data-grid",
+      "evidence": ["headless row selection", "browser_realizer semantic grid", "native SysListView32 governed row selection"],
+      "kind": "DATA_GRID",
+      "realized_by": ["HEADLESS", "BROWSER", "WIN32"]
+    },
+    {
+      "component_id": "list",
+      "evidence": ["headless governed selection", "browser_realizer semantic listbox", "native LISTBOX governed selection"],
+      "kind": "LIST",
+      "realized_by": ["HEADLESS", "BROWSER", "WIN32"]
+    },
+    {
+      "component_id": "menu",
+      "evidence": ["headless governed selection", "browser_realizer semantic menu", "native owner-drawn menu selection"],
+      "kind": "MENU",
+      "realized_by": ["HEADLESS", "BROWSER", "WIN32"]
+    },
+    {
+      "component_id": "navigation",
+      "evidence": ["headless governed selection", "browser_realizer semantic navigation", "native owner-drawn navigation selection"],
+      "kind": "NAVIGATION",
+      "realized_by": ["HEADLESS", "BROWSER", "WIN32"]
+    },
+    {
+      "component_id": "notification",
+      "evidence": ["headless status projection", "browser_realizer semantic status", "native owner-drawn status surface"],
+      "kind": "NOTIFICATION",
+      "realized_by": ["HEADLESS", "BROWSER", "WIN32"]
+    },
+    {
+      "component_id": "radio-group",
+      "evidence": ["headless governed selection", "browser_realizer semantic radiogroup", "native owner-drawn radio selection"],
+      "kind": "RADIO_GROUP",
+      "realized_by": ["HEADLESS", "BROWSER", "WIN32"]
+    },
+    {
+      "component_id": "tree",
+      "evidence": ["headless governed selection", "browser_realizer semantic tree", "native LISTBOX tree selection"],
+      "kind": "TREE",
+      "realized_by": ["HEADLESS", "BROWSER", "WIN32"]
+    }
+  ],
+  "schema": "mosaic.ui.std.catalog-extension.v0.1",
+  "standing": "LOCAL_CANDIDATE",
+  "tier_basis": "ADDITIVE_PRE_1_0_SUFFICIENCY_EXTENSION; HEADLESS_BROWSER_AND_WIN32_25_KIND_CONFORMANCE; FROZEN_17_KIND_CATALOG_REMAINS_UNCHANGED"
+}

@@ -1,0 +1,55 @@
+{
+  "authority_effect": "NONE",
+  "candidates": [
+    {
+      "adapter_id": "BROWSER_CANVAS_2D",
+      "available_in_candidate": true,
+      "canonical_dependency": false,
+      "dependencies": [],
+      "scores": {"accessibility": 4, "determinism": 4, "evidence": 4, "isolation": 5, "packaging": 5, "portability": 5},
+      "selection_class": "IMPLEMENT_NOW",
+      "tested_scope": "STANDALONE_STANDARDS_ONLY_HTML_CANVAS_ARTIFACT"
+    },
+    {
+      "adapter_id": "SOFTWARE_RASTER_PNG",
+      "available_in_candidate": true,
+      "canonical_dependency": false,
+      "dependencies": [],
+      "scores": {"accessibility": 1, "determinism": 5, "evidence": 5, "isolation": 5, "packaging": 5, "portability": 5},
+      "selection_class": "IMPLEMENT_NOW",
+      "tested_scope": "STDLIB_RGB_RASTER_AND_PNG_ARTIFACT"
+    },
+    {
+      "adapter_id": "WIN32_GDI_2D",
+      "available_in_candidate": false,
+      "canonical_dependency": false,
+      "dependencies": [],
+      "scores": {"accessibility": 3, "determinism": 3, "evidence": 4, "isolation": 4, "packaging": 4, "portability": 1},
+      "selection_class": "DEFER_PLATFORM_WITNESS",
+      "tested_scope": "NOT_IMPLEMENTED_FOR_PLAY"
+    },
+    {
+      "adapter_id": "GODOT_2D",
+      "available_in_candidate": false,
+      "canonical_dependency": false,
+      "dependencies": ["EXTERNAL_ENGINE"],
+      "scores": {"accessibility": 3, "determinism": 3, "evidence": 3, "isolation": 5, "packaging": 2, "portability": 4},
+      "selection_class": "DEFER_EXTERNAL_ENGINE_RESEARCH",
+      "tested_scope": "NOT_INSTALLED_OR_TESTED"
+    },
+    {
+      "adapter_id": "SDL2",
+      "available_in_candidate": false,
+      "canonical_dependency": false,
+      "dependencies": ["EXTERNAL_LIBRARY"],
+      "scores": {"accessibility": 2, "determinism": 4, "evidence": 3, "isolation": 5, "packaging": 2, "portability": 4},
+      "selection_class": "DEFER_EXTERNAL_LIBRARY_RESEARCH",
+      "tested_scope": "NOT_INSTALLED_OR_TESTED"
+    }
+  ],
+  "hard_requirements": ["CANONICAL_DEPENDENCY_FALSE", "AUTHORITY_EFFECT_NONE", "INDEPENDENT_ABLATION", "SEMANTIC_STATE_OBSERVATION"],
+  "schema": "mosaic.play.adapter-candidate-matrix.v0.1",
+  "score_range": [0, 5],
+  "standing": "LOCAL_CANDIDATE",
+  "weights": {"accessibility": 2, "determinism": 3, "evidence": 3, "isolation": 2, "packaging": 1, "portability": 2}
+}

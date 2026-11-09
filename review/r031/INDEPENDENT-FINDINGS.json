@@ -1,0 +1,105 @@
+{
+ "schema": "reviewer.r031.findings.v1",
+ "subject": "UCM v0.1 r031 transtemporal-native final review transport",
+ "identity_observed": {
+  "transport_sha256": "33e1cac29dfa6eebc15c4682a590681d2620e992edca338240c093069af619e6",
+  "revision": "r031",
+  "release_root": "8e6dbf64573c060a82bc2d9105b308901175b24376991a21598715b08d2a8cbe",
+  "qualification_root": "bdb2b4587f2fe5ac78f88ac0a572cbdab83a4a9b1085c8ef79c5280e55d22d9e",
+  "qualification_receipt_sha256": "4369605b1437ff4453e279c4588f2fc72f9185cfd1d80b144c6249dc184f4eec",
+  "runtime_sha256": "7ed74bbb27487d4df83dd4ca83bdf8acceeade319e0cf0355d6b6381c72058a5",
+  "source_root": "603b6e4d13be2d24e304bae4d20de22fa6843060a4521bcd74f7d17b6d5b089c",
+  "release_identity_root": "ea3511bb57bb102f365571eec369d9f429de06037e260a915eaba001d4202db4",
+  "cold_boot_sha256": "2c9f3d49a748849a054a1d47ae11f7f28b7f7509eea6edd7d6e1ef0068dd9b31",
+  "operator_kit_sha256_repaired": "bedfa2b4fdf8192fad1a83e410464e6c2a54f8b0c7c612fa3eb541741b0f83a5",
+  "transtemporal_history_sha256": "314f672a19e23e12ba79ac97f39ba05465c2e016137edff9ba6d836a99101118",
+  "attached_receipt": "byte-identical to the receipt inside the transport",
+  "expected_values_supplied": false,
+  "predecessor": "LABELLED_UNVERIFIED: r030 (qualification 25436291..., identity 360194d2..., source 7ada9854...); r030 was never delivered to this reviewer"
+ },
+ "standing": "INFORMATION_ONLY",
+ "authority_effect": "NONE",
+ "real_a5": false,
+ "g0": "CLOSED",
+ "verdict": "HOLD_FOR_REPAIR",
+ "verdict_basis": "One MED finding (R31-01): the r031 acceptance program fails its own generator --check against the qualified source, and its six closure check ids do not appear in the qualification receipt. The product itself reproduces exactly: custody exact; replay 453/455 on 3.12.3 and 3.13.16 with only the two known environment non-passes and test-id set equal to the receipt; release and cold boot rebuild byte-identical; transtemporal archive verifies independently and reconstructs the r031 runtime byte for byte; C11 verifier compiles warning-free and passes on the exact tree. If the Governor treats program records as non-required evidence, R31-01 is LOW and the verdict is INCOMPLETE_REVIEW (independent Tier 1 remains).",
+ "findings": [
+  {
+   "id": "R31-01",
+   "severity": "MED",
+   "class": "acceptance-program-custody",
+   "status": "OPEN",
+   "title": "The r031 acceptance program does not bind the qualified source or the qualification receipt",
+   "evidence": [
+    "tools/build_transtemporal_r031_program.py --check exits 1 with R031_PROGRAM_DRIFT:SOURCE-DENOMINATOR.json on both interpreters.",
+    "Two of its 15 denominator files changed after sealing: tests/test_transtemporal_archive.py (81420b7e.../7167 B -> 355c0ec5.../7496 B) and tools/build_transtemporal_r031_operator_kit.py (60b49a72.../5880 B -> 2cba4204.../5881 B). Both are in the qualified source (root 603b6e4d...).",
+    "All six R31 work selections name closure ids with a 'tests.' prefix (e.g. tests.test_transtemporal_archive.TranstemporalArchiveTests.test_two_revisions_...); the receipt lists these tests only without it. The other 125 selections use the receipt's form. pippi_work_units never resolves a closure id against a receipt, and no qualification test runs the current program's --check, so neither defect is caught.",
+    "The r028 and r029 program --check both passed in their own revisions."
+   ],
+   "impact": "The R31-01..06 acceptance records cannot be shown, by exact identity, to close on the qualified bytes. The underlying tests exist and pass in replay under their bare ids, so this is an evidence-binding defect, not a product defect.",
+   "repair": "Regenerate the r031 program after the final source edit, using the receipt's test-id form; add a qualification test that runs the current revision's program --check and requires every direct_closure_check_id to appear in the receipt.",
+   "escalation_note": "Rated MED by the R24-01 precedent (generated record stale against shipped source). LOW if program records are not a required leg."
+  },
+  {
+   "id": "R31-02",
+   "severity": "LOW",
+   "class": "operator-apparatus-custody",
+   "status": "OPEN",
+   "title": "The repaired court that passed is outside the qualified source, and its kit manifest miscounts",
+   "evidence": [
+    "operator/transtemporal-native-r031/RUN-TIER1.py in the qualified source is the original runner ba5f698a..., and tools/build_transtemporal_r031_operator_kit.py rebuilds the original kit 0e98de83... byte-identically on both interpreters: the kit whose run HOLD on CONTROL-KIT-CUSTODY.",
+    "The repaired kit bedfa2b4... equals the original plus a one-line runner change (scratch dir=out.parent removed; runner b39e81c7...), COURT-REPAIR.json and PREDECESSOR-HOLD-EVIDENCE.zip; KIT-MANIFEST member_count stays 29 while it carries 31 rows. No shipped tool builds it; REPAIR-BUILD-RESULT names a Windows path.",
+    "Every declared hash in COURT-REPAIR.json (original kit, original root b6645706..., both runner hashes, hold evidence c013bd2a...) verifies."
+   ],
+   "impact": "Your PASS (court root 738b9f8b...) was produced by a court that cannot be rebuilt from the released source. The repair itself is correct, minimal and honestly declared.",
+   "repair": "Carry the repaired runner and its kit builder in the next source, freeze it in the operator registry, and derive member_count from the rows."
+  },
+  {
+   "id": "R31-03",
+   "severity": "LOW",
+   "class": "native-verifier-denominator",
+   "status": "OPEN",
+   "title": "The C11 verifier has no denominator: it passes whatever rows its manifest lists",
+   "evidence": "The line protocol carries no row count and no binding to the manifest root, and the verifier does not check ROOT for unlisted files. By source, a header-only manifest returns PASS with checked 0, and a truncated one passes on its remaining rows. The doc says it checks SHA-256 'for every file'. Not executed (no negative exercises, per instruction).",
+   "mitigation": "The doc scopes it as a narrow projection, and the Python reference verifier remains mandatory; the printed checked count is the only signal.",
+   "repair": "Add a trailer line with file count and manifest_root (or a digest of the rows) and refuse checked==0 or a count mismatch; optionally flag files under ROOT not listed."
+  },
+  {
+   "id": "R31-04",
+   "severity": "INFO",
+   "status": "OPEN",
+   "title": "Observations",
+   "items": [
+    "r030 was never delivered to me: predecessor roots are labelled, not verified; the r030 court (which repairs R29-01 statically) has no operator run in custody.",
+    "build_collaboration_closure_r030_program.py --check crashes with KeyError('member_count'); the r027-r029 builders REFUSE against current source. test_historical_builders_check_custody_instead_of_rewriting covers four other builders only. The frozen registries themselves verify.",
+    "R031-NATIVE-STUDY is a Windows gcc timing record (ratio 0.852) and was not reproduced; its nonclaims are explicit.",
+    "The r030 failed intermediate qualifications are retained in SDK evidence and labelled FAIL.",
+    "Carried selections R28-07 (renamed test) and public-vocabulary-r012 (R20-01) still do not resolve against the current receipt."
+   ]
+  },
+  {
+   "id": "R31-05",
+   "severity": "INFO",
+   "status": "CARRIED",
+   "items": [
+    "R21-01 secondary items; sim.add parameter shape checked only at evaluation.",
+    "r015-r017, r025 and r030 never reviewed; two Windows-only tests; wheel test needs setuptools; receipt root depends on Python patch version; case probe writes transiently."
+   ]
+  }
+ ],
+ "closed": [
+  {"id": "R29-01", "basis": "r030 court separates CCP-UNRESEALED-DECISION-SHAPE-REFUSAL (GATEWAY_DISPOSITION_INVALID) from a fully resealed CCP-RESEALED-DECISION-LAUNDERING (DECISION_INVALID). Static; that court is unexecuted."},
+  {"id": "R29-02 items", "basis": "credential envelope validated before write; storage locator fully revalidated in publication signing; validate_signed_retrieval_receipt added; r027-r030 programs and courts frozen."},
+  {"id": "R28-04 frozen lag", "basis": "program registry 28 rows and operator 18, including r027-r030."}
+ ],
+ "user_run_tier1": {
+  "first_run": {"court_root": "36c45e17d706266587aa49ce32ba24e7758db5c10d46d27ec55dbca4e66306ce", "status": "HOLD_FOR_REPAIR", "failed": ["CONTROL-KIT-CUSTODY"], "cause": "court scratch inside extracted kit (court defect)"},
+  "repaired_run": {"court_root": "738b9f8b81874ded8d478ae62b171eb5ba3e340a3a69b515ce5ddc86ff7f69ac", "status": "PASS", "cases": 14, "evidence_sha256": "f24e8feaff3dd5916382e1e710637712b3261add48bd83ed8a7a00d9d9374099", "court_eq_repaired_kit": true, "court_root_recomputes": true},
+  "classification": "USER_RUN_BUILDER_AUTHORED; not independent Tier 1"
+ },
+ "not_performed": [
+  "Independent Tier 1 (courts read statically, not run, per instruction)",
+  "Windows and WSL legs; native UI; native timing study",
+  "Negative or forgery exercises; R31-03 is by source"
+ ]
+}

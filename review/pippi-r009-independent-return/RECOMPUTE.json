@@ -1,0 +1,24 @@
+{
+ "schema": "reviewer.rel9.recompute.v1",
+ "standing": "INFORMATION_ONLY",
+ "authority_effect": "NONE",
+ "real_a5": false,
+ "g0": "CLOSED",
+ "inputs": "tier0/input-pins.txt",
+ "tier0": {
+  "verifier": "tier0/verifier-runs.txt",
+  "custody": "tier0/custody.json (release, partition, ledger, receipt, smoke; per-archive manifest and META recompute and cross-binding)",
+  "source_identity_r008": "tier0/source-identity-and-r008.json (995-row reconstitution; identity; diff vs r007; carried r007 review byte-identity; r008 operator evidence provenance)"
+ },
+ "tier1": {
+  "status": "NOT PERFORMED; r009 operator kit custody only"
+ },
+ "tier2": {
+  "qualification_replay": "tier2/full-3.12, tier2/full-3.13: qual.stdout, qual.stderr, qual/UCM-v0.1-QUALIFICATION-FAILED.json (295/297; ids == receipt)",
+  "rebuild": "tier2/rebuild-3.12.txt, tier2/rebuild-3.13.txt, full-*/dist2.stdout",
+  "runtime": "tier2/runtime/runs.txt and *.json",
+  "publication_planning": "tier2/publication/publication-plan-check-r009.json (scripts/publication_plan_check_r009.py; real delivered archives)",
+  "work_selection": "tier2/work-selection/work-selection-check.json (scripts/work_selection_check.py)"
+ },
+ "method": "env -i PATH=/usr/bin:/bin HOME=/nonexistent TMPDIR=<disposable> <venv python> -I -B ...; venvs awb2 3.12.3 / 3.13.16"
+}

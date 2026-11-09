@@ -1,0 +1,37 @@
+{
+  "authority_effect": "NONE",
+  "schema": "mosaic.ui.std.theme.v0.1",
+  "standing": "LOCAL_CANDIDATE",
+  "theme_id": "SIGNATURE-LIGHT",
+  "tokens": {
+    "colors": {
+      "accent": "#147d72",
+      "accent_hover": "#0f665d",
+      "border": "#c5cdd5",
+      "canvas": "#f5f7f9",
+      "field": "#ffffff",
+      "focus": "#1769aa",
+      "info": "#1769aa",
+      "pending": "#8a5c00",
+      "refused": "#b42318",
+      "selection": "#d4ebe7",
+      "surface": "#ffffff",
+      "surface_hover": "#e8edf0",
+      "surface_raised": "#eef2f4",
+      "text": "#17202a",
+      "text_quiet": "#5b6773"
+    },
+    "radii": {"md": 6, "none": 0, "sm": 4},
+    "spacing": {"lg": 20, "md": 12, "sm": 8, "xl": 28, "xs": 4},
+    "typography": {
+      "roles": {
+        "body": {"family": "Segoe UI", "size": 15, "weight": 400},
+        "heading": {"family": "Segoe UI", "size": 18, "weight": 600},
+        "metric": {"family": "Segoe UI", "size": 30, "weight": 600},
+        "mono": {"family": "Cascadia Mono", "size": 13, "weight": 400},
+        "title": {"family": "Segoe UI", "size": 28, "weight": 600}
+      },
+      "unit": "logical_px_character_height"
+    }
+  }
+}

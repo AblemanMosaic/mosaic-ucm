@@ -1,0 +1,7 @@
+interface:
+  display_name: "UCM Pippi-Mediated Agent"
+  short_description: "Govern observable agent turns through Pippi"
+  default_prompt: "Use $ucm-pippi-mediated-agent to mediate this agent session through Pippi and preserve a verified campaign journal."
+policy:
+  allow_implicit_invocation: true
+

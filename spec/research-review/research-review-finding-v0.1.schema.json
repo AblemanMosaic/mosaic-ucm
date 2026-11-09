@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mosaic.research.review-finding.v0.1",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "finding_id", "review_id", "lens_pack_root", "lens_id", "subject_root", "source_anchor", "severity", "change_class", "summary", "rationale", "evidence_roots", "counterevidence_roots", "affected_concept_ids", "affected_artifact_ids", "proposed_action", "reviewer_identity_root", "limitations", "status", "standing", "authority_effect", "real_a5", "g0", "finding_root"],
+  "properties": {
+    "schema": {"const": "mosaic.research.review-finding.v0.1"}, "finding_id": {"$ref": "#/$defs/id"}, "review_id": {"$ref": "#/$defs/id"}, "lens_pack_root": {"$ref": "#/$defs/root"}, "lens_id": {"$ref": "#/$defs/id"}, "subject_root": {"$ref": "#/$defs/root"},
+    "source_anchor": {"type": "object", "additionalProperties": false, "required": ["path", "section", "location_start", "location_end", "excerpt_sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "section": {"type": "string", "minLength": 1}, "location_start": {"type": "integer", "minimum": 0}, "location_end": {"type": "integer", "minimum": 0}, "excerpt_sha256": {"$ref": "#/$defs/root"}}},
+    "severity": {"enum": ["INFO", "LOW", "MEDIUM", "HIGH", "CRITICAL"]}, "change_class": {"enum": ["PROCESS", "SEMANTIC", "EVIDENCE", "REFERENCE", "EDITORIAL", "FORMATTING"]}, "summary": {"type": "string", "minLength": 1}, "rationale": {"type": "string", "minLength": 1}, "evidence_roots": {"$ref": "#/$defs/roots"}, "counterevidence_roots": {"$ref": "#/$defs/roots"}, "affected_concept_ids": {"$ref": "#/$defs/ids"}, "affected_artifact_ids": {"$ref": "#/$defs/ids"}, "proposed_action": {"type": "string", "minLength": 1}, "reviewer_identity_root": {"$ref": "#/$defs/root"}, "limitations": {"$ref": "#/$defs/texts"}, "status": {"const": "REPORTED"}, "standing": {"const": "INFORMATION_ONLY"}, "authority_effect": {"const": "NONE"}, "real_a5": {"const": false}, "g0": {"const": "CLOSED"}, "finding_root": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {"root": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "roots": {"type": "array", "items": {"$ref": "#/$defs/root"}, "uniqueItems": true}, "id": {"type": "string", "pattern": "^[A-Za-z0-9._:/@+-]+$", "maxLength": 192}, "ids": {"type": "array", "items": {"$ref": "#/$defs/id"}, "uniqueItems": true}, "texts": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}}
+}

@@ -1,0 +1,26 @@
+{
+ "schema": "reviewer.rel7.recompute.v1",
+ "standing": "INFORMATION_ONLY",
+ "authority_effect": "NONE",
+ "real_a5": false,
+ "g0": "CLOSED",
+ "inputs": "tier0/input-pins.txt",
+ "tier0": {
+  "verifier": "tier0/verifier-runs.txt (shipped VERIFY.py on 3.12.3/3.13.16)",
+  "custody": "tier0/custody.json (release, partition, ledger, qualification roots; four archive manifests; META record roots)",
+  "meta_bindings": "tier0/meta-bindings.json (self-certificate, DKN, state, THR cross-bindings)",
+  "thr": "tier0/thr-commitments.json (H_s/H_c/H_j/H_m/H_r and h_body recompute)",
+  "source_and_qualification": "tier0/source-and-qualification.json (980-row reconstitution; identity; receipt bindings; runtime subset; diff vs r004)",
+  "kit_and_carried": "tier0/kit-and-carried-reviews.json"
+ },
+ "tier1": {
+  "status": "NOT PERFORMED (operator kit custody checked only)"
+ },
+ "tier2": {
+  "qualification_replay": "tier2/full-3.12 and full-3.13: qual.stdout (per-test events), qual.stderr, qual/UCM-v0.1-QUALIFICATION-FAILED.json (288/290; test ids == delivered receipt); full-3.12/wheel-sys312.stderr (wheel test on system 3.12 with setuptools: Windows-only import)",
+  "rebuild": "tier2/rebuild-3.12.txt, tier2/rebuild-3.13.txt, full-*/dist2.stdout (build_release.py; five artifacts byte-identical to delivered)",
+  "runtime": "tier2/runtime/runs.txt and *.json",
+  "positive_exercises": "tier2/publication/publication-plan-check.json (scripts/publication_plan_check.py), tier2/publication/version-transition-check.json (scripts/version_transition_check.py)"
+ },
+ "method": "env -i PATH=/usr/bin:/bin HOME=/nonexistent TMPDIR=<disposable> <venv python> -I -B ...; venvs awb2 3.12.3 / 3.13.16 (blake3, cryptography, cffi, pycparser; no setuptools, no PyYAML)"
+}

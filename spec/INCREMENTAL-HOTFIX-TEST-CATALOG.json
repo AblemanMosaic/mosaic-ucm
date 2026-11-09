@@ -1,0 +1,47 @@
+[
+  {
+    "test_id": "tests.test_correction_transaction",
+    "covers": [
+      "src/ucm/correction_transaction.py",
+      "tools/ucm-correction.py",
+      "spec/AMCAS-BOUNDED-CORRECTION-CONTRACT.json"
+    ],
+    "always": false
+  },
+  {
+    "test_id": "tests.test_incremental_hotfix",
+    "covers": [
+      "src/ucm/incremental_hotfix.py",
+      "tools/ucm-hotfix.py",
+      "spec/INCREMENTAL-HOTFIX-CONTRACT.json"
+    ],
+    "always": false
+  },
+  {
+    "test_id": "tests.test_incremental_hotfix_abi",
+    "covers": [
+      "src/ucm/capabilities.py",
+      "src/ucm/incremental_hotfix.py"
+    ],
+    "always": false
+  },
+  {
+    "test_id": "tests.test_amcas_parity",
+    "covers": [
+      "src/ucm/amcas_parity.py",
+      "spec/amcas-baseline/"
+    ],
+    "always": false
+  },
+  {
+    "test_id": "tests.test_public_surface",
+    "covers": [
+      "src/ucm/system.py",
+      "src/ucm/capabilities.py",
+      "src/ucm/cli.py",
+      "spec/ucm-system-registry.json",
+      "spec/product-profiles/"
+    ],
+    "always": false
+  }
+]

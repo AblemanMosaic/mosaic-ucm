@@ -1,0 +1,287 @@
+{
+ "atlas_pipeline": {
+  "atlas": {
+   "ablation_status": "HISTORICAL_EVIDENCE_REFERENCED_NOT_REEXECUTED",
+   "co_projections": 5,
+   "every_rule_has_nonempty": true,
+   "identity_equivalence_any": false,
+   "library_rules": 14,
+   "root": "008c1b8a89561ada639712a8cd8ed747135374c750e391c37293d7ecb93d05eb",
+   "rule_ids_eq_library": true,
+   "rules": 14
+  },
+  "atlas_surfaces_unknown": [],
+  "context": {
+   "CODING": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   },
+   "PACKAGING": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 10
+   },
+   "PORTABILITY_CLAIM": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   },
+   "RECOVERY": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 9
+   },
+   "RELEASE_PLANNING": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 10
+   },
+   "REMOTE_WORK": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   },
+   "REVIEW": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   }
+  },
+  "explain_all_rules": true,
+  "explain_all_transitions": {
+   "BIND_CONSTITUTION": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "DIAGNOSE_RESULT": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "IMPORT_EFFECT": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "IMPORT_PUBLICATION_RECEIPT": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "ORIENT_PROJECT": "APPLY_PURE_TRANSITION_CHECKS",
+   "PREFLIGHT_WORK": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "PREPARE_DISPATCH": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "PROPOSE_PUBLICATION": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "SEAL_REVISION": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "SELECT_WORK": "OBTAIN_CCP_CURRENT_USE_DECISION"
+  },
+  "pipeline": {
+   "all_reachable": true,
+   "any_auto_grant": false,
+   "atlas_root_bound": true,
+   "ccp_not_required": [
+    "ORIENT_PROJECT"
+   ],
+   "endpoints_known": true,
+   "root": "225f9ffc1a3fcf2bbe8d216e33b13208d74cea08cc54dca5b394f4acbe129fa4",
+   "rules_known": true,
+   "states": 11,
+   "terminal_have_no_out": [],
+   "transitions": 10,
+   "unique_from": true
+  },
+  "spec/PIPPI-CONSTITUTIONAL-STANDARDS-ATLAS.json": {
+   "coldboot_eq_live": [
+    true
+   ],
+   "coldboot_paths": [
+    "PIPPI/PIPPI-CONSTITUTIONAL-STANDARDS-ATLAS.json"
+   ],
+   "runtime_eq_live": true,
+   "runtime_json_eq_live": true
+  },
+  "spec/PIPPI-PIPELINE-MODEL.json": {
+   "coldboot_eq_live": [
+    true
+   ],
+   "coldboot_paths": [
+    "PIPPI/PIPPI-PIPELINE-MODEL.json"
+   ],
+   "runtime_eq_live": true,
+   "runtime_json_eq_live": true
+  }
+ },
+ "court_case010_diagnosis": {
+  "court_expected": "CCP_ADMISSIBILITY_DECISION_INVALID (ccp_admissibility.py:892)",
+  "court_mutation": "decision only",
+  "first_refusal": "CCP_ADMISSIBILITY_GATEWAY_DISPOSITION_INVALID (ccp_admissibility.py:854)",
+  "unit_test_reseal_passes_in_replay": true
+ },
+ "custody": {
+  "identity_eq_rel": true,
+  "partition_root_ok": true,
+  "qual_binds": {
+   "ident": true,
+   "lin": true,
+   "rel": true,
+   "rev": true,
+   "rt": true,
+   "rtman": true,
+   "sdk": true,
+   "src": true,
+   "test_set": true,
+   "tests_unique": true
+  },
+  "qual_root_ok": true,
+  "release_root_ok": true,
+  "source_manifest_root_ok": true,
+  "transport_binds": {
+   "kit": true,
+   "qual": true,
+   "release": true,
+   "runtime": true,
+   "source": true
+  },
+  "transport_root_ok": true,
+  "transport_rows_ok": true,
+  "transport_set_closed": true
+ },
+ "frozen": {
+  "FROZEN-OPERATOR-REGISTRY.json": {
+   "all_bytes_ok": true,
+   "all_posix_order": true,
+   "all_roots_ok": true,
+   "count": 14,
+   "order_sensitive_dirs": [],
+   "registry_root": "32fb4ed104670f5657a06d93d0b355f508436cc5cdbb139bfb8ed53e7588e3a1",
+   "registry_root_ok": true
+  },
+  "FROZEN-PROGRAM-REGISTRY.json": {
+   "all_bytes_ok": true,
+   "all_posix_order": true,
+   "all_roots_ok": true,
+   "count": 24,
+   "order_sensitive_dirs": [
+    "program/maturity-evolution",
+    "program/pippi-r010",
+    "program/pippi-r011"
+   ],
+   "registry_root": "23be9058e6c4473283821bf120bc2e2c37dd898772f08551eff3999475325f18",
+   "registry_root_ok": true
+  }
+ },
+ "generators": {
+  "build_collaboration_integrity_r029_program": "PASS",
+  "build_pippi_adaptive_contracts": "PASS"
+ },
+ "identity": {
+  "cold_boot_sha256": "b65eb2e2390efd0f02ed31648d09f9de6a1ef66d73ab3e7ab9e2bcf47aa1bad2",
+  "operator_kit_sha256": "a05f665c26929b045c65353e4177efde139e8e070ec3e6834e5902f103065b1e",
+  "qualification_receipt_sha256": "8396a8c401f843af18bd03e5c46d2b897117fb5615e5042a4f387e7e5da2865c",
+  "qualification_root": "56d0b379ae0b7973ec0ff63d5913c5a3a60bf57e19f2bd73862a7351753946dc",
+  "release_identity_root": "705be5041504932f704a8735dc6aeb356744c57c19b6b48e23675bd190e7ba84",
+  "release_root": "310de97a200e52a722fb93102195a6527f4ada0d0845ef69873415906ad59053",
+  "revision": "r029",
+  "runtime_sha256": "0e45fe24337952ca04b70b2bb24ffcde3aacec09606cb01488c8a425df373ecb",
+  "source_root": "351eb8fdc7a2eed1d2130ade239da9b7e39c240f7d08ecc71c6a7f10790b91ab",
+  "transport_sha256": "8d96ae510cd207411038295f701caf35a8c8900e264c9383b9bf4706c7024566"
+ },
+ "interpreters": [
+  "3.12.3",
+  "3.13.16"
+ ],
+ "kit": {
+  "dups": false,
+  "eq_transport": {
+   "PIPPI-v0.1-adaptive-cold-boot.zip": true,
+   "PORTABILITY-GATE.json": true,
+   "UCM-v0.1-QUALIFICATION.json": true,
+   "UCM-v0.1-runtime.zip": true,
+   "WINDOWS-NATIVE-WITNESS.json": true,
+   "WSL-NATIVE-WITNESS.json": true
+  },
+  "labels": {
+   "authority_effect": "NONE",
+   "builder_authored": true,
+   "cold_boot_sha256": "b65eb2e2390efd0f02ed31648d09f9de6a1ef66d73ab3e7ab9e2bcf47aa1bad2",
+   "evidence_glob": "UCM-r029-COLLABORATION-INTEGRITY-TIER1-EVIDENCE-*.zip",
+   "g0": "CLOSED",
+   "member_count": 32,
+   "operator_executed": false,
+   "qualification_sha256": "8396a8c401f843af18bd03e5c46d2b897117fb5615e5042a4f387e7e5da2865c",
+   "real_a5": false,
+   "revision": "r029",
+   "runner_path": "RUN-TIER1.py",
+   "runtime_sha256": "0e45fe24337952ca04b70b2bb24ffcde3aacec09606cb01488c8a425df373ecb",
+   "schema": "mosaic.ucm.pippi-operator-review-kit.v0.1",
+   "standing": "INFORMATION_ONLY",
+   "subject_id": "UCM_R029_COLLABORATION_INTEGRITY",
+   "tier1_executed": false
+  },
+  "manifest_root_keys": [
+   "operator_kit_root"
+  ],
+  "manifests": [
+   "KIT-MANIFEST.json"
+  ],
+  "members": 33,
+  "methods": [
+   8
+  ],
+  "root_ok_operator_kit_root": true,
+  "rows_ok": true,
+  "set_closed": true
+ },
+ "parity": {
+  "capability_root": "ba7483787ead2951172cc953b0ce480c49d0db4243924db98ccc5a8121e6edce",
+  "exactly_once": true,
+  "registry": {
+   "differing": [],
+   "each_equals_live_entry": true,
+   "missing_from_live": [],
+   "registry_surfaces": 75
+  },
+  "route_exact": true,
+  "routes": 31
+ },
+ "portability_source_manifest": {
+  "rebuilt_eq_shipped": true,
+  "root": "351eb8fdc7a2eed1d2130ade239da9b7e39c240f7d08ecc71c6a7f10790b91ab"
+ },
+ "predecessor": {
+  "predecessor_engineering_revision": "r028",
+  "predecessor_qualification_root": "f14106bfb3a78e3a86d83898f07b0f567dc5d0cb7913d3a377aa4bd14f6dd08b",
+  "predecessor_release_identity_root": "7dd9149c0b3650859b73e5710bc491161c6ebf5d44381b5e992ac089d8d8a62d",
+  "predecessor_source_root": "cff86ff9d12f04385a89f43cb9e94df2310b44a7272765d60238b5c556dad3be"
+ },
+ "rebuild_byte_identical": {
+  "cold_boot": true,
+  "interpreters": [
+   "3.12",
+   "3.13"
+  ],
+  "operator_kit_and_launchers": true,
+  "release_4_archives_and_record": true
+ },
+ "replay": {
+  "3.12": {
+   "id_set_eq_receipt": true,
+   "non_pass": [
+    "test_installed_package.InstalledPackageTests.test_wheel_contains_runtime_resource_and_runs_from_unrelated_directory",
+    "test_pippi_release_packaging.PippiReleasePackagingTests.test_native_ui_imports_from_the_python_runtime_closure"
+   ],
+   "pass": 442,
+   "tests": 444
+  },
+  "3.13": {
+   "id_set_eq_receipt": true,
+   "non_pass": [
+    "test_installed_package.InstalledPackageTests.test_wheel_contains_runtime_resource_and_runs_from_unrelated_directory",
+    "test_pippi_release_packaging.PippiReleasePackagingTests.test_native_ui_imports_from_the_python_runtime_closure"
+   ],
+   "pass": 442,
+   "tests": 444
+  }
+ },
+ "schema": "reviewer.r029.recompute.v1",
+ "work_selections": {
+  "count": 119,
+  "not_ok": [
+   "program/constitutional-atlas-r028/R28-07-WORK-SELECTION.json",
+   "program/public-vocabulary-r012/WORK-SELECTION.json"
+  ]
+ }
+}

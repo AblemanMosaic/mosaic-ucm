@@ -1,0 +1,42 @@
+{
+ "schema": "reviewer.r026.recompute.v1",
+ "subject": "UCM v0.1 r026 runtime-parity focused transport",
+ "identity_observed": {
+  "transport_sha256": "a886b5a9674dcee0994ee7901dd38278d02af58cfed1ac0aaaebd4fd872be41c",
+  "revision": "r026",
+  "release_root": "ab23924e363cac303a11638c8decf774bea4e6322fc6e41ba722bd89f4db7d5c",
+  "qualification_root": "f1f5c4bbc4077077cc86cdafaf8f4c37ac00c8d8f606b3e4e57e32d3e16bcc0a",
+  "runtime_sha256": "031e906105eabf2201d55aaa6d3437ae42fa1f6126f01f5de792d9a4c495e270",
+  "source_root": "d61502f23fce6cdeb7772b4ee3d3efd3d36249f276fde86d976ae09e6f0c595c",
+  "cold_boot_sha256": "57b3ed049f63e1e8c704c9dfca26cec6198b38c1d7f2def769a30b0c00c994af",
+  "operator_kit_sha256": "d06b308d9577021abb585c9f8b1d4508231c0c7c9031f8fdf18a7b143aca6058",
+  "expected_values_supplied": false,
+  "predecessor": "NOT VERIFIABLE (release identity in SDK, absent)"
+ },
+ "standing": "INFORMATION_ONLY",
+ "authority_effect": "NONE",
+ "real_a5": false,
+ "g0": "CLOSED",
+ "tier0": {
+  "custody": "tier0/custody.json",
+  "cold_boot": "tier0/coldboot-*.json",
+  "absent_archives": [
+   "UCM-v0.1-sdk.zip",
+   "UCM-v0.1-review.zip",
+   "UCM-v0.1-lineage.zip"
+  ]
+ },
+ "tier1": {
+  "status": "NOT PERFORMED",
+  "r025_user_run": "HOLD_FOR_REPAIR 22/25; authority-ceiling failure derivative"
+ },
+ "tier2": {
+  "parity": "tier2/parity-3.12.json, tier2/parity-3.13.json (identical; 9 generated files equal live in runtime and cold boot)",
+  "witness_outputs": "5/5 reproduce on Linux; tier2/frozen-partial.json (program 19/23 rows exact, operator 0/13 checkable; both registry roots recompute)",
+  "case_probe": "tier2/portability/environment-3.1x.out (probed, clean)",
+  "surface_coverage": "tier2/surface-map-coverage.json",
+  "replay": "NOT PERFORMED (SDK absent)",
+  "rebuild": "NOT PERFORMED (SDK absent)"
+ },
+ "execution": "python3 -I -B, env -i, disposable copies; subject code only in authorized venvs for live generation, registry/policy roots and environment-observe; court and launcher read only; no install, no network; no earlier results carried"
+}

@@ -1,0 +1,34 @@
+{
+  "applications": {
+    "archive_composer": {
+      "purpose": "Create, measure, verify, and restore crystallized archives",
+      "windows_x86_64": "NATIVE_GUI_AND_CLI",
+      "linux_x86_64": "CLI"
+    },
+    "memory_vault": {
+      "purpose": "Catalog, search, watch, verify, launch, and restore crystallized memory",
+      "windows_x86_64": "NATIVE_GUI_AND_CLI",
+      "linux_x86_64": "CLI"
+    }
+  },
+  "authority_effect": "NONE",
+  "external_runtime_dependencies": {
+    "source": ["Python >=3.12"],
+    "standalone_linux_x86_64": ["glibc floor declared by artifact manifest"],
+    "standalone_windows_x86_64": []
+  },
+  "formats": {
+    "semcrys_standard_archive": "0.3",
+    "semantic_index": "0.4",
+    "snapshot": ["0.2", "0.3"],
+    "vault_bundle": "0.4"
+  },
+  "internal_lineage": "0.4.0-r045",
+  "license": "Apache-2.0",
+  "network_default": "OFFLINE",
+  "public_version": "0.1.0",
+  "schema": "mosaic.memory-vault.public-release-contract.v0.1",
+  "security_claim": "INTEGRITY_AND_LOCAL_EFFECT_GOVERNANCE_WITHIN_DOCUMENTED_BOUNDARIES; NO_CONFIDENTIALITY_OR_HOSTILE_HOST_ISOLATION CLAIM",
+  "standing": "PUBLIC_RELEASE",
+  "suite": "Mosaic Memory Vault"
+}

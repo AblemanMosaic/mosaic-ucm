@@ -1,0 +1,285 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:mosaic:realization-space-contract:v0.1",
+  "title": "Mosaic Realization Space Contract v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "contract_id",
+    "contract_version",
+    "subject",
+    "possibility",
+    "axes",
+    "constraints",
+    "capabilities",
+    "selection",
+    "lowering",
+    "evidence",
+    "authority"
+  ],
+  "properties": {
+    "schema": {"const": "mosaic.realization-space-contract.v0.1"},
+    "contract_id": {"$ref": "#/$defs/id"},
+    "contract_version": {"type": "string", "minLength": 1},
+    "description": {"type": "string"},
+    "subject": {"$ref": "#/$defs/subject"},
+    "possibility": {"$ref": "#/$defs/possibility"},
+    "axes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/axis"}
+    },
+    "constraints": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/constraint"}
+    },
+    "objectives": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/objective"}
+    },
+    "preferred_regions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/region"}
+    },
+    "capabilities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "ENUMERATE", "VALIDATE", "NORMALIZE", "SAMPLE", "INTERPOLATE",
+          "ESTIMATE_COST", "SELECT", "LOWER", "REALIZE", "COMPARE",
+          "ADAPT", "EXPLAIN", "RECEIPT"
+        ]
+      }
+    },
+    "selection": {"$ref": "#/$defs/selection"},
+    "lowering": {"$ref": "#/$defs/lowering"},
+    "adaptation": {"$ref": "#/$defs/adaptation"},
+    "evidence": {"$ref": "#/$defs/evidence"},
+    "revision": {"$ref": "#/$defs/revision"},
+    "authority": {"$ref": "#/$defs/authority"}
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_.:-]*$"
+    },
+    "stringArray": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject_id", "subject_schema", "authority_owner", "source_roots",
+        "preserved_identity", "forbidden_overrides"
+      ],
+      "properties": {
+        "subject_id": {"$ref": "#/$defs/id"},
+        "subject_schema": {"type": "string", "minLength": 1},
+        "authority_owner": {"$ref": "#/$defs/id"},
+        "source_roots": {"$ref": "#/$defs/stringArray"},
+        "coordinate_frame": {"type": "object"},
+        "preserved_identity": {"$ref": "#/$defs/stringArray"},
+        "forbidden_overrides": {"$ref": "#/$defs/stringArray"}
+      }
+    },
+    "possibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["intended_variation", "excluded_claims"],
+      "properties": {
+        "intended_variation": {"$ref": "#/$defs/stringArray"},
+        "excluded_claims": {"$ref": "#/$defs/stringArray"}
+      }
+    },
+    "numericDomain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimum", "maximum"],
+      "properties": {
+        "minimum": {"type": "number"},
+        "maximum": {"type": "number"},
+        "exclusive_minimum": {"type": "boolean"},
+        "exclusive_maximum": {"type": "boolean"},
+        "step": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "enumDomain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["values"],
+      "properties": {
+        "values": {"type": "array", "minItems": 1, "uniqueItems": true}
+      }
+    },
+    "axis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "label", "value_type", "domain", "default", "ownership",
+        "mutability", "continuity", "state_effect", "effect_owner",
+        "apply_mode", "persistence_effect", "replay_effect", "authority_effect"
+      ],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "label": {"type": "string", "minLength": 1},
+        "description": {"type": "string"},
+        "value_type": {
+          "enum": ["BOOLEAN", "INTEGER", "NUMBER", "ENUM", "VECTOR", "COLOR", "CURVE", "SEED", "REFERENCE"]
+        },
+        "domain": {
+          "anyOf": [
+            {"$ref": "#/$defs/numericDomain"},
+            {"$ref": "#/$defs/enumDomain"},
+            {"type": "object"}
+          ]
+        },
+        "default": true,
+        "unit": {"type": "string"},
+        "precision": {"type": "integer", "minimum": 0},
+        "ownership": {"enum": ["AUTHORIAL", "USER", "ADAPTIVE", "RUNTIME", "DERIVED", "EVIDENCE_ONLY"]},
+        "mutability": {"enum": ["FROZEN", "INSTANCE", "SESSION", "FRAME", "EDIT", "DERIVED"]},
+        "continuity": {"enum": ["DISCRETE", "CONTINUOUS_LINEAR", "CONTINUOUS_ANGULAR", "CONTINUOUS_COLOR", "PIECEWISE", "NOT_INTERPOLABLE"]},
+        "state_effect": {"enum": ["PRESENTATION", "INPUT_POLICY", "SIMULATION_RULE", "WORLD_GENERATION", "PERSISTENCE_SCHEMA", "OBSERVATION_POLICY", "EVALUATION_ONLY", "DERIVED"]},
+        "effect_owner": {"$ref": "#/$defs/id"},
+        "apply_mode": {"enum": ["IMMEDIATE", "FRAME_BOUNDARY", "PREPARE_AND_SWAP", "TICK_BOUNDARY", "WORLD_REVISION", "SAVE_MIGRATION", "RESTART_REQUIRED", "OFFLINE_ONLY"]},
+        "persistence_effect": {"enum": ["NONE", "SESSION", "PROFILE", "SAVE_COMPATIBILITY", "NEW_WORLD", "SAVE_MIGRATION_REQUIRED"]},
+        "replay_effect": {"enum": ["NONE", "PRESENTATION_ONLY", "INPUT_TRACE", "SIMULATION_RULES", "WORLD_IDENTITY"]},
+        "dependencies": {"$ref": "#/$defs/stringArray"},
+        "cost_metrics": {"$ref": "#/$defs/stringArray"},
+        "ui_hint": {"type": "string"},
+        "authority_effect": {"const": "NONE"}
+      }
+    },
+    "constraint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "severity", "expression", "explanation", "refusal_code"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "kind": {"enum": ["INVARIANT", "DEPENDENCY", "EXCLUSION", "CONDITIONAL_DOMAIN", "COMPATIBILITY", "BUDGET", "CLAIM_BOUNDARY"]},
+        "severity": {"enum": ["HARD", "ADVISORY"]},
+        "expression": {"type": "string", "minLength": 1},
+        "expression_language": {"type": "string"},
+        "explanation": {"type": "string", "minLength": 1},
+        "refusal_code": {"$ref": "#/$defs/id"}
+      }
+    },
+    "objective": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["metric_id", "direction", "priority", "measurement", "scope"],
+      "properties": {
+        "metric_id": {"$ref": "#/$defs/id"},
+        "unit": {"type": "string"},
+        "direction": {"enum": ["MINIMIZE", "MAXIMIZE", "TARGET", "BAND"]},
+        "target": {"type": "number"},
+        "band": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}], "minItems": 2, "maxItems": 2},
+        "priority": {"type": "integer", "minimum": 0},
+        "weight": {"type": "number", "minimum": 0},
+        "measurement": {"type": "string", "minLength": 1},
+        "scope": {"enum": ["PORTABLE", "HOST", "SCENE", "SESSION", "HUMAN_SUBJECTIVE"]}
+      }
+    },
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "purpose", "predicate", "standing"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "purpose": {"type": "string", "minLength": 1},
+        "predicate": {"type": "string", "minLength": 1},
+        "standing": {"enum": ["AUTHORED", "MEASURED", "GENERATED", "PROVISIONAL"]},
+        "profile_defaults": {"type": "object"}
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["default_policy", "seed_required_for_non_unique"],
+      "properties": {
+        "default_policy": {"$ref": "#/$defs/id"},
+        "policies": {"$ref": "#/$defs/stringArray"},
+        "seed_required_for_non_unique": {"type": "boolean"},
+        "fallback_policy": {"enum": ["REFUSE", "DECLARED_ONLY"]}
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_id", "adapter_version", "required_capabilities", "preservation_criteria", "known_losses", "fallbacks"],
+      "properties": {
+        "target_id": {"$ref": "#/$defs/id"},
+        "runtime_family": {"$ref": "#/$defs/id"},
+        "adapter_version": {"type": "string", "minLength": 1},
+        "required_capabilities": {"$ref": "#/$defs/stringArray"},
+        "optional_capabilities": {"$ref": "#/$defs/stringArray"},
+        "supported_region": {"type": "string"},
+        "axis_mapping": {"type": "object"},
+        "preservation_criteria": {"$ref": "#/$defs/stringArray"},
+        "known_losses": {"$ref": "#/$defs/stringArray"},
+        "fallbacks": {"$ref": "#/$defs/stringArray"}
+      }
+    },
+    "lowering": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["targets", "allowed_results"],
+      "properties": {
+        "targets": {"type": "array", "items": {"$ref": "#/$defs/target"}},
+        "allowed_results": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"enum": ["EXACT", "BOUNDED", "FALLBACK", "LOSSY", "REFUSED"]}
+        }
+      }
+    },
+    "adaptation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "policies"],
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "policies": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_roots", "required_fields", "non_claims"],
+      "properties": {
+        "required_roots": {"$ref": "#/$defs/stringArray"},
+        "required_fields": {"$ref": "#/$defs/stringArray"},
+        "metrics": {"$ref": "#/$defs/stringArray"},
+        "non_claims": {"$ref": "#/$defs/stringArray"}
+      }
+    },
+    "revision": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "predecessor_root": {"type": "string"},
+        "trigger_evidence_roots": {"$ref": "#/$defs/stringArray"},
+        "migration": {"type": "string"},
+        "unresolved_questions": {"$ref": "#/$defs/stringArray"}
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["standing", "authority_effect", "self_admission", "release_gate", "track_a_dependency"],
+      "properties": {
+        "standing": {"type": "string", "minLength": 1},
+        "authority_effect": {"const": "NONE"},
+        "self_admission": {"const": false},
+        "release_gate": {"const": false},
+        "track_a_dependency": {"const": "NONE"},
+        "claim_boundary": {"type": "string"}
+      }
+    }
+  }
+}

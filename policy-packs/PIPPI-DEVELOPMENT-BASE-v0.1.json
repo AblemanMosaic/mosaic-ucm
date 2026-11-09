@@ -1,0 +1,17 @@
+{
+  "schema": "mosaic.ucm.policy-pack.v0.1",
+  "pack_id": "PIPPI_DEVELOPMENT_BASE_V0_1",
+  "version": "0.1.0",
+  "requirements": [
+    {"id": "PIPPI.CONTEXT_BOUND", "class": "MANDATORY", "statement": "Bind every mediated turn to subject, policy, profile, jurisdiction, and capability-registry roots."},
+    {"id": "PIPPI.UNDECLARED_EFFECT_HELD", "class": "MANDATORY", "statement": "Hold or refuse every undeclared effectful proposal."},
+    {"id": "PIPPI.VISIBLE_OUTPUT_PROJECTED", "class": "MANDATORY", "statement": "Expose only a rooted human projection and preserve the exact draft text."},
+    {"id": "PIPPI.PROGRESS_NONSEMANTIC", "class": "MANDATORY", "statement": "Keep progress events outside evidence and authority roots."},
+    {"id": "PIPPI.EXCEPTION_EXTERNAL", "class": "MANDATORY", "statement": "Route constitutional gaps to an external decision; no exception record grants authority."},
+    {"id": "PIPPI.SEMANTIC_PROVIDER_BOUND", "class": "CONDITIONAL", "statement": "When semantic passage is required, pin the external provider or disclose it as unbound."}
+  ],
+  "standing": "INFORMATION_ONLY",
+  "authority_effect": "NONE",
+  "real_a5": false,
+  "g0": "CLOSED"
+}

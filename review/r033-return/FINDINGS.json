@@ -1,0 +1,71 @@
+{
+ "schema": "reviewer.r033.findings.v1",
+ "subject": "UCM v0.1 r033 native closure full review transport",
+ "identity_observed": {
+  "transport_sha256": "225ace8dbecef970616c5916a4daa89d1d5719730608c27ede771992c4a60be7",
+  "transport_root": "c58e039db172caf85ac36abe54d27e8565835903f63cb3e5d9b495bd7a429582",
+  "revision": "r033",
+  "release_root": "d8c41b03aec805a400cba5d44cd20d903d4ee6d0064a53c897a3a432ea0a2354",
+  "qualification_root": "c7a67b7dc03bfb454d08795ea130668c97fa20eecf6f99c1fa758bad614fad09",
+  "runtime_sha256": "b36529bc578e7684085b2d243d3fd597b5da5219b41cf3353165713cd920b704",
+  "source_root": "169470fe465f9e6a926874ec6df3945f071dca1f7ef488ef103657307eefd605",
+  "release_identity_root": "cf8fc55bd32cc2246cb6a7ee8ebc18e20fbd826a03c092a273d5a5b4b5c6018d",
+  "cold_boot_sha256": "54445acfde8291734fc54bda834c883e8b9fafa2b81f4ed27e67b49d5f745707",
+  "operator_kit_sha256": "158e30b9700b96b9e7493e7e3575c3f1f2e395d43ef0af88fc1cd266721fa764",
+  "expected_values_supplied": false,
+  "predecessor": "r032: qualification 5b5a64e2..., identity 1ee0ffc5..., source d52891c5... all equal my r032 observations in full"
+ },
+ "standing": "INFORMATION_ONLY",
+ "authority_effect": "NONE",
+ "real_a5": false,
+ "g0": "CLOSED",
+ "verdict": "INCOMPLETE_REVIEW",
+ "verdict_basis": "No finding at MED or above; R32-01, R32-02 and R32-03 closed. Custody exact; 1,954-row source reconstituted; replay 473/475 on 3.12.3 and 3.13.16 with only the two known environment non-passes and test-id set equal to the receipt; release and cold boot rebuilt twice per interpreter, all byte-identical; operator kit rebuilds byte-identically; all nine corpus programs, including the four profile boundaries, correspond exactly under Linux gcc and clang and equal both witnesses. Withheld only because the independent Tier 1 leg (and the Windows/WSL legs) remain; the r033 court is builder-authored and unexecuted.",
+ "findings": [
+  {
+   "id": "R33-01",
+   "severity": "LOW",
+   "class": "stale-artifact",
+   "status": "OPEN",
+   "title": "The transport's PORTABILITY-SOURCE-MANIFEST.json is stale",
+   "evidence": "The transport member and the copy at evidence/r033-portability/PORTABILITY-SOURCE-MANIFEST.json have root 13caa7b2... (sha256 e11854a4...). The qualified source's own PORTABILITY-SOURCE-MANIFEST.json, which build_portability_source_archive.py rebuilds byte-identically on both interpreters, has root 169470fe... = the source root that both witnesses and the receipt bind. The stale copy differs in 26 rows: VERIFY.py, tests/test_public_release_qualification.py and 24 program/native-closure-r033 records.",
+   "impact": "Nothing in the proof chain reads it (the gate, witnesses and receipt bind 169470fe...), but a reader rebuilding the portability source from the transport's copy would obtain a different source than was qualified.",
+   "repair": "Regenerate both copies after the final edit, or drop them and point to the in-source manifest; add a check that every carried PORTABILITY-SOURCE-MANIFEST root equals the witnesses' source_root."
+  },
+  {
+   "id": "R33-02",
+   "severity": "INFO",
+   "status": "OPEN",
+   "title": "Observations",
+   "items": [
+    "execute_native_binary derives the 'external' projection SHA-256 from the same file it passes to the binary, so on the Python path the pin cannot disagree with the file. The correspondence check still compares program_sha256 with the reference lowering, which would surface a mismatch. The C CLI itself accepts a genuinely external pin.",
+    "ucm_native_core.c hashes the file and then reopens it to parse; a concurrent writer could change it between the two reads. Reading once into memory would remove that window.",
+    "The qualification shadow probe inserts src first and then checks where ucm came from, so it can only confirm that src/ucm imports. The real protection is the exported PYTHONPATH=src and PYTHONNOUSERSITE=1 for children.",
+    "build_native_completion_r032_program.py --check now reports drift against current source; r032 is frozen and its files verify against the frozen registry, so this is the historical-builder pattern (also r026-r030).",
+    "Carried selections R28-07, R20-01 and the six r031 'tests.'-form selections still do not resolve against the current receipt.",
+    "The work order invites an independent reviewer to design additional attacks; per your standing instruction none were run. Refusal paths (resealed archive shrink, non-canonical integers, trailing data) were checked by source and by the replayed builder tests."
+   ]
+  },
+  {
+   "id": "R33-03",
+   "severity": "INFO",
+   "status": "CARRIED",
+   "items": [
+    "R21-01 secondary items; sim.add parameter shape checked only at evaluation.",
+    "r015-r017, r025 and r030 never reviewed; two Windows-only tests; wheel test needs setuptools; receipt root depends on Python patch version; case probe writes transiently."
+   ]
+  }
+ ],
+ "closed": [
+  {"id": "R32-01", "basis": "MAX_LINE 8192 covers the longest REGISTERS line (5,390 B). Nine-program corpus with 256-register, 4,096-instruction, 2,048-step stack and 1,000,000-step boundaries corresponds exactly (gcc, clang; 3.12, 3.13). Reviewer-built 256-register programs at I64_MIN, I64_MAX, zero and mixed values, and a 4,096-instruction program, also correspond."},
+  {"id": "R32-02", "basis": "Fallback test now invokes tools/ucm.py -B (inserts src); qualification exports PYTHONPATH=src and PYTHONNOUSERSITE=1 and probes the import origin. Passes in clean replay on both interpreters."},
+  {"id": "R32-03", "basis": "Archive verifier requires external manifest root, rows root and member count; refuses mismatch and trailing data. Positive run on the exact r031 tree PASS (1,270), binding pins equal independent recomputation; builder's resealed-truncation test passes in replay."},
+  {"id": "R32-04 items", "basis": "Canonical integers only; lowercase hex digests; external projection SHA-256 checked before parse; trailing bytes refused; r031 and r032 programs and courts frozen (30/21 rows); r032 provenance record added."}
+ ],
+ "user_run_tier1_r032": {"status": "PASS", "cases": 14, "court_root": "268b9474e6781007b8dd32eff4dc75bfcf94da93faffdcb90716748757961ebf", "evidence_sha256": "7a58c24aa2ab676ccdc353dc99f7f40d593a495b1c79864f0adb719f81ba0a48", "court_eq_r032_kit": true, "court_root_recomputes": true, "subject_runtime": "19d41ff3...", "classification": "USER_RUN_BUILDER_AUTHORED; not independent Tier 1"},
+ "not_performed": [
+  "Independent Tier 1 for r033 (court read statically, not run, per instruction)",
+  "Windows and WSL legs (builder witnesses; Linux third-platform correspondence performed)",
+  "Additional attacks or negative exercises, per instruction"
+ ]
+}

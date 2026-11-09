@@ -1,0 +1,28 @@
+{
+  "schema": "mosaic.ucm.constitutional-launcher-contract.v0.1",
+  "standing": "INFORMATION_ONLY",
+  "authority_effect": "NONE",
+  "real_a5": false,
+  "g0": "CLOSED",
+  "cm1_required_fields": [
+    "subject_root",
+    "executable_root",
+    "argument_root",
+    "environment_root",
+    "executor_root",
+    "readiness_contract_root",
+    "allowed_effect_classes",
+    "gates",
+    "uncertain_policy"
+  ],
+  "cm2_preference_fields": [
+    "display_name",
+    "splash_asset_root",
+    "phase_labels",
+    "readiness_probe"
+  ],
+  "required_gates": ["G1_SENTINEL", "G2_WITNESS", "G3_DIAGNOSTIC"],
+  "executor": "EXTERNAL",
+  "progress_semantics": "NONSEMANTIC",
+  "uncertain_policy": "RECONCILE_WITHOUT_RELAUNCH"
+}

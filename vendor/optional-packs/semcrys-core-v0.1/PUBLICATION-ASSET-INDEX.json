@@ -1,0 +1,179 @@
+{
+  "asset_groups": [
+    {
+      "artifacts": [
+        {
+          "bytes": 2549,
+          "path": "RELEASE-MANIFEST.json",
+          "role": "RELEASE_MANIFEST",
+          "sha256": "1fcd5fc1a902806064e15cd327f8844579585fac01985bab776e2a93c49710ba"
+        },
+        {
+          "bytes": 88,
+          "path": "RELEASE-MANIFEST.json.sha256",
+          "role": "SHA256_SIDECAR",
+          "sha256": "00b2810c435bf8e0ef0e6234bbecc7dcf6b9d5dcc5357a7108f19beee9b96dc1"
+        }
+      ],
+      "group": "release_control",
+      "verification": "ROOTED_MANIFEST_AND_ADJACENT_SIDECAR"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 1080827,
+          "path": "semcrys-core-0.1.0-source.zip",
+          "role": "SOURCE_REPOSITORY",
+          "sha256": "24b6f8069968b27e29b7304f80feb8b491b13cf092178313fe15b117b8df2bc4"
+        },
+        {
+          "bytes": 96,
+          "path": "semcrys-core-0.1.0-source.zip.sha256",
+          "role": "SHA256_SIDECAR",
+          "sha256": "7928d27673015a2d24060739faabf13e23334d301c121e46f8315f97bc94226d"
+        },
+        {
+          "bytes": 314846,
+          "path": "semcrys-core-0.1.0.pyz",
+          "role": "STDLIB_ZIPAPP",
+          "sha256": "0f81a0279fc54acd89208df51b671cba302dbca2de452c416dd1a237e7e65809"
+        },
+        {
+          "bytes": 89,
+          "path": "semcrys-core-0.1.0.pyz.sha256",
+          "role": "SHA256_SIDECAR",
+          "sha256": "ebd1038fa5b3263f5a390c85fbe3ec7cb9a0f1a3ce7b0f410766803a902c7f93"
+        },
+        {
+          "bytes": 324902,
+          "path": "semcrys_core-0.1.0-py3-none-any.whl",
+          "role": "PURE_PYTHON_WHEEL",
+          "sha256": "1ce1b5aa45d1cfcce5fe16b754aec1aaf821fcb75b6afb045028f1432578ffd4"
+        },
+        {
+          "bytes": 102,
+          "path": "semcrys_core-0.1.0-py3-none-any.whl.sha256",
+          "role": "SHA256_SIDECAR",
+          "sha256": "7c68640d2f751eb0f42d2cf4ea46e97096f7cef4dc8570b8b5fca54ec4191d53"
+        },
+        {
+          "bytes": 358129,
+          "path": "semcrys_core-0.1.0-py3-none-win_amd64.whl",
+          "role": "NATIVE_WHEEL",
+          "sha256": "9c27c1526ef52b706285c1d399f946f65cd46ddc56c8704b001d360cf7facdba"
+        },
+        {
+          "bytes": 108,
+          "path": "semcrys_core-0.1.0-py3-none-win_amd64.whl.sha256",
+          "role": "SHA256_SIDECAR",
+          "sha256": "3ce4e05f1cd9dfd136ddb94b06a48980e74e3bf47f892c0b1118debec4d4a74f"
+        },
+        {
+          "bytes": 37938721,
+          "path": "semcrys-0.1.0-windows-x64.zip",
+          "role": "STANDALONE_WINDOWS_X64",
+          "sha256": "e690b485696ec952edb96fd44d098bb3fb01ebf5b9f080d1ba6b73d3defe072b"
+        },
+        {
+          "bytes": 96,
+          "path": "semcrys-0.1.0-windows-x64.zip.sha256",
+          "role": "SHA256_SIDECAR",
+          "sha256": "9ce637eca21a35d12cd65a36431fdd81d8f7b528a37a4141c03fa12fccecbaa3"
+        },
+        {
+          "bytes": 37908069,
+          "path": "semcrys-0.1.0-linux-x64.tar.gz",
+          "role": "STANDALONE_LINUX_X64",
+          "sha256": "06df9d91be8b8733c85386d864ff4f5c9b1b22a20a01850c909210f80af39df9"
+        },
+        {
+          "bytes": 97,
+          "path": "semcrys-0.1.0-linux-x64.tar.gz.sha256",
+          "role": "SHA256_SIDECAR",
+          "sha256": "c36d68511f6a73d96308cfd50a5989b5ec382fce31b56944ffc4d05eafb65d07"
+        },
+        {
+          "bytes": 22939848,
+          "path": "ULTRA_FAMILY.crys",
+          "role": "ULTRA_RELEASE_ASSET",
+          "sha256": "859f1160b2c61620fc582d6d420294d91d6d68106f67e97ac14930e69bbb4e71"
+        },
+        {
+          "bytes": 84,
+          "path": "ULTRA_FAMILY.crys.sha256",
+          "role": "SHA256_SIDECAR",
+          "sha256": "395702bad56c9aa018cefbf918a6903a4d9c51f319078cb08eb34a1b723c5835"
+        }
+      ],
+      "group": "manifest_bound_payloads",
+      "verification": "RELEASE_MANIFEST_ROWS_AND_ADJACENT_SIDECARS"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 100668437,
+          "path": "semcrys-core-0.1.0-offline-bundle.zip",
+          "role": "OFFLINE_BUNDLE",
+          "sha256": "7e5d380ecbf35f8089167f0ba3a2df2d3021bdcad8e25a64544a9eef8fe6e168"
+        },
+        {
+          "bytes": 104,
+          "path": "semcrys-core-0.1.0-offline-bundle.zip.sha256",
+          "role": "SHA256_SIDECAR",
+          "sha256": "13087d1eb1999e4b4a85d0909a8e27b82d59783680a500bf500edc9df417a64d"
+        }
+      ],
+      "group": "offline_custody_bundle",
+      "verification": "ADJACENT_SIDECAR_AND_EMBEDDED_RELEASE_MANIFEST"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 929,
+          "path": "SemCrys-Core-0.1.0-REVIEWER-20261102-R4.boundary.json",
+          "role": "REVIEWER_COMPANION",
+          "sha256": "bfb4668ec26b9e397748e7865d5f26dea9bebb52428d0f651d7271cf9a963ef7"
+        },
+        {
+          "bytes": 29544584,
+          "path": "SemCrys-Core-0.1.0-REVIEWER-20261102-R4.zip",
+          "role": "REVIEWER_COMPANION",
+          "sha256": "89c20daeade3f5321302af535ebf0cb4127d1a6cc11aafc7e40a1bc1f25b2c2a"
+        },
+        {
+          "bytes": 110,
+          "path": "SemCrys-Core-0.1.0-REVIEWER-20261102-R4.zip.sha256",
+          "role": "REVIEWER_COMPANION",
+          "sha256": "d720589a65857490090ae08fe02c420c39c122a3193fcda13d8b09851e1efff0"
+        }
+      ],
+      "group": "reviewer_companion_evidence",
+      "standing": "COMPANION_EVIDENCE_WITH_OWN_BOUNDARY_AND_SIDECAR",
+      "verification": "REVIEWER_BOUNDARY_AND_ADJACENT_SIDECAR"
+    }
+  ],
+  "authority_effect": "NONE",
+  "core_manifest": {
+    "manifest_root": "871644018e68d946af048fb414dd6acb4c75eacc4a894d87427fd13ac03a6bc8",
+    "path": "RELEASE-MANIFEST.json",
+    "sha256": "1fcd5fc1a902806064e15cd327f8844579585fac01985bab776e2a93c49710ba"
+  },
+  "excluded_host_generated_assets": [
+    {
+      "names": [
+        "Source code (zip)",
+        "Source code (tar.gz)"
+      ],
+      "reason": "GitHub generates these snapshots from the release tag; the tag commit is their custody boundary."
+    }
+  ],
+  "index_root": "42a7ac5dd3d1b7cb6d4e1e9d3b15afa133b7d52b42ebc3253e1fb8989e98e07e",
+  "release_tag": "v0.1.0",
+  "schema": "semcrys.publication-asset-index.v0.1",
+  "self_binding": {
+    "index": "PUBLICATION-ASSET-INDEX.json",
+    "rule": "INDEX_ROOT_PLUS_ADJACENT_SIDECAR",
+    "sidecar": "PUBLICATION-ASSET-INDEX.json.sha256"
+  },
+  "version": "0.1.0"
+}

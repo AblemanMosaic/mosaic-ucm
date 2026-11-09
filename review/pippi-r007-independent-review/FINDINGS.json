@@ -1,0 +1,74 @@
+{
+ "schema": "reviewer.rel7.findings.v1",
+ "subject": "UCM P/PPI r007 independent review handoff",
+ "handoff_sha256": "9f4c8bd0132beefb0ab0bd1337156ff673834b6dca2e6e423b579bcb8ad9cedf",
+ "handoff_manifest_root": "4deddd791c23ce7a2fa1f9e44cd9b2cbd9f4a757a87aef49742e981e239c3f6b",
+ "release_root": "12bf76d9b2c33187a6ea456f1e5536ed4dc8ea49548b1b3193d86ba9f748bb07",
+ "release_identity_root": "ff631aa2bded53341e58f61685ff58126e504ba69455a0b62e7c3cbb76c5636b",
+ "source_manifest_root": "fa2fbe88292b00fd5aa0644bcb15249e61446e3983dfa5475d4258e69fffbab7",
+ "runtime_sha256": "f22fa377018a527974ad7e58c720a15e3150c45673017fc2520799aa61475c5e",
+ "runtime_manifest_root": "3b44a9d61b1f9bdb3c0a76bfa6f8ead8382cde1028376a7f52f6b90357cade7a",
+ "qualification_root": "19499df55b1dd5c8b139b4111be70911b845aa00b7e8e74f9a65aea3b912944e",
+ "repair_ledger_root": "02cbb65e3fa132f0327dcd74b27dd920242ff68a5b603187482462024d2405f9",
+ "verdict": "HOLD_FOR_REPAIR",
+ "verdict_basis": "One MED (REL7-01): the DKN-addressed publication gate is declarative; build_publication_plan labels a plan DKN_SELF_CERTIFIED on a caller-asserted PASS_SELF_CERTIFIED flag with no certificate verification and accepts the status with no certificate roots, so work-order item 6 cannot be confirmed and ledger repair PIPPI-PUBLICATION-01 is not met as stated. Everything else passes: handoff and archive custody, partition, all META certification records, qualification receipt binding to the exact source and release (closes REL4-01), externally pinned installer (closes REL4-02), 288/290 replay on 3.12.3 and 3.13.16 with the two non-passes Windows-host-only, byte-identical rebuild on both interpreters, and the revision/version-transition rules.",
+ "review_class": "PASSIVE_AND_POSITIVE_PATH_NO_ADVERSARIAL_TESTING_NO_WINDOWS_EXECUTION",
+ "reviewer_independence": "No involvement in building r007 or its operator kit; the carried UMT1 executed return is this reviewer's and was verified byte-identical.",
+ "execution": "python3 -I -B in an empty environment on disposable copies; system CPython 3.12.3/3.13.16 for stdlib checks; previously authorized isolated venvs for subject execution; nothing installed; no network; installer, service, dashboard and operator kit read, not run; subject code executed only for run_public_release_qualification.py, build_release.py, verify_runtime_tree.py, read-only orientation and two documented-input exercises of public functions; no forged signatures, certificates or approvals.",
+ "standing": "INFORMATION_ONLY",
+ "authority_effect": "NONE",
+ "real_a5": false,
+ "g0": "CLOSED",
+ "carried_findings": {
+  "REL4-01": "CLOSED",
+  "REL4-02": "CLOSED",
+  "PPUB-01": "CLOSED_WITH_REL4-01",
+  "PPUB-02": "HOST_LIMITED_NOT_CHECKABLE",
+  "PPUB-03": "CLOSED_R004",
+  "ledger PIPPI-CERT-01": "CONSISTENT_WITH_EVIDENCE",
+  "ledger PIPPI-VERSION-01": "CONSISTENT_WITH_EVIDENCE",
+  "ledger PIPPI-PUBLICATION-01": "NOT_MET_AS_STATED_SEE_REL7-01",
+  "ledger PIPPI-WINDOWS-01": "BUILDER_EVIDENCE_ONLY"
+ },
+ "findings": [
+  {
+   "id": "REL7-01",
+   "severity": "MED",
+   "class": "HAPPY_PATH_CLAIM_NOT_IMPLEMENTED",
+   "title": "DKN-addressed publication plans accept a caller-asserted certificate status; the embedded self-certificate is never verified",
+   "evidence": [
+    "src/ucm/pippi_integrations.py build_publication_plan: refuses dkn_public_namespace only when self_certificate_status != 'PASS_SELF_CERTIFIED'; thr_body_root/self_certificate_root optional and unchecked; never reads the artifact or META records",
+    "src/ucm/pippi_cli.py review-publication-proposal --self-certificate-status {READY..., PASS_SELF_CERTIFIED} passed through by pippi_reviews.propose_publication",
+    "tier2/publication/publication-plan-check.json: DKN + PASS_SELF_CERTIFIED with no certificate roots -> ACCEPTED, publication_identity_status DKN_SELF_CERTIFIED; with arbitrary roots -> ACCEPTED; READY or no status -> refused",
+    "src/ucm/release_certification.py: PASS_SELF_CERTIFIED is only produced after Ed25519 verification; verify_embedded_metadata exists but is not called by the plan path",
+    "REPAIR-LEDGER.json PIPPI-PUBLICATION-01 states the refusal is on the embedded certificate"
+   ],
+   "effect": "A publication plan can be labelled DKN-self-certified for an artifact that has no certificate. No dispatch occurs in this release (provider_dispatch_authorized false, human_authorization_required true), but the plan is the record a publisher would consume and the ledger overstates the gate.",
+   "repair": "Derive self_certificate_status, self_certificate_root and thr_body_root from verify_embedded_metadata over the artifact named by artifact_sha256 (or the four META records supplied as inputs); remove the CLI flag; correct the ledger."
+  },
+  {
+   "id": "REL7-02",
+   "severity": "INFO",
+   "class": "OBSERVATION",
+   "title": "Observations",
+   "evidence": [
+    "Qualification receipt embeds python version, so its root is patch-version dependent; all other fields match the replay",
+    "Two of 290 qualification tests are Windows-only; the receipt's 0/0/0 is not reproducible on POSIX",
+    "IPC.key chmod 0o600 ineffective on Windows ACLs (unchanged)"
+   ]
+  }
+ ],
+ "unperformed_legs": [
+  "Tier 1 / operator kit (item 7)",
+  "Windows legs (item 8): installer, service, dashboard probe, uninstaller, mosaic_ui.win32",
+  "Content review of ecosystem return packages",
+  "Bound-certificate signature verification (subject unbound by design)"
+ ],
+ "non_claims": [
+  "NO_PUBLICATION_DEPLOYMENT_INSTALLATION_OR_RELEASE_AUTHORIZATION",
+  "NO_DKN_BINDING_OR_CERTIFICATION",
+  "NO_AUTHORITY_GRANT",
+  "NO_APPLICATION_EXECUTION",
+  "NO_NETWORK_IDENTITY_FEDERATION_A5_G0_OR_PRODUCTION_AUTHORITY"
+ ]
+}

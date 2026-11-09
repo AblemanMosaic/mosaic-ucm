@@ -1,0 +1,44 @@
+{
+  "schema": "mosaic.ucm.incremental-hotfix-contract.v0.1",
+  "amcas_elements": [
+    "ARTIFACT_CUSTODY",
+    "SEMANTIC_GRAPH",
+    "TEST_REPAIR_CONTROL",
+    "NATIVE_PROOF",
+    "EVIDENCE_VERIFICATION",
+    "LIFECYCLE_MIGRATION"
+  ],
+  "states": [
+    "PATCH_BOUND",
+    "IMPACT_COMPUTED",
+    "PARTIALLY_COMPILED",
+    "TEST_PLAN_BOUND",
+    "TESTED",
+    "INCREMENTALLY_VALIDATED",
+    "RESTORED",
+    "PROMOTED_FOR_QUALIFICATION"
+  ],
+  "cache_key_fields": [
+    "unit_root",
+    "dependency_roots",
+    "compiler_root",
+    "contract_root",
+    "policy_pack_roots",
+    "toolchain_root",
+    "environment_root",
+    "configuration_root"
+  ],
+  "rules": [
+    "ACTIVE_PLAN_DERIVES_CHANGED_PATHS_FROM_SEALED_CORRECTION",
+    "UNKNOWN_OR_CONTROL_PLANE_IMPACT_ESCALATES",
+    "REUSE_REQUIRES_EXACT_CACHE_KEY",
+    "EXECUTION_DENOMINATORS_ARE_EXACT",
+    "PROGRESS_IS_NONSEMANTIC",
+    "INCREMENTAL_PASS_IS_NEVER_RELEASE_QUALIFICATION",
+    "RELEASE_REQUIRES_ONE_CACHE_FREE_FULL_QUALIFICATION"
+  ],
+  "standing": "INFORMATION_ONLY",
+  "authority_effect": "NONE",
+  "real_a5": false,
+  "g0": "CLOSED"
+}

@@ -1,0 +1,403 @@
+{
+ "atlas_pipeline": {
+  "atlas": {
+   "ablation_status": "HISTORICAL_EVIDENCE_REFERENCED_NOT_REEXECUTED",
+   "co_projections": 5,
+   "every_rule_has_nonempty": true,
+   "identity_equivalence_any": false,
+   "library_rules": 14,
+   "root": "258c6c2023f07c9c985d9f3af8dd550a081c4814a78415b404b0431fe0d3ab25",
+   "rule_ids_eq_library": true,
+   "rules": 14
+  },
+  "atlas_surfaces_unknown": [],
+  "context": {
+   "CODING": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   },
+   "PACKAGING": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 10
+   },
+   "PORTABILITY_CLAIM": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   },
+   "RECOVERY": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 9
+   },
+   "RELEASE_PLANNING": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 10
+   },
+   "REMOTE_WORK": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   },
+   "REVIEW": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   }
+  },
+  "explain_all_rules": true,
+  "explain_all_transitions": {
+   "BIND_CONSTITUTION": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "DIAGNOSE_RESULT": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "IMPORT_EFFECT": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "IMPORT_PUBLICATION_RECEIPT": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "ORIENT_PROJECT": "APPLY_PURE_TRANSITION_CHECKS",
+   "PREFLIGHT_WORK": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "PREPARE_DISPATCH": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "PROPOSE_PUBLICATION": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "SEAL_REVISION": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "SELECT_WORK": "OBTAIN_CCP_CURRENT_USE_DECISION"
+  },
+  "pipeline": {
+   "all_reachable": true,
+   "any_auto_grant": false,
+   "atlas_root_bound": true,
+   "ccp_not_required": [
+    "ORIENT_PROJECT"
+   ],
+   "endpoints_known": true,
+   "root": "251398b0ba3e20d4cac3771be441c389f00f10b352aa23965ef386c331f341e6",
+   "rules_known": true,
+   "states": 11,
+   "terminal_have_no_out": [],
+   "transitions": 10,
+   "unique_from": true
+  },
+  "spec/PIPPI-CONSTITUTIONAL-STANDARDS-ATLAS.json": {
+   "coldboot_eq_live": [
+    true
+   ],
+   "coldboot_paths": [
+    "PIPPI/PIPPI-CONSTITUTIONAL-STANDARDS-ATLAS.json"
+   ],
+   "runtime_eq_live": true,
+   "runtime_json_eq_live": true
+  },
+  "spec/PIPPI-PIPELINE-MODEL.json": {
+   "coldboot_eq_live": [
+    true
+   ],
+   "coldboot_paths": [
+    "PIPPI/PIPPI-PIPELINE-MODEL.json"
+   ],
+   "runtime_eq_live": true,
+   "runtime_json_eq_live": true
+  }
+ },
+ "court_repair": {
+  "diff": "dir=out.parent removed from TemporaryDirectory",
+  "kit_member_count_declared": 29,
+  "kit_rows": 31,
+  "original_runner": "ba5f698ae1d594d1",
+  "repaired_runner": "b39e81c7df3a880a"
+ },
+ "custody": {
+  "identity_eq_rel": true,
+  "partition_root_ok": true,
+  "qual_binds": {
+   "ident": true,
+   "lin": true,
+   "rel": true,
+   "rev": true,
+   "rt": true,
+   "rtman": true,
+   "sdk": true,
+   "src": true,
+   "test_set": true,
+   "tests_unique": true
+  },
+  "qual_root_ok": true,
+  "release_root_ok": true,
+  "source_manifest_root_ok": true,
+  "transport_binds": {
+   "kit": true,
+   "qual": true,
+   "release": true,
+   "runtime": true,
+   "source": true
+  },
+  "transport_root_ok": true,
+  "transport_rows_ok": true,
+  "transport_set_closed": true
+ },
+ "frozen": {
+  "FROZEN-OPERATOR-REGISTRY.json": {
+   "all_bytes_ok": true,
+   "all_posix_order": true,
+   "all_roots_ok": true,
+   "count": 18,
+   "order_sensitive_dirs": [],
+   "registry_root": "a8553b52523f5b40b61257fd2a6417e24173f408059b08f0ac77bdaf35008373",
+   "registry_root_ok": true
+  },
+  "FROZEN-PROGRAM-REGISTRY.json": {
+   "all_bytes_ok": true,
+   "all_posix_order": true,
+   "all_roots_ok": true,
+   "count": 28,
+   "order_sensitive_dirs": [
+    "program/maturity-evolution",
+    "program/pippi-r010",
+    "program/pippi-r011"
+   ],
+   "registry_root": "0e58b5e33bc12d9dfbd992f2e94ee31cfc1b7011c1b19c5449900933dfc51b31",
+   "registry_root_ok": true
+  }
+ },
+ "generators": {
+  "build_collaboration_closure_r030_program": "CRASH KeyError('member_count')",
+  "build_pippi_adaptive_contracts": "PASS",
+  "build_transtemporal_r031_program": "FAIL R031_PROGRAM_DRIFT:SOURCE-DENOMINATOR.json",
+  "r027_r028_r029_program_builders": "REFUSED"
+ },
+ "identity": {
+  "attached_receipt_eq_transport": true,
+  "attached_receipt_sha256": "4369605b1437ff4453e279c4588f2fc72f9185cfd1d80b144c6249dc184f4eec",
+  "cold_boot_sha256": "2c9f3d49a748849a054a1d47ae11f7f28b7f7509eea6edd7d6e1ef0068dd9b31",
+  "operator_kit_sha256": "bedfa2b4fdf8192fad1a83e410464e6c2a54f8b0c7c612fa3eb541741b0f83a5",
+  "qualification_root": "bdb2b4587f2fe5ac78f88ac0a572cbdab83a4a9b1085c8ef79c5280e55d22d9e",
+  "release_identity_root": "ea3511bb57bb102f365571eec369d9f429de06037e260a915eaba001d4202db4",
+  "release_root": "8e6dbf64573c060a82bc2d9105b308901175b24376991a21598715b08d2a8cbe",
+  "revision": "r031",
+  "runtime_sha256": "7ed74bbb27487d4df83dd4ca83bdf8acceeade319e0cf0355d6b6381c72058a5",
+  "source_root": "603b6e4d13be2d24e304bae4d20de22fa6843060a4521bcd74f7d17b6d5b089c",
+  "transport_sha256": "33e1cac29dfa6eebc15c4682a590681d2620e992edca338240c093069af619e6",
+  "transtemporal_sha256": "314f672a19e23e12ba79ac97f39ba05465c2e016137edff9ba6d836a99101118"
+ },
+ "interpreters": [
+  "3.12.3",
+  "3.13.16"
+ ],
+ "kit": {
+  "dups": false,
+  "eq_transport": {
+   "PIPPI-v0.1-adaptive-cold-boot.zip": true,
+   "PORTABILITY-GATE.json": true,
+   "R031-NATIVE-STUDY.json": true,
+   "UCM-v0.1-QUALIFICATION.json": true,
+   "UCM-v0.1-runtime.zip": true,
+   "WINDOWS-NATIVE-WITNESS.json": true,
+   "WSL-NATIVE-WITNESS.json": true
+  },
+  "labels": {
+   "authority_effect": "NONE",
+   "builder_authored": true,
+   "cold_boot_sha256": "2c9f3d49a748849a054a1d47ae11f7f28b7f7509eea6edd7d6e1ef0068dd9b31",
+   "evidence_glob": "UCM-r031-TRANSTEMPORAL-NATIVE-TIER1-EVIDENCE-*.zip",
+   "g0": "CLOSED",
+   "member_count": 29,
+   "operator_executed": false,
+   "qualification_sha256": "4369605b1437ff4453e279c4588f2fc72f9185cfd1d80b144c6249dc184f4eec",
+   "real_a5": false,
+   "revision": "r031",
+   "runner_path": "RUN-TIER1.py",
+   "runtime_sha256": "7ed74bbb27487d4df83dd4ca83bdf8acceeade319e0cf0355d6b6381c72058a5",
+   "schema": "mosaic.ucm.pippi-operator-review-kit.v0.1",
+   "standing": "INFORMATION_ONLY",
+   "subject_id": "UCM_R031_TRANSTEMPORAL_NATIVE",
+   "tier1_executed": false
+  },
+  "manifest_root_keys": [
+   "operator_kit_root"
+  ],
+  "manifests": [
+   "KIT-MANIFEST.json"
+  ],
+  "members": 32,
+  "methods": [
+   8
+  ],
+  "root_ok_operator_kit_root": true,
+  "rows_ok": true,
+  "set_closed": true
+ },
+ "native": {
+  "checked": 1270,
+  "clang": "warning-free",
+  "gcc": "13.3.0 warning-free -Wall -Wextra -Wpedantic",
+  "manifest_eq_independent": true,
+  "status": "PASS"
+ },
+ "parity": {
+  "capability_root": "02d2ad51f5a78c7d64b220e369778ef8955f820b197c39a051c91678490163ab",
+  "registry": {
+   "differing": [],
+   "each_equals_live_entry": true,
+   "missing_from_live": [],
+   "registry_surfaces": 80
+  },
+  "routes": 36
+ },
+ "portability_source_manifest": {
+  "rebuilt_eq_shipped": true,
+  "root": "603b6e4d13be2d24e304bae4d20de22fa6843060a4521bcd74f7d17b6d5b089c"
+ },
+ "predecessor_labelled_unverified": {
+  "predecessor_engineering_revision": "r030",
+  "predecessor_qualification_root": "25436291af27ecfadfc4c8babb2b8ba4adc348851a87d3751e4f8f0c8e8c259e",
+  "predecessor_release_identity_root": "360194d2949c9a84a9834a6056f5c94191f3fdd1f11040aa339b4988da845cec",
+  "predecessor_source_root": "7ada98546cbd1330eeaca3f01125a3e428d047a427fc5cd34ba395acf52b5e07"
+ },
+ "r031_denominator_drift": {
+  "tests/test_transtemporal_archive.py": [
+   "81420b7e2c74",
+   7167,
+   "355c0ec52eb9",
+   7496
+  ],
+  "tools/build_transtemporal_r031_operator_kit.py": [
+   "60b49a7251d6",
+   5880,
+   "2cba42043f26",
+   5881
+  ]
+ },
+ "r031_selection_ids_in_receipt": false,
+ "rebuild_byte_identical": {
+  "cold_boot": true,
+  "interpreters": [
+   "3.12",
+   "3.13"
+  ],
+  "original_kit_from_source_0e98de83": true,
+  "release_4_archives_and_record": true
+ },
+ "replay": {
+  "3.12": {
+   "id_set_eq_receipt": true,
+   "non_pass": [
+    "test_installed_package.InstalledPackageTests.test_wheel_contains_runtime_resource_and_runs_from_unrelated_directory",
+    "test_pippi_release_packaging.PippiReleasePackagingTests.test_native_ui_imports_from_the_python_runtime_closure"
+   ],
+   "pass": 453,
+   "tests": 455
+  },
+  "3.13": {
+   "id_set_eq_receipt": true,
+   "non_pass": [
+    "test_installed_package.InstalledPackageTests.test_wheel_contains_runtime_resource_and_runs_from_unrelated_directory",
+    "test_pippi_release_packaging.PippiReleasePackagingTests.test_native_ui_imports_from_the_python_runtime_closure"
+   ],
+   "pass": 453,
+   "tests": 455
+  }
+ },
+ "schema": "reviewer.r031.recompute.v1",
+ "transtemporal": {
+  "all_objects_referenced": true,
+  "diff_counts": {
+   "added": 25,
+   "changed": 50,
+   "removed": 0
+  },
+  "diff_eq": {
+   "added": true,
+   "changed": true,
+   "removed": true
+  },
+  "head": "r031\n",
+  "manifest_member_count_ok": true,
+  "manifest_root_ok": true,
+  "manifest_rows_ok": true,
+  "manifest_set_closed": true,
+  "members": 1334,
+  "methods": [
+   8
+  ],
+  "new_ids_fresh_and_above_parent": true,
+  "objects": 1320,
+  "objects_self_addressed": true,
+  "parent_link": true,
+  "r031_reconstructs_runtime_exactly": true,
+  "retention": {
+   "deletions": [],
+   "r030_members_eq": true,
+   "r031_input_b3_eq": true,
+   "r031_input_sha_eq": true,
+   "r031_members_eq": true,
+   "root_ok": true,
+   "safe_deletion": false
+  },
+  "revisions": {
+   "r030": {
+    "dkn_root_ok": true,
+    "dkn_unbound": true,
+    "ids_unique": true,
+    "logical_bytes_ok": true,
+    "manifest_root_ok": true,
+    "no_unsafe_paths": true,
+    "paths_sorted": true,
+    "paths_unique": true,
+    "receipt_binds": true,
+    "receipt_root_ok": true,
+    "rows_verify": true,
+    "thr_receipt": true,
+    "thr_root_ok": true,
+    "thr_state": true
+   },
+   "r031": {
+    "dkn_root_ok": true,
+    "dkn_unbound": true,
+    "ids_unique": true,
+    "logical_bytes_ok": true,
+    "manifest_root_ok": true,
+    "no_unsafe_paths": true,
+    "paths_sorted": true,
+    "paths_unique": true,
+    "receipt_binds": true,
+    "receipt_root_ok": true,
+    "rows_verify": true,
+    "thr_receipt": true,
+    "thr_root_ok": true,
+    "thr_state": true
+   }
+  },
+  "semcrys": {
+   "effects": false,
+   "manifest_eq_r031": true,
+   "root_ok": true,
+   "status": "HELD_OPTIONAL_PACK_UNBOUND"
+  },
+  "stable_ids_for_shared_paths": true,
+  "storage": {
+   "dedup": 8350569,
+   "logical": 18972616,
+   "report_eq": true,
+   "root_ok": true,
+   "unique": 10622047
+  }
+ },
+ "work_selections": {
+  "count": 131,
+  "not_ok": [
+   "program/constitutional-atlas-r028/R28-07-WORK-SELECTION.json",
+   "program/public-vocabulary-r012/WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-01-WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-02-WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-03-WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-04-WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-05-WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-06-WORK-SELECTION.json"
+  ]
+ }
+}

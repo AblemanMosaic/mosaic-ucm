@@ -1,0 +1,41 @@
+{
+  "authority_effect": "NONE",
+  "cases": [
+    {
+      "max_construct_ms": 150,
+      "max_event_ms": 25,
+      "max_peak_bytes": 4194304,
+      "max_project_ms": 150,
+      "max_snapshot_ms": 25,
+      "node_count": 25
+    },
+    {
+      "max_construct_ms": 250,
+      "max_event_ms": 75,
+      "max_peak_bytes": 16777216,
+      "max_project_ms": 500,
+      "max_snapshot_ms": 75,
+      "node_count": 250
+    },
+    {
+      "max_construct_ms": 750,
+      "max_event_ms": 250,
+      "max_peak_bytes": 50331648,
+      "max_project_ms": 1500,
+      "max_snapshot_ms": 250,
+      "node_count": 1000
+    },
+    {
+      "max_construct_ms": 3500,
+      "max_event_ms": 1000,
+      "max_peak_bytes": 201326592,
+      "max_project_ms": 12000,
+      "max_snapshot_ms": 1000,
+      "node_count": 10000
+    }
+  ],
+  "policy_id": "MOSAIC-UI-PERFORMANCE-ENVELOPES-0.10",
+  "samples": 1,
+  "schema": "mosaic.ui.performance-policy.v0.1",
+  "standing": "LOCAL_CANDIDATE"
+}

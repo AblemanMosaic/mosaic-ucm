@@ -1,0 +1,547 @@
+{
+ "atlas_pipeline": {
+  "atlas": {
+   "ablation_status": "HISTORICAL_EVIDENCE_REFERENCED_NOT_REEXECUTED",
+   "co_projections": 5,
+   "every_rule_has_nonempty": true,
+   "identity_equivalence_any": false,
+   "library_rules": 14,
+   "root": "63abb0187e7be98f43e095c9da74d35826650f2df1da30f6fc9d0c18eaecb77d",
+   "rule_ids_eq_library": true,
+   "rules": 14
+  },
+  "atlas_surfaces_unknown": [],
+  "context": {
+   "CODING": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   },
+   "PACKAGING": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 10
+   },
+   "PORTABILITY_CLAIM": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   },
+   "RECOVERY": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 9
+   },
+   "RELEASE_PLANNING": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 10
+   },
+   "REMOTE_WORK": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   },
+   "REVIEW": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   }
+  },
+  "explain_all_rules": true,
+  "explain_all_transitions": {
+   "BIND_CONSTITUTION": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "DIAGNOSE_RESULT": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "IMPORT_EFFECT": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "IMPORT_PUBLICATION_RECEIPT": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "ORIENT_PROJECT": "APPLY_PURE_TRANSITION_CHECKS",
+   "PREFLIGHT_WORK": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "PREPARE_DISPATCH": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "PROPOSE_PUBLICATION": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "SEAL_REVISION": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "SELECT_WORK": "OBTAIN_CCP_CURRENT_USE_DECISION"
+  },
+  "pipeline": {
+   "all_reachable": true,
+   "any_auto_grant": false,
+   "atlas_root_bound": true,
+   "ccp_not_required": [
+    "ORIENT_PROJECT"
+   ],
+   "endpoints_known": true,
+   "root": "30dd1f8cdd0d7cb4b76d0481a9c1134ac3baeee4e3887a58a52d8763acd10c5d",
+   "rules_known": true,
+   "states": 11,
+   "terminal_have_no_out": [],
+   "transitions": 10,
+   "unique_from": true
+  },
+  "spec/PIPPI-CONSTITUTIONAL-STANDARDS-ATLAS.json": {
+   "coldboot_eq_live": [
+    true
+   ],
+   "coldboot_paths": [
+    "PIPPI/PIPPI-CONSTITUTIONAL-STANDARDS-ATLAS.json"
+   ],
+   "runtime_eq_live": true,
+   "runtime_json_eq_live": true
+  },
+  "spec/PIPPI-PIPELINE-MODEL.json": {
+   "coldboot_eq_live": [
+    true
+   ],
+   "coldboot_paths": [
+    "PIPPI/PIPPI-PIPELINE-MODEL.json"
+   ],
+   "runtime_eq_live": true,
+   "runtime_json_eq_live": true
+  }
+ },
+ "custody": {
+  "identity_eq_rel": true,
+  "partition_root_ok": true,
+  "qual_binds": {
+   "ident": true,
+   "lin": true,
+   "rel": true,
+   "rev": true,
+   "rt": true,
+   "rtman": true,
+   "sdk": true,
+   "src": true,
+   "test_set": true,
+   "tests_unique": true
+  },
+  "qual_root_ok": true,
+  "release_root_ok": true,
+  "source_manifest_root_ok": true,
+  "transport_binds": {
+   "qual": true,
+   "release": true,
+   "revision": true,
+   "runtime": true
+  },
+  "transport_root_ok": true,
+  "transport_rows_ok": true,
+  "transport_set_closed": true
+ },
+ "fallback_test": {
+  "clean": "FAIL ModuleNotFoundError ucm",
+  "interpreters": [
+   "3.12",
+   "3.13"
+  ],
+  "with_PYTHONPATH_src": "PASS"
+ },
+ "frozen": {
+  "FROZEN-OPERATOR-REGISTRY.json": {
+   "all_bytes_ok": true,
+   "all_posix_order": true,
+   "all_roots_ok": true,
+   "count": 18,
+   "order_sensitive_dirs": [],
+   "registry_root": "a8553b52523f5b40b61257fd2a6417e24173f408059b08f0ac77bdaf35008373",
+   "registry_root_ok": true
+  },
+  "FROZEN-PROGRAM-REGISTRY.json": {
+   "all_bytes_ok": true,
+   "all_posix_order": true,
+   "all_roots_ok": true,
+   "count": 28,
+   "order_sensitive_dirs": [
+    "program/maturity-evolution",
+    "program/pippi-r010",
+    "program/pippi-r011"
+   ],
+   "registry_root": "0e58b5e33bc12d9dfbd992f2e94ee31cfc1b7011c1b19c5449900933dfc51b31",
+   "registry_root_ok": true
+  }
+ },
+ "generators": {
+  "build_native_completion_r032_program": "PASS 27",
+  "build_native_core_r032_assets": "PASS 12/5",
+  "build_pippi_adaptive_contracts": "PASS 14"
+ },
+ "identity": {
+  "cold_boot_sha256": "8e4ea819fc64e31eab63ca0fac702da042c026fce6e65e667a1104dfd8812796",
+  "operator_kit_sha256": "6a9253ca1a658b3e5eb05cf3b92075ea339ed4d645ca738367ba1e9cfcb566f3",
+  "qualification_root": "5b5a64e2f23e2f65ef6e053487e66066f46022c7fcca877a8a9f5c4e66827e36",
+  "release_identity_root": "1ee0ffc5ecf43f44513c13c1bca1b95a2cc492110785732a09469fe5e89b107e",
+  "release_root": "6ee309d0a9c144877fc9dfc058af7e78efba8c31dc3530d47baa56c4c30652c1",
+  "revision": "r032",
+  "runtime_sha256": "19d41ff3a4d645f2ac192a91d68618c89cac97e0cbeb8ed30a56a7c57b964757",
+  "source_root": "d52891c508a55ad7cff7ab2a201c9749407c5991bc04ac489d6a9ae12c9bc94d",
+  "transport_root": "0fd02b34fcb33da37fcd3da09fed287f4f7d51524c97d9dffd9efdf1cb8f74c2",
+  "transport_sha256": "24f5cd92beaba58e1772dbcb3b4d94a972ff41c9d95c0870193680869e54ee61"
+ },
+ "interpreters": [
+  "3.12.3",
+  "3.13.16"
+ ],
+ "kit": {
+  "dups": false,
+  "eq_transport": {
+   "PIPPI-v0.1-adaptive-cold-boot.zip": true,
+   "UCM-v0.1-QUALIFICATION.json": true,
+   "UCM-v0.1-runtime.zip": true,
+   "WINDOWS-NATIVE-CORE-WITNESS.json": true,
+   "WSL-NATIVE-CORE-WITNESS.json": true
+  },
+  "labels": {
+   "authority_effect": "NONE",
+   "builder_authored": true,
+   "cold_boot_sha256": "8e4ea819fc64e31eab63ca0fac702da042c026fce6e65e667a1104dfd8812796",
+   "evidence_glob": "UCM-r032-NATIVE-COMPLETION-TIER1-*.zip",
+   "g0": "CLOSED",
+   "member_count": 36,
+   "operator_executed": false,
+   "qualification_sha256": "4df92aea37232afd7557e70be6adeaf021866692a480dc5dd088bcfe7be4acb5",
+   "real_a5": false,
+   "revision": "r032",
+   "runner_path": "RUN-TIER1.py",
+   "runtime_sha256": "19d41ff3a4d645f2ac192a91d68618c89cac97e0cbeb8ed30a56a7c57b964757",
+   "schema": "mosaic.ucm.pippi-operator-review-kit.v0.1",
+   "standing": "INFORMATION_ONLY",
+   "subject_id": "UCM_R032_NATIVE_COMPLETION",
+   "tier1_executed": false
+  },
+  "manifest_root_keys": [
+   "operator_kit_root"
+  ],
+  "manifests": [
+   "KIT-MANIFEST.json"
+  ],
+  "members": 37,
+  "methods": [
+   8
+  ],
+  "root_ok_operator_kit_root": true,
+  "rows_ok": true,
+  "set_closed": true
+ },
+ "native": {
+  "compilers": [
+   "gcc 13.3.0",
+   "clang"
+  ],
+  "corpus": [
+   "ucm-arithmetic-truncating_division gcc {\"program_sha256\":\"b5b6565d85ed35feef90e9f9ccbfe59b8e8622e7c6e540fd27f60a68583d606f\",\"result_i64\":-2,\"status\":\"PASS\",\"steps\":4}",
+   "ucm-arithmetic-truncating_division clang {\"program_sha256\":\"b5b6565d85ed35feef90e9f9ccbfe59b8e8622e7c6e540fd27f60a68583d606f\",\"result_i64\":-2,\"status\":\"PASS\",\"steps\":4}",
+   "ucm-branch-typed_disposition gcc {\"program_sha256\":\"b4fe0fabd1b0d4f725310a9acc9d0045fe9d5d00290b473369f8e03e17eb8dd9\",\"result_i64\":3,\"status\":\"PASS\",\"steps\":4}",
+   "ucm-branch-typed_disposition clang {\"program_sha256\":\"b4fe0fabd1b0d4f725310a9acc9d0045fe9d5d00290b473369f8e03e17eb8dd9\",\"result_i64\":3,\"status\":\"PASS\",\"steps\":4}",
+   "ucm-budget-within_limit gcc {\"program_sha256\":\"403d1b514ce6796af0f73c772b55e7426b6e3211f50e52ad2980c39225cf6e31\",\"result_i64\":1,\"status\":\"PASS\",\"steps\":6}",
+   "ucm-budget-within_limit clang {\"program_sha256\":\"403d1b514ce6796af0f73c772b55e7426b6e3211f50e52ad2980c39225cf6e31\",\"result_i64\":1,\"status\":\"PASS\",\"steps\":6}",
+   "ucm-gate-held_missing_witness gcc {\"program_sha256\":\"2433445728392041502ddba324075042d819d117133b6f29893a26874025e1e1\",\"result_i64\":0,\"status\":\"PASS\",\"steps\":6}",
+   "ucm-gate-held_missing_witness clang {\"program_sha256\":\"2433445728392041502ddba324075042d819d117133b6f29893a26874025e1e1\",\"result_i64\":0,\"status\":\"PASS\",\"steps\":6}",
+   "ucm-gate-three_receipts gcc {\"program_sha256\":\"3fb02373b6a72e4dd5962ee0d591bc14eac038bc407bb586c9c87b047175f773\",\"result_i64\":1,\"status\":\"PASS\",\"steps\":6}",
+   "ucm-gate-three_receipts clang {\"program_sha256\":\"3fb02373b6a72e4dd5962ee0d591bc14eac038bc407bb586c9c87b047175f773\",\"result_i64\":1,\"status\":\"PASS\",\"steps\":6}"
+  ],
+  "flags": "-std=c17 -O2 -Wall -Wextra -Wpedantic -Werror",
+  "native_source_sha256": "b0880b43b9afc5b25a1bccd4a5245eda6fcca63e57a9c679a01831ba2f5c3bac",
+  "register_boundary": [
+   {
+    "c_exit": 0,
+    "c_refusal": null,
+    "correspond": true,
+    "python": "PASS",
+    "registers": 1,
+    "registers_line_bytes": 33,
+    "values": "min_i64"
+   },
+   {
+    "c_exit": 0,
+    "c_refusal": null,
+    "correspond": true,
+    "python": "PASS",
+    "registers": 22,
+    "registers_line_bytes": 475,
+    "values": "min_i64"
+   },
+   {
+    "c_exit": 0,
+    "c_refusal": null,
+    "correspond": true,
+    "python": "PASS",
+    "registers": 23,
+    "registers_line_bytes": 496,
+    "values": "min_i64"
+   },
+   {
+    "c_exit": 3,
+    "c_refusal": "NATIVE_PROGRAM_HEADER_INVALID",
+    "correspond": false,
+    "python": "PASS",
+    "registers": 24,
+    "registers_line_bytes": 517,
+    "values": "min_i64"
+   },
+   {
+    "c_exit": 3,
+    "c_refusal": "NATIVE_REGISTER_COUNT_MISMATCH",
+    "correspond": false,
+    "python": "PASS",
+    "registers": 100,
+    "registers_line_bytes": 2114,
+    "values": "min_i64"
+   },
+   {
+    "c_exit": 3,
+    "c_refusal": "NATIVE_REGISTER_COUNT_MISMATCH",
+    "correspond": false,
+    "python": "PASS",
+    "registers": 255,
+    "registers_line_bytes": 5369,
+    "values": "min_i64"
+   },
+   {
+    "c_exit": 3,
+    "c_refusal": "NATIVE_REGISTER_COUNT_MISMATCH",
+    "correspond": false,
+    "python": "PASS",
+    "registers": 256,
+    "registers_line_bytes": 5390,
+    "values": "min_i64"
+   },
+   {
+    "c_exit": 0,
+    "c_refusal": null,
+    "correspond": true,
+    "python": "PASS",
+    "registers": 1,
+    "registers_line_bytes": 14,
+    "values": "zero"
+   },
+   {
+    "c_exit": 0,
+    "c_refusal": null,
+    "correspond": true,
+    "python": "PASS",
+    "registers": 22,
+    "registers_line_bytes": 57,
+    "values": "zero"
+   },
+   {
+    "c_exit": 0,
+    "c_refusal": null,
+    "correspond": true,
+    "python": "PASS",
+    "registers": 23,
+    "registers_line_bytes": 59,
+    "values": "zero"
+   },
+   {
+    "c_exit": 0,
+    "c_refusal": null,
+    "correspond": true,
+    "python": "PASS",
+    "registers": 24,
+    "registers_line_bytes": 61,
+    "values": "zero"
+   },
+   {
+    "c_exit": 0,
+    "c_refusal": null,
+    "correspond": true,
+    "python": "PASS",
+    "registers": 100,
+    "registers_line_bytes": 214,
+    "values": "zero"
+   },
+   {
+    "c_exit": 3,
+    "c_refusal": "NATIVE_REGISTER_COUNT_MISMATCH",
+    "correspond": false,
+    "python": "PASS",
+    "registers": 255,
+    "registers_line_bytes": 524,
+    "values": "zero"
+   },
+   {
+    "c_exit": 3,
+    "c_refusal": "NATIVE_REGISTER_COUNT_MISMATCH",
+    "correspond": false,
+    "python": "PASS",
+    "registers": 256,
+    "registers_line_bytes": 526,
+    "values": "zero"
+   }
+  ]
+ },
+ "parity": {
+  "capability_root": "145e0c672b81a69c853b59df0ec8c8ca4868d0dd481bd110b89bc65fc17d7c61",
+  "registry": {
+   "differing": [],
+   "each_equals_live_entry": true,
+   "missing_from_live": [],
+   "registry_surfaces": 80
+  },
+  "routes": 36
+ },
+ "portability_source_manifest": {
+  "rebuilt_eq_shipped": true
+ },
+ "predecessor": {
+  "predecessor_engineering_revision": "r031",
+  "predecessor_qualification_root": "bdb2b4587f2fe5ac78f88ac0a572cbdab83a4a9b1085c8ef79c5280e55d22d9e",
+  "predecessor_release_identity_root": "ea3511bb57bb102f365571eec369d9f429de06037e260a915eaba001d4202db4",
+  "predecessor_source_root": "603b6e4d13be2d24e304bae4d20de22fa6843060a4521bcd74f7d17b6d5b089c"
+ },
+ "r032_selections": [
+  {
+   "case_valid": true,
+   "check": "test_native_core_r032.NativeCoreR032Tests.test_r032_program_is_current",
+   "check_in_receipt": true,
+   "denominator_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "effect": false,
+   "file": "program/native-completion-r032/R32-01-WORK-SELECTION.json",
+   "infra": false,
+   "ok": true,
+   "rebuild_eq": true,
+   "subject_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "work_class": "DIRECT_ACCEPTANCE_CLOSURE"
+  },
+  {
+   "case_valid": true,
+   "check": "test_native_core_r032.NativeCoreR032Tests.test_integrated_r031_repair_is_exact",
+   "check_in_receipt": true,
+   "denominator_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "effect": false,
+   "file": "program/native-completion-r032/R32-02-WORK-SELECTION.json",
+   "infra": false,
+   "ok": true,
+   "rebuild_eq": true,
+   "subject_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "work_class": "DIRECT_ACCEPTANCE_CLOSURE"
+  },
+  {
+   "case_valid": true,
+   "check": "test_transtemporal_archive.TranstemporalArchiveTests.test_native_projection_and_cli_help_are_stable",
+   "check_in_receipt": true,
+   "denominator_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "effect": false,
+   "file": "program/native-completion-r032/R32-03-WORK-SELECTION.json",
+   "infra": false,
+   "ok": true,
+   "rebuild_eq": true,
+   "subject_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "work_class": "DIRECT_ACCEPTANCE_CLOSURE"
+  },
+  {
+   "case_valid": true,
+   "check": "test_native_core_r032.NativeCoreR032Tests.test_native_c17_runtime_corresponds_exactly",
+   "check_in_receipt": true,
+   "denominator_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "effect": false,
+   "file": "program/native-completion-r032/R32-04-WORK-SELECTION.json",
+   "infra": false,
+   "ok": true,
+   "rebuild_eq": true,
+   "subject_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "work_class": "DIRECT_ACCEPTANCE_CLOSURE"
+  },
+  {
+   "case_valid": true,
+   "check": "test_native_core_r032.NativeCoreR032Tests.test_cli_and_abi_expose_portable_fallback",
+   "check_in_receipt": true,
+   "denominator_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "effect": false,
+   "file": "program/native-completion-r032/R32-05-WORK-SELECTION.json",
+   "infra": false,
+   "ok": true,
+   "rebuild_eq": true,
+   "subject_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "work_class": "DIRECT_ACCEPTANCE_CLOSURE"
+  },
+  {
+   "case_valid": true,
+   "check": "test_native_core_r032.NativeCoreR032Tests.test_cross_platform_native_witnesses_match",
+   "check_in_receipt": true,
+   "denominator_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "effect": false,
+   "file": "program/native-completion-r032/R32-06-WORK-SELECTION.json",
+   "infra": false,
+   "ok": true,
+   "rebuild_eq": true,
+   "subject_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "work_class": "DIRECT_ACCEPTANCE_CLOSURE"
+  },
+  {
+   "case_valid": true,
+   "check": "test_native_core_r032.NativeCoreR032Tests.test_pippi_c_preflight_covers_native_completion_denominator",
+   "check_in_receipt": true,
+   "denominator_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "effect": false,
+   "file": "program/native-completion-r032/R32-07-WORK-SELECTION.json",
+   "infra": false,
+   "ok": true,
+   "rebuild_eq": true,
+   "subject_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "work_class": "DIRECT_ACCEPTANCE_CLOSURE"
+  },
+  {
+   "case_valid": true,
+   "check": "test_native_core_r032.NativeCoreR032Tests.test_r032_operator_runner_is_reserved_for_user",
+   "check_in_receipt": true,
+   "denominator_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "effect": false,
+   "file": "program/native-completion-r032/R32-08-WORK-SELECTION.json",
+   "infra": false,
+   "ok": true,
+   "rebuild_eq": true,
+   "subject_root": "e94427fed1740f56e4e5675024ff5d040d822c11cee87e50ab0c8ce36dbb18bf",
+   "work_class": "DIRECT_ACCEPTANCE_CLOSURE"
+  }
+ ],
+ "rebuild_byte_identical": {
+  "cold_boot": true,
+  "interpreters": [
+   "3.12",
+   "3.13"
+  ],
+  "operator_kit_and_launchers": true,
+  "release_4_archives_and_record": true
+ },
+ "replay": {
+  "3.12": {
+   "id_set_eq_receipt": true,
+   "non_pass": [
+    "test_installed_package.InstalledPackageTests.test_wheel_contains_runtime_resource_and_runs_from_unrelated_directory",
+    "test_native_core_r032.NativeCoreR032Tests.test_cli_and_abi_expose_portable_fallback",
+    "test_pippi_release_packaging.PippiReleasePackagingTests.test_native_ui_imports_from_the_python_runtime_closure"
+   ],
+   "pass": 463,
+   "tests": 466
+  },
+  "3.13": {
+   "id_set_eq_receipt": true,
+   "non_pass": [
+    "test_installed_package.InstalledPackageTests.test_wheel_contains_runtime_resource_and_runs_from_unrelated_directory",
+    "test_native_core_r032.NativeCoreR032Tests.test_cli_and_abi_expose_portable_fallback",
+    "test_pippi_release_packaging.PippiReleasePackagingTests.test_native_ui_imports_from_the_python_runtime_closure"
+   ],
+   "pass": 463,
+   "tests": 466
+  }
+ },
+ "schema": "reviewer.r032.recompute.v1",
+ "work_selections": {
+  "count": 139,
+  "not_ok": [
+   "program/constitutional-atlas-r028/R28-07-WORK-SELECTION.json",
+   "program/public-vocabulary-r012/WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-01-WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-02-WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-03-WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-04-WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-05-WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-06-WORK-SELECTION.json"
+  ]
+ }
+}

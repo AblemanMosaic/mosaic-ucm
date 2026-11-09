@@ -1,0 +1,8 @@
+
+.g-context{border-bottom:1px solid var(--border);background:var(--surface)}
+.g-summary{display:flex;align-items:center;gap:12px;padding:8px var(--pad);cursor:pointer;list-style:none;font-size:var(--fs-sm)}
+.g-summary::-webkit-details-marker{display:none}
+.g-summary:before{content:"";width:6px;height:6px;border-right:1.5px solid var(--quiet);border-bottom:1.5px solid var(--quiet);transform:rotate(-45deg);transition:transform .12s}
+details[open]>.g-summary:before{transform:rotate(45deg)}
+.g-summary-label{font-weight:600}
+.g-summary-hint{color:var(--quiet);font-size:var(--fs-xs);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}

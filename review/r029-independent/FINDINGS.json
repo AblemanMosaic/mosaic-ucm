@@ -1,0 +1,79 @@
+{
+ "schema": "reviewer.r029.findings.v1",
+ "subject": "UCM v0.1 r029 collaboration-integrity full review transport",
+ "identity_observed": {
+  "transport_sha256": "8d96ae510cd207411038295f701caf35a8c8900e264c9383b9bf4706c7024566",
+  "revision": "r029",
+  "release_root": "310de97a200e52a722fb93102195a6527f4ada0d0845ef69873415906ad59053",
+  "qualification_root": "56d0b379ae0b7973ec0ff63d5913c5a3a60bf57e19f2bd73862a7351753946dc",
+  "runtime_sha256": "0e45fe24337952ca04b70b2bb24ffcde3aacec09606cb01488c8a425df373ecb",
+  "source_root": "351eb8fdc7a2eed1d2130ade239da9b7e39c240f7d08ecc71c6a7f10790b91ab",
+  "cold_boot_sha256": "b65eb2e2390efd0f02ed31648d09f9de6a1ef66d73ab3e7ab9e2bcf47aa1bad2",
+  "operator_kit_sha256": "a05f665c26929b045c65353e4177efde139e8e070ec3e6834e5902f103065b1e",
+  "expected_values_supplied": false,
+  "predecessor": "r028: qualification f14106bf..., release identity 7dd9149c..., source cff86ff9... all equal my r028 observations in full"
+ },
+ "standing": "INFORMATION_ONLY",
+ "authority_effect": "NONE",
+ "real_a5": false,
+ "g0": "CLOSED",
+ "verdict": "INCOMPLETE_REVIEW",
+ "verdict_basis": "No product finding at MED or above. R28-01, R28-02 and R28-03 repaired in source as recommended. Custody exact; replay, release, cold-boot and operator-kit rebuilds byte-identical on 3.12.3 and 3.13.16. The user-run Tier 1 HOLD (cases 010 and 017) traces to a court defect (R29-01), not a product failure; it is user-run and builder-authored, so it is not independent Tier 1 in either direction. Withheld because the independent Tier 1 leg and Windows/WSL legs remain, and the court must be repaired before any run of it can pass.",
+ "findings": [
+  {
+   "id": "R29-01",
+   "severity": "LOW",
+   "class": "court-defect",
+   "status": "OPEN",
+   "title": "Tier 1 case CCP-RESEALED-DECISION-LAUNDERING never reseals its forgery, so the product refuses it under a different code and the case fails",
+   "evidence": "RUN-TIER1.py sets forged['decision']['decision']='REFUSE' only, then requires the refusal text to contain CCP_ADMISSIBILITY_DECISION_INVALID. ccp_admissibility._validate_decision_shape runs first: the control decision carries gateway_disposition SEPARATE_GATEWAY_AUTHORIZATION_REQUIRED, which is only valid for ADMIT, so it refuses with CCP_ADMISSIBILITY_GATEWAY_DISPOSITION_INVALID (line 854) before the decision-equality check (line 892) is reached; the decision_root would also mismatch. refuses() requires the exact code and returns False, giving PREDICATE_FALSE. The builder's own unit test test_ccp_binding_holds_nonadmitted_transition does the full reseal (gateway disposition and decision_root) and expects DECISION_INVALID; it passed in replay.",
+   "consequence": "Case 010 failed on a refused forgery; case 017 (authority ceiling) failed only as the aggregate. Your HOLD_FOR_REPAIR carries no evidence of a CCP bypass. Same class as R27-01.",
+   "repair": "Make the court mirror the unit test (set gateway_disposition to NOT_ELIGIBLE_FOR_EFFECT and recompute decision_root), or accept any CCP_ADMISSIBILITY_* refusal; keep an unresealed variant as a separate case expecting the shape refusal.",
+   "verified_by": "static source reading; the court's forgery was not executed, per instruction"
+  },
+  {
+   "id": "R29-02",
+   "severity": "INFO",
+   "status": "OPEN",
+   "title": "Observations",
+   "items": [
+    "CCP anchors arrive in the same ccp_evaluation bundle as the decision. The binding proves the decision is the exact evaluation of the bundled evidence against the bundled anchors (and the decision root commits to them); that the anchors came from an independent source remains the caller's duty.",
+    "Carried r028 selection R28-07 names a test renamed in r029, so it no longer resolves against the r029 receipt; it closed against r028's. r027 and r028 programs are still not frozen in the registries, and historical program builders (r026, r027, r028) --check REFUSE against current source.",
+    "publication_receipt_signing_body checks a storage locator's root and artifact hash but does not re-run the locator's own credential-mark validation.",
+    "write_local_credential does not validate the envelope before writing; a malformed envelope is written and the function then raises.",
+    "No validator exists for a retrieval receipt after the fact; its verification happens only at signing time against the live file."
+   ]
+  },
+  {
+   "id": "R29-03",
+   "severity": "INFO",
+   "status": "CARRIED",
+   "title": "Carried items",
+   "items": [
+    "R20-01 (public-vocabulary-r012 selection).",
+    "R21-01 secondary items; sim.add parameter shape checked only at evaluation.",
+    "r015-r017 and r025 never reviewed; two Windows-only tests; wheel test needs setuptools; receipt root depends on Python patch version; case probe writes transiently."
+   ]
+  }
+ ],
+ "closed": [
+  {"id": "R28-01", "basis": "_identity_from_key requires declared identity == mosaic_id(signing key) for change, publication (build and validate) and retrieval."},
+  {"id": "R28-02", "basis": "build_ccp_transition_binding no longer accepts a status; it validates the full decision against snapshot, evidence, profile, perimeter, correspondence and anchors, checks the operation, and derives status and roots."},
+  {"id": "R28-03", "basis": "Retrieval validates the signed publication receipt, hashes the actual file, and requires equality with the published artifact hash."},
+  {"id": "R28-04 items", "basis": "SEALED no longer terminal (only PUBLISHED); exclusive pending file with link/reparse refusal; salt and nonce no longer caller-supplied; cold boot carries all 11 skill files byte-identical."}
+ ],
+ "user_run_tier1": {
+  "status": "HOLD_FOR_REPAIR",
+  "failed": ["CCP-RESEALED-DECISION-LAUNDERING", "CONTROL-AUTHORITY-CEILING"],
+  "court_root": "d80200f663f677eeb062e464b10a20d81ddad360a82ee86d51e671fde8998ff4",
+  "evidence_sha256": "72b484fdb34bfdf4510dcb7031f6acaf240508c7dad70427203bf305e19fc737",
+  "evidence_zip_received": false,
+  "classification": "USER_RUN_BUILDER_AUTHORED; not independent Tier 1",
+  "diagnosis": "R29-01"
+ },
+ "not_performed": [
+  "Independent Tier 1 (court read statically, not run, per instruction)",
+  "Windows and WSL legs; native UI execution",
+  "Negative/forgery exercises; R29-01 diagnosis is by source"
+ ]
+}

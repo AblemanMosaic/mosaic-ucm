@@ -1,0 +1,13 @@
+{
+  "schema": "mosaic.ucm.semantic-passage-provider-contract.v0.1",
+  "standing": "INFORMATION_ONLY",
+  "authority_effect": "NONE",
+  "real_a5": false,
+  "g0": "CLOSED",
+  "text_rule": "EXACT_UTF8_BYTES_IMMUTABLE",
+  "span_unit": "UTF8_BYTE_OFFSET",
+  "provider_modes": ["REFERENCE_UNBOUND", "PINNED_EXTERNAL_PROVIDER"],
+  "candidate_identity": ["vocabulary_root", "term_id", "sense_id", "bound_term"],
+  "outcomes": ["PASS_RESOLVED", "HELD_CLARIFICATION_REQUIRED", "REFUSED_BUDGET_EXHAUSTED"],
+  "future_provider_families": ["CSIL", "GTK", "GCNL"]
+}

@@ -1,0 +1,96 @@
+{
+ "schema": "reviewer.r032.findings.v1",
+ "subject": "UCM v0.1 r032 native completion review transport",
+ "identity_observed": {
+  "transport_sha256": "24f5cd92beaba58e1772dbcb3b4d94a972ff41c9d95c0870193680869e54ee61",
+  "transport_root": "0fd02b34fcb33da37fcd3da09fed287f4f7d51524c97d9dffd9efdf1cb8f74c2",
+  "revision": "r032",
+  "release_root": "6ee309d0a9c144877fc9dfc058af7e78efba8c31dc3530d47baa56c4c30652c1",
+  "qualification_root": "5b5a64e2f23e2f65ef6e053487e66066f46022c7fcca877a8a9f5c4e66827e36",
+  "runtime_sha256": "19d41ff3a4d645f2ac192a91d68618c89cac97e0cbeb8ed30a56a7c57b964757",
+  "source_root": "d52891c508a55ad7cff7ab2a201c9749407c5991bc04ac489d6a9ae12c9bc94d",
+  "release_identity_root": "1ee0ffc5ecf43f44513c13c1bca1b95a2cc492110785732a09469fe5e89b107e",
+  "cold_boot_sha256": "8e4ea819fc64e31eab63ca0fac702da042c026fce6e65e667a1104dfd8812796",
+  "operator_kit_sha256": "6a9253ca1a658b3e5eb05cf3b92075ea339ed4d645ca738367ba1e9cfcb566f3",
+  "expected_values_supplied": false,
+  "predecessor": "r031: qualification bdb2b458..., identity ea3511bb..., source 603b6e4d... all equal my r031 observations in full"
+ },
+ "standing": "INFORMATION_ONLY",
+ "authority_effect": "NONE",
+ "real_a5": false,
+ "g0": "CLOSED",
+ "verdict": "HOLD_FOR_REPAIR",
+ "verdict_basis": "Two MED findings. R32-01: the C17 native core refuses profile-valid programs the Python reference accepts (work-order item 5). R32-02: acceptance closure test R32-05 fails a clean replay on both supported interpreters because it is not hermetic (work-order item 3). Everything else holds: custody exact; release, cold boot and operator kit rebuild byte-identical on 3.12.3 and 3.13.16; the five-program corpus corresponds exactly on a third platform under gcc and clang; R31-01 and R31-02 closed; R31-03 repaired with a narrow residual.",
+ "findings": [
+  {
+   "id": "R32-01",
+   "severity": "MED",
+   "class": "native-correspondence",
+   "status": "OPEN",
+   "title": "The C17 core cannot read the register sets the declared profile allows",
+   "evidence": [
+    "native/ucm_native_core.c reads every line with fgets into MAX_LINE=512 bytes. The REGISTERS header carries all register values on one line; the profile and validate_native_program allow 256 i64 registers (a line of up to 5,390 bytes).",
+    "Positive exercise with profile-valid programs built by build_native_program: Python reference PASS in every case; the C core (gcc and clang, -std=c17 -Werror) PASS only while the REGISTERS line is at most 511 bytes. Full-width values: 23 registers PASS, 24 refuse (NATIVE_PROGRAM_HEADER_INVALID), 100/255/256 refuse (NATIVE_REGISTER_COUNT_MISMATCH). Zero values: 100 PASS, 255 and 256 refuse.",
+    "The five corpus programs never approach a declared limit, so the witnesses and court cannot see this."
+   ],
+   "contradicts": "Work order item 5 ('C17 ... and Python reference realization agree exactly'); docs/UCM-NATIVE-COMPLETION.md ('it is not allowed to silently widen the C profile'); profile limits.max_registers 256.",
+   "impact": "Fail-closed: the C core refuses with a typed code and never returns a wrong value. But the native execution authority covers only part of its own declared profile, and the declared 256-register limit is unreachable.",
+   "repair": "Size the line buffer to the profile maximum (or emit one register per line), and add boundary programs to the frozen corpus: 256 registers at I64_MIN/I64_MAX, 4096 instructions, the 1,000,000-step bound and the 1024 stack bound."
+  },
+  {
+   "id": "R32-02",
+   "severity": "MED",
+   "class": "qualification-hermeticity",
+   "status": "OPEN",
+   "title": "Acceptance closure test R32-05 depends on an importable ucm outside the qualified source",
+   "evidence": [
+    "test_native_core_r032.test_cli_and_abi_expose_portable_fallback runs [sys.executable, '-m', 'ucm.cli', ...] with cwd=ROOT and no PYTHONPATH. Other CLI tests (e.g. test_public_surface) set PYTHONPATH=ROOT/src.",
+    "Clean replay from an empty environment fails it on both 3.12.3 and 3.13.16: ModuleNotFoundError: No module named 'ucm'. Rerun with PYTHONPATH=src it passes on both.",
+    "The receipt records PASS on the builder's 3.12.10, so ucm was importable there from outside the qualification's own path setup, possibly an installed copy rather than the qualified source.",
+    "This test is the direct closure check for acceptance case R32-05."
+   ],
+   "impact": "The replay leg fails on clean supported hosts (463/466 rather than the expected 464/466), and the R32-05 closure on the builder may have exercised a different ucm than the bytes qualified.",
+   "repair": "Pass env PYTHONPATH=ROOT/src (or invoke tools/ucm.py) in the test, and have qualification refuse when an installed ucm shadows the source."
+  },
+  {
+   "id": "R32-03",
+   "severity": "LOW",
+   "class": "native-verifier-pin",
+   "status": "OPEN",
+   "title": "R31-03 residual: the external pin binds the header's root label, not the rows",
+   "evidence": "ucm_archive_verify.c compares argv[3] with the header's manifest_root string, and the trailer's row digest is declared by the same manifest. By source, a truncated manifest with its header count and trailer recomputed passes. Damage and naive truncation now refuse, as the doc says.",
+   "repair": "Pin the row-stream digest externally (emit it beside the manifest root in a Python receipt and pass it as a fourth argument), or document that only accidental truncation is in scope."
+  },
+  {
+   "id": "R32-04",
+   "severity": "INFO",
+   "status": "OPEN",
+   "title": "Observations",
+   "items": [
+    "The C core accepts non-canonical integer spellings (strtoimax allows leading whitespace and '+') and ignores bytes after the END line (program_sha256 still covers them). Its digests are self-declared, so it executes any self-consistent projection within the profile; no external program_root is pinned.",
+    "The r031 programs and courts are not yet frozen: both registries are unchanged at 28 program and 18 operator rows. review/r031 has no PROVENANCE.json, unlike r028/r029; r032 binds it through its source denominator instead.",
+    "The r031 work selections keep their 'tests.' ids (historical, unchanged); with R28-07 and R20-01 they do not resolve against the current receipt.",
+    "The fallback test's child interpreter runs without -B and writes bytecode into the source tree during qualification."
+   ]
+  },
+  {
+   "id": "R32-05",
+   "severity": "INFO",
+   "status": "CARRIED",
+   "items": [
+    "R21-01 secondary items; sim.add parameter shape checked only at evaluation.",
+    "r015-r017, r025 and r030 never reviewed; two Windows-only tests; wheel test needs setuptools; receipt root depends on Python patch version; case probe writes transiently."
+   ]
+  }
+ ],
+ "closed": [
+  {"id": "R31-01", "basis": "r032 program --check PASS on both interpreters (27 records); eight receipt-form closure ids all in the receipt; qualification runs the program --check and refuses (R032_ACCEPTANCE_CLOSURE_CHECK_NOT_IN_QUALIFICATION) unless all eight are present, and issues a receipt only if the whole suite passes; denominator of 75 files binds the changed source and the r031 carried evidence."},
+  {"id": "R31-02", "basis": "Repaired runner, repair record and declaration are in source at operator/transtemporal-native-r031-repaired, byte-identical to the r031 repaired kit; the r031 PASS evidence is carried byte-exact as predecessor evidence; release identity says operator_tier1_status SEPARATE_USER_RUN_REQUIRED for r032; the r032 kit rebuilds byte-identically from source and its member_count equals its rows. Freezing is pending (R32-04)."},
+  {"id": "R31-03", "basis": "Header v2 with external manifest-root pin and nonzero count, END trailer with count and row digest, refusal when absent or mismatched. Residual: R32-03."}
+ ],
+ "not_performed": [
+  "Independent Tier 1 (court read statically, not run, per instruction)",
+  "Windows and WSL legs (builder witnesses; a Linux third-platform corpus run was performed)",
+  "Negative or forgery exercises; R32-03 is by source. R32-01 used only profile-valid programs."
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "schema": "reviewer.rel9.findings.v1",
+ "subject": "UCM P/PPI r009 independent review handoff",
+ "handoff_sha256": "c1a5208f45845e381b54b00e245d147b8c8f4d6b255b32b0de6fa9cb12c7f669",
+ "handoff_manifest_root": "5b97c7d76cd505f6b4c5ce905296fe3e08855e67e3d78e203556e5543e67135b",
+ "release_root": "0405a6ffa3d3e267c172c1616a9c70665b43df05e3994f70fd95b7c0bbc06791",
+ "release_identity_root": "f854df5366ea788268965845dbf1cf351a1390feb2097ec8d630761555b27396",
+ "source_manifest_root": "2eab3248a75b9f669e2cc195abe61ececc9f2a7cb4a7b9e67f2786554979be32",
+ "runtime_sha256": "0d44e5ab6ad66979664e315ccf14b6f6e64b68d4c179350545dfca51d1542287",
+ "runtime_manifest_root": "f122f694a42c625b0945cee6457aefa071ff1778ed65a374f10448f28695785c",
+ "qualification_root": "cdda7ca868ce442d1276215186371dd6c93d3a8f08869971ac8520d371e3a30b",
+ "repair_ledger_root": "1f6821bdc938f6c7edc5ba174f826dd50766761ada165856028d83fefb8cbd9b",
+ "verdict": "INCOMPLETE_REVIEW",
+ "verdict_basis": "No MED or HIGH finding. REL7-01 is closed on reviewer evidence: publication planning opens the exact SHA-pinned archive, verifies the closed manifest and all four META records via verify_embedded_metadata, derives every certification field (derived roots equal the embedded records on the delivered runtime and lineage archives), and exposes no caller status/root parameters. Custody, partition, META certification, receipt binding to the exact source and release, 295/297 replay on 3.12.3 and 3.13.16 (two Windows-host-only non-passes), byte-identical rebuild on both interpreters, version-transition rules and the work-selection rule (items 8-10) pass on positive evidence. Terminal verdict withheld because the independent Tier 1 leg has not been performed: the carried r008 operator evidence is user-run, builder-authored and against the r008 runtime; the r009 kit is unexecuted.",
+ "review_class": "PASSIVE_AND_POSITIVE_PATH_NO_ADVERSARIAL_TESTING_NO_WINDOWS_EXECUTION",
+ "reviewer_independence": "No involvement in building r009, its operator kits, or the r008 operator run; the carried r007 review return is this reviewer's and was verified byte-identical. This reviewer has run no operator kit.",
+ "execution": "python3 -I -B in an empty environment on disposable copies; system CPython 3.12.3/3.13.16 for stdlib checks; previously authorized isolated venvs for subject execution; nothing installed; no network; subject code executed only for run_public_release_qualification.py, build_release.py, verify_runtime_tree.py, read-only orientation and documented-input exercises of public functions against the real delivered archives; no forged, re-sealed or signed artifacts.",
+ "standing": "INFORMATION_ONLY",
+ "authority_effect": "NONE",
+ "real_a5": false,
+ "g0": "CLOSED",
+ "carried_findings": {
+  "REL7-01": "CLOSED_REVIEWER_EVIDENCE",
+  "REL7-02": "NOTED",
+  "REL4-01": "CLOSED_R007",
+  "REL4-02": "CLOSED_R007",
+  "ledger PIPPI-WORK-SELECTION-01": "CONSISTENT_WITH_EVIDENCE",
+  "ledger PIPPI-WORK-SELECTION-02": "CONSISTENT_WITH_EVIDENCE",
+  "ledger PIPPI-CERT-01": "CONSISTENT_WITH_EVIDENCE",
+  "ledger PIPPI-VERSION-01": "CONSISTENT_WITH_EVIDENCE",
+  "ledger R008-OPERATOR-TIER1": "USER_RUN_BUILDER_COURT_ON_R008_NOT_INDEPENDENT_NOT_R009",
+  "ledger PIPPI-WINDOWS-01": "BUILDER_EVIDENCE_ONLY"
+ },
+ "findings": [
+  {
+   "id": "REL9-01",
+   "severity": "LOW",
+   "class": "HARDENING_BATCHED",
+   "title": "Shared-infrastructure outcomes are judged against the acceptance case's expected result code rather than the block's unblock criterion",
+   "evidence": [
+    "src/ucm/pippi_work_units.py assess_work_unit_outcome: matched = observed_result_code == case['expected_result_code'] for both work classes; the infrastructure block (unblock_criterion) is not consulted",
+    "tier2/work-selection/work-selection-check.json: infra step reporting the case code 'PASS' -> PREREQUISITE_SATISFIED_FOLLOW_ON_DIRECT_STEP_REQUIRED; infra step reporting the block's unblock criterion 'X_PASS' -> PREREQUISITE_UNMET; acceptance_case_closed false in both"
+   ],
+   "effect": "Prerequisite semantics are conflated with the acceptance case's; the never-closes invariant is unaffected.",
+   "repair": "For SHARED_INFRASTRUCTURE compare against the bound block's unblock_criterion (or a declared prerequisite result code) and record the infrastructure_block_root in the outcome."
+  },
+  {
+   "id": "REL9-02",
+   "severity": "INFO",
+   "class": "OBSERVATION",
+   "title": "Observations",
+   "evidence": [
+    "Ledger and r008 disposition describe REL7-01 as closed by operator evidence; closure is determined here on reviewer evidence",
+    "Receipt root is Python-patch-version dependent; two of 297 tests are Windows-only",
+    "IPC.key chmod 0o600 ineffective on Windows ACLs"
+   ]
+  }
+ ],
+ "unperformed_legs": [
+  "Tier 1 (item 11) including item 7's negative legs and the Ed25519-bound acceptance leg; r009 operator kit not run",
+  "Windows legs (item 12)",
+  "Content review of ecosystem return packages"
+ ],
+ "non_claims": [
+  "NO_TERMINAL_RECOMMENDATION",
+  "NO_PUBLICATION_DEPLOYMENT_INSTALLATION_OR_RELEASE_AUTHORIZATION",
+  "NO_DKN_BINDING_OR_CERTIFICATION",
+  "NO_AUTHORITY_GRANT",
+  "NO_APPLICATION_EXECUTION",
+  "NO_NETWORK_IDENTITY_FEDERATION_A5_G0_OR_PRODUCTION_AUTHORITY"
+ ]
+}

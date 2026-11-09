@@ -1,0 +1,262 @@
+{
+ "atlas_pipeline": {
+  "atlas": {
+   "ablation_status": "HISTORICAL_EVIDENCE_REFERENCED_NOT_REEXECUTED",
+   "co_projections": 5,
+   "every_rule_has_nonempty": true,
+   "identity_equivalence_any": false,
+   "library_rules": 14,
+   "root": "95d4ca264b1f79d69486cc2bdf83cb68598b5ec2a8164633dffaf5bdbb91688f",
+   "rule_ids_eq_library": true,
+   "rules": 14
+  },
+  "atlas_surfaces_unknown": [],
+  "context": {
+   "CODING": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   },
+   "PACKAGING": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 10
+   },
+   "PORTABILITY_CLAIM": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   },
+   "RECOVERY": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 9
+   },
+   "RELEASE_PLANNING": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 10
+   },
+   "REMOTE_WORK": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   },
+   "REVIEW": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   }
+  },
+  "explain_all_rules": true,
+  "explain_all_transitions": {
+   "BIND_CONSTITUTION": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "DIAGNOSE_RESULT": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "IMPORT_EFFECT": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "IMPORT_PUBLICATION_RECEIPT": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "ORIENT_PROJECT": "APPLY_PURE_TRANSITION_CHECKS",
+   "PREFLIGHT_WORK": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "PREPARE_DISPATCH": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "PROPOSE_PUBLICATION": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "SEAL_REVISION": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "SELECT_WORK": "OBTAIN_CCP_CURRENT_USE_DECISION"
+  },
+  "pipeline": {
+   "all_reachable": true,
+   "any_auto_grant": false,
+   "atlas_root_bound": true,
+   "ccp_not_required": [
+    "ORIENT_PROJECT"
+   ],
+   "endpoints_known": true,
+   "root": "3249200d6a5fbddb64757e3a93286e73d8e8c8a0301048b38bfd61384a28f04d",
+   "rules_known": true,
+   "states": 11,
+   "terminal_have_no_out": [
+    "SEALED"
+   ],
+   "transitions": 10,
+   "unique_from": true
+  },
+  "spec/PIPPI-CONSTITUTIONAL-STANDARDS-ATLAS.json": {
+   "coldboot_eq_live": [
+    true
+   ],
+   "coldboot_paths": [
+    "PIPPI/PIPPI-CONSTITUTIONAL-STANDARDS-ATLAS.json"
+   ],
+   "runtime_eq_live": true,
+   "runtime_json_eq_live": true
+  },
+  "spec/PIPPI-PIPELINE-MODEL.json": {
+   "coldboot_eq_live": [
+    true
+   ],
+   "coldboot_paths": [
+    "PIPPI/PIPPI-PIPELINE-MODEL.json"
+   ],
+   "runtime_eq_live": true,
+   "runtime_json_eq_live": true
+  }
+ },
+ "custody": {
+  "identity_eq_rel": true,
+  "partition_root_ok": true,
+  "qual_binds": {
+   "ident": true,
+   "lin": true,
+   "rel": true,
+   "rev": true,
+   "rt": true,
+   "rtman": true,
+   "sdk": true,
+   "src": true,
+   "test_set": true,
+   "tests_unique": true
+  },
+  "qual_root_ok": true,
+  "release_root_ok": true,
+  "source_manifest_root_ok": true,
+  "transport_binds": {
+   "kit": true,
+   "qual": true,
+   "release": true,
+   "runtime": true,
+   "source": true
+  },
+  "transport_root_ok": true,
+  "transport_rows_ok": true,
+  "transport_set_closed": true
+ },
+ "frozen": {
+  "FROZEN-OPERATOR-REGISTRY.json": {
+   "all_bytes_ok": true,
+   "all_posix_order": true,
+   "all_roots_ok": true,
+   "count": 14,
+   "order_sensitive_dirs": [],
+   "registry_root": "32fb4ed104670f5657a06d93d0b355f508436cc5cdbb139bfb8ed53e7588e3a1",
+   "registry_root_ok": true
+  },
+  "FROZEN-PROGRAM-REGISTRY.json": {
+   "all_bytes_ok": true,
+   "all_posix_order": true,
+   "all_roots_ok": true,
+   "count": 24,
+   "order_sensitive_dirs": [
+    "program/maturity-evolution",
+    "program/pippi-r010",
+    "program/pippi-r011"
+   ],
+   "registry_root": "23be9058e6c4473283821bf120bc2e2c37dd898772f08551eff3999475325f18",
+   "registry_root_ok": true
+  }
+ },
+ "generators": {
+  "build_constitutional_atlas_r028_program-3.12.out": "PASS",
+  "build_constitutional_atlas_r028_program-3.13.out": "PASS",
+  "build_pippi_adaptive_contracts-3.12.out": "PASS",
+  "build_pippi_adaptive_contracts-3.13.out": "PASS"
+ },
+ "identity": {
+  "cold_boot_sha256": "c6977374127e0d665f7476a2467bfe62e277ede57fdfe106c045e329bf5a3154",
+  "operator_kit_sha256": "54196133106efac930ff1e02d63ae44219374fe1f6d0431a6a6171a6e00731ef",
+  "qualification_receipt_sha256": "eb2ea85bb2dec518d276f7a817b025503a6a8c8dca75c28b05d7a5cfbd929fa3",
+  "qualification_root": "f14106bfb3a78e3a86d83898f07b0f567dc5d0cb7913d3a377aa4bd14f6dd08b",
+  "release_identity_root": "7dd9149c0b3650859b73e5710bc491161c6ebf5d44381b5e992ac089d8d8a62d",
+  "release_root": "c3baa2763d709c2f1f0daaae93653e0c809dcecc7bb0a8aaf389c2315e1ab5ac",
+  "revision": "r028",
+  "runtime_sha256": "3e8372c2c5dd976ef02e3af2928a06b6d5946f556cd49829d1f8ecaccabcf79f",
+  "source_root": "cff86ff9d12f04385a89f43cb9e94df2310b44a7272765d60238b5c556dad3be",
+  "transport_sha256": "d7f5b6deae9226e8ab596e2a530b4956a1fc4dce937e4c60c2352ab986e8838a"
+ },
+ "interpreters": [
+  "3.12.3",
+  "3.13.16"
+ ],
+ "kit": {
+  "eq_transport": {
+   "PIPPI-v0.1-adaptive-cold-boot.zip": true,
+   "PORTABILITY-GATE.json": true,
+   "UCM-v0.1-QUALIFICATION.json": true,
+   "UCM-v0.1-runtime.zip": true,
+   "WINDOWS-NATIVE-WITNESS.json": true,
+   "WSL-NATIVE-WITNESS.json": true
+  },
+  "members": 35,
+  "root_ok_operator_kit_root": true,
+  "rows_ok": true,
+  "set_closed": true
+ },
+ "parity": {
+  "contracts_runtime_and_coldboot_eq_live": true,
+  "interpreters_identical": true,
+  "registry": {
+   "differing": [],
+   "each_equals_live_entry": true,
+   "missing_from_live": [],
+   "registry_surfaces": 74
+  },
+  "routes": 30,
+  "routes_exact": true,
+  "routes_exactly_once": true
+ },
+ "portability_source_manifest": {
+  "rebuilt_sha256_3.12": "1d100eede697fa1d554d2e451f7ef7ebb5131ddcdd59102536aa6692e7f35671",
+  "rebuilt_sha256_3.13": "1d100eede697fa1d554d2e451f7ef7ebb5131ddcdd59102536aa6692e7f35671",
+  "shipped_sha256": "1d100eede697fa1d554d2e451f7ef7ebb5131ddcdd59102536aa6692e7f35671",
+  "source_root": "cff86ff9d12f04385a89f43cb9e94df2310b44a7272765d60238b5c556dad3be"
+ },
+ "predecessor": {
+  "predecessor_engineering_revision": "r027",
+  "predecessor_qualification_root": "8c6feecd89819748c24a2252dbdf0bb49ef6cd6bc40f8c4d33671b5f3e9fc33d",
+  "predecessor_release_identity_root": "01ab0ea811d19d3e2583ac466585554790e4055591fdb0622d0062be630b0446",
+  "predecessor_source_root": "de36dc95b8416b89eefe6bdf84266d2f4ab971ccab51cfab7fce55561375ea0f"
+ },
+ "rebuild_byte_identical": {
+  "3.12": {
+   "UCM-v0.1-lineage.zip": true,
+   "UCM-v0.1-release.json": true,
+   "UCM-v0.1-review.zip": true,
+   "UCM-v0.1-runtime.zip": true,
+   "UCM-v0.1-sdk.zip": true,
+   "cold_boot": true
+  },
+  "3.13": {
+   "UCM-v0.1-lineage.zip": true,
+   "UCM-v0.1-release.json": true,
+   "UCM-v0.1-review.zip": true,
+   "UCM-v0.1-runtime.zip": true,
+   "UCM-v0.1-sdk.zip": true,
+   "cold_boot": true
+  }
+ },
+ "replay": {
+  "3.12": {
+   "id_set_eq_receipt": true,
+   "non_pass": [
+    "test_installed_package.InstalledPackageTests.test_wheel_contains_runtime_resource_and_runs_from_unrelated_directory",
+    "test_pippi_release_packaging.PippiReleasePackagingTests.test_native_ui_imports_from_the_python_runtime_closure"
+   ],
+   "pass": 439,
+   "tests": 441
+  },
+  "3.13": {
+   "id_set_eq_receipt": true,
+   "non_pass": [
+    "test_installed_package.InstalledPackageTests.test_wheel_contains_runtime_resource_and_runs_from_unrelated_directory",
+    "test_pippi_release_packaging.PippiReleasePackagingTests.test_native_ui_imports_from_the_python_runtime_closure"
+   ],
+   "pass": 439,
+   "tests": 441
+  }
+ },
+ "schema": "reviewer.r028.recompute.v1"
+}

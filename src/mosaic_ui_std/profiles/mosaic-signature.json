@@ -1,0 +1,52 @@
+{
+  "authority_effect": "NONE",
+  "component_kinds": [
+    "BADGE",
+    "BUTTON",
+    "COMBOBOX",
+    "DATA_GRID",
+    "DIALOG",
+    "LIST",
+    "MENU",
+    "NAVIGATION",
+    "NOTIFICATION",
+    "PROGRESS",
+    "STATUS",
+    "TEXT_FIELD"
+  ],
+  "compositions": [
+    {
+      "composition_id": "data-workspace",
+      "name": "Data workspace",
+      "purpose": "Dense search, selection, and tabular review workflow.",
+      "required_kinds": ["BUTTON", "COMBOBOX", "DATA_GRID", "LIST", "NAVIGATION", "STATUS", "TEXT_FIELD"]
+    },
+    {
+      "composition_id": "operational-dashboard",
+      "name": "Operational dashboard",
+      "purpose": "Scan-first operational state, progress, evidence, and action workflow.",
+      "required_kinds": ["BADGE", "BUTTON", "DATA_GRID", "NAVIGATION", "NOTIFICATION", "PROGRESS", "STATUS"]
+    },
+    {
+      "composition_id": "settings-workflow",
+      "name": "Settings workflow",
+      "purpose": "Configuration, confirmation, and bounded feedback workflow.",
+      "required_kinds": ["BUTTON", "COMBOBOX", "DIALOG", "MENU", "NOTIFICATION", "STATUS", "TEXT_FIELD"]
+    }
+  ],
+  "default_density": "comfortable",
+  "default_theme": "signature-dark",
+  "densities": ["comfortable", "compact"],
+  "profile_id": "mosaic-signature",
+  "profile_version": "0.21.0",
+  "quality_contract": {
+    "letter_spacing": 0,
+    "max_radius": 8,
+    "minimum_text_contrast": 4.5,
+    "nested_cards": false,
+    "responsive_viewports": [640, 1280]
+  },
+  "schema": "mosaic.ui.signature-profile.v0.1",
+  "standing": "LOCAL_CANDIDATE",
+  "themes": ["high-contrast-dark", "signature-dark", "signature-light"]
+}

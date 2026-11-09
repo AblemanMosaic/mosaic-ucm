@@ -1,0 +1,71 @@
+{
+  "schema": "mosaic.realization-space-contract.v0.1",
+  "contract_id": "MOSAIC-WORLD-SURFACE-REALIZATION-V0.1",
+  "contract_version": "0.1.0-local-fixture",
+  "description": "Local world-style fixture for presentation-only surface variation.",
+  "subject": {
+    "subject_id": "MOSAIC-WORLD-SURFACE",
+    "subject_schema": "mosaic.world.surface.v0.1",
+    "authority_owner": "MOSAIC-WORLD-CORE",
+    "source_roots": ["LOCAL-FIXTURE"],
+    "preserved_identity": ["WORLD_ROOT", "BLOCK_ID", "COLLISION_SURFACE"],
+    "forbidden_overrides": ["COLLISION", "MINING_RESULT", "WORLD_MUTATION", "RESOURCE_STATE"]
+  },
+  "possibility": {
+    "intended_variation": ["edge presentation", "detail distance"],
+    "excluded_claims": ["collision mutation", "world mutation", "runtime qualification"]
+  },
+  "axes": [
+    {
+      "id": "WORLD.SURFACE.EDGE_METHOD",
+      "label": "Edge method",
+      "value_type": "ENUM",
+      "domain": {"values": ["NONE", "NORMAL_ONLY", "ONE_SEGMENT_BEVEL"]},
+      "default": "NORMAL_ONLY",
+      "ownership": "AUTHORIAL",
+      "mutability": "INSTANCE",
+      "continuity": "NOT_INTERPOLABLE",
+      "state_effect": "PRESENTATION",
+      "effect_owner": "MOSAIC-WORLD-SURFACE-REALIZER",
+      "apply_mode": "PREPARE_AND_SWAP",
+      "persistence_effect": "PROFILE",
+      "replay_effect": "PRESENTATION_ONLY",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "WORLD.SURFACE.DETAIL_DISTANCE_M",
+      "label": "Detail distance",
+      "value_type": "NUMBER",
+      "domain": {"minimum": 8.0, "maximum": 96.0, "step": 4.0},
+      "default": 32.0,
+      "unit": "m",
+      "precision": 0,
+      "ownership": "ADAPTIVE",
+      "mutability": "SESSION",
+      "continuity": "PIECEWISE",
+      "state_effect": "PRESENTATION",
+      "effect_owner": "MOSAIC-WORLD-SURFACE-REALIZER",
+      "apply_mode": "FRAME_BOUNDARY",
+      "persistence_effect": "PROFILE",
+      "replay_effect": "PRESENTATION_ONLY",
+      "authority_effect": "NONE"
+    }
+  ],
+  "constraints": [],
+  "capabilities": ["ENUMERATE", "VALIDATE", "SELECT", "LOWER", "EXPLAIN", "RECEIPT"],
+  "selection": {"default_policy": "EXACT-DEFAULTS", "seed_required_for_non_unique": true},
+  "lowering": {"targets": [], "allowed_results": ["EXACT", "BOUNDED", "REFUSED"]},
+  "evidence": {
+    "required_roots": ["CONTRACT", "SUBJECT", "CONFIGURATION"],
+    "required_fields": ["EDGE_METHOD", "DETAIL_DISTANCE_M"],
+    "non_claims": ["COLLISION_MUTATION", "WORLD_MUTATION", "RUNTIME_QUALIFICATION"]
+  },
+  "authority": {
+    "standing": "LOCAL_CROSS_DOMAIN_FIXTURE",
+    "authority_effect": "NONE",
+    "self_admission": false,
+    "release_gate": false,
+    "track_a_dependency": "NONE",
+    "claim_boundary": "CONTROL_MODEL_TEST_FIXTURE_ONLY"
+  }
+}

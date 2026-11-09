@@ -1,0 +1,242 @@
+{
+  "schema": "mosaic.realization-space-contract.v0.1",
+  "contract_id": "MOSAIC-READER-DOCUMENT-REALIZATION-V0.1",
+  "contract_version": "0.1.0",
+  "description": "Effect-free document projection controls for Mosaic Reader. Content mutation and navigation effects remain outside this realization contract.",
+  "subject": {
+    "subject_id": "MOSAIC-READER-OPEN-DOCUMENT",
+    "subject_schema": "mosaic.reader.document-source.v0.1",
+    "authority_owner": "MOSAIC-READER-DOCUMENT-CUSTODY",
+    "source_roots": [
+      "sha256:5bca2ad0f2ed675a056a3a83b3f06af7b2f0049a910cb2c2054c365110c6407d",
+      "sha256:969f9d7be738d084a2c1638d0a44072bfd62ab08a2b7daebfd9cbfe74d73d2b0"
+    ],
+    "coordinate_frame": {
+      "flow_axis": "BLOCK_THEN_INLINE",
+      "length_unit": "CSS_PX_EQUIVALENT_LOGICAL_UNIT",
+      "time_basis": "NONE"
+    },
+    "preserved_identity": [
+      "EXACT_SOURCE_BYTES",
+      "DOCUMENT_ID",
+      "SOURCE_FORMAT",
+      "LINK_TARGET_TEXT"
+    ],
+    "forbidden_overrides": [
+      "DOCUMENT_SUPPLIED_CODE_EXECUTION",
+      "AUTOMATIC_NETWORK_FETCH",
+      "AUTOMATIC_LINK_ACTIVATION",
+      "HOST_IDENTITY_DISCLOSURE",
+      "EXTERNAL_STATE_MUTATION"
+    ]
+  },
+  "possibility": {
+    "intended_variation": [
+      "layout mode",
+      "typographic scale",
+      "code wrapping",
+      "source format projection",
+      "link admission posture",
+      "external asset posture"
+    ],
+    "excluded_claims": [
+      "document execution authority",
+      "navigation authority",
+      "content-edit authority",
+      "network authority",
+      "pixel identity across platforms",
+      "production admission"
+    ]
+  },
+  "axes": [
+    {
+      "id": "READER.LAYOUT.MODE",
+      "label": "Layout mode",
+      "description": "Selects a presentation layout without changing document source or meaning.",
+      "value_type": "ENUM",
+      "domain": {"values": ["FLOW", "PAGED", "PRESENTATION"]},
+      "default": "FLOW",
+      "ownership": "USER",
+      "mutability": "SESSION",
+      "continuity": "DISCRETE",
+      "state_effect": "PRESENTATION",
+      "effect_owner": "MOSAIC-READER-LAYOUT",
+      "apply_mode": "PREPARE_AND_SWAP",
+      "persistence_effect": "PROFILE",
+      "replay_effect": "PRESENTATION_ONLY",
+      "ui_hint": "SEGMENTED_CONTROL",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "READER.TYPOGRAPHY.SCALE",
+      "label": "Text scale",
+      "description": "Scales presentation typography while preserving source custody.",
+      "value_type": "NUMBER",
+      "domain": {"minimum": 0.75, "maximum": 2.0, "step": 0.05},
+      "default": 1.0,
+      "precision": 2,
+      "ownership": "USER",
+      "mutability": "SESSION",
+      "continuity": "CONTINUOUS_LINEAR",
+      "state_effect": "PRESENTATION",
+      "effect_owner": "MOSAIC-READER-TYPOGRAPHY",
+      "apply_mode": "FRAME_BOUNDARY",
+      "persistence_effect": "PROFILE",
+      "replay_effect": "PRESENTATION_ONLY",
+      "ui_hint": "SLIDER",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "READER.CODE.WRAP",
+      "label": "Wrap code blocks",
+      "description": "Controls visual line wrapping in code projections.",
+      "value_type": "BOOLEAN",
+      "domain": {},
+      "default": false,
+      "ownership": "USER",
+      "mutability": "SESSION",
+      "continuity": "DISCRETE",
+      "state_effect": "PRESENTATION",
+      "effect_owner": "MOSAIC-READER-LAYOUT",
+      "apply_mode": "FRAME_BOUNDARY",
+      "persistence_effect": "PROFILE",
+      "replay_effect": "PRESENTATION_ONLY",
+      "ui_hint": "TOGGLE",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "READER.CONTENT.FORMAT",
+      "label": "Source format",
+      "description": "Binds the selected non-executing parser profile for this instance.",
+      "value_type": "ENUM",
+      "domain": {"values": ["PLAIN_TEXT", "MARKDOWN", "HTML_SUBSET"]},
+      "default": "PLAIN_TEXT",
+      "ownership": "AUTHORIAL",
+      "mutability": "INSTANCE",
+      "continuity": "NOT_INTERPOLABLE",
+      "state_effect": "PRESENTATION",
+      "effect_owner": "MOSAIC-READER-PARSER",
+      "apply_mode": "PREPARE_AND_SWAP",
+      "persistence_effect": "NONE",
+      "replay_effect": "PRESENTATION_ONLY",
+      "ui_hint": "FORMAT_BADGE",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "READER.NAVIGATION.LINK_POLICY",
+      "label": "Link policy",
+      "description": "Controls which host admission path is offered; it never activates a target itself.",
+      "value_type": "ENUM",
+      "domain": {"values": ["PROMPT", "ALLOWLIST_ONLY", "DISABLED"]},
+      "default": "PROMPT",
+      "ownership": "USER",
+      "mutability": "SESSION",
+      "continuity": "DISCRETE",
+      "state_effect": "INPUT_POLICY",
+      "effect_owner": "MOSAIC-READER-NAVIGATION-GATE",
+      "apply_mode": "FRAME_BOUNDARY",
+      "persistence_effect": "PROFILE",
+      "replay_effect": "INPUT_TRACE",
+      "ui_hint": "POLICY_SELECT",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "READER.ASSET.EXTERNAL_POLICY",
+      "label": "External asset policy",
+      "description": "Limits assets to none or explicitly declared local custody; automatic fetch is not in the domain.",
+      "value_type": "ENUM",
+      "domain": {"values": ["DISABLED", "DECLARED_LOCAL_ONLY"]},
+      "default": "DISABLED",
+      "ownership": "AUTHORIAL",
+      "mutability": "FROZEN",
+      "continuity": "DISCRETE",
+      "state_effect": "INPUT_POLICY",
+      "effect_owner": "MOSAIC-READER-ASSET-GATE",
+      "apply_mode": "PREPARE_AND_SWAP",
+      "persistence_effect": "NONE",
+      "replay_effect": "INPUT_TRACE",
+      "ui_hint": "SECURITY_BADGE",
+      "authority_effect": "NONE"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "READER-AUTHORITY-CEILING",
+      "kind": "CLAIM_BOUNDARY",
+      "severity": "HARD",
+      "expression": "authority_effect == 'NONE'",
+      "expression_language": "rsc.expr.v0.1",
+      "explanation": "A document realization cannot grant execution, navigation, network, mutation, release, or admission authority.",
+      "refusal_code": "RSC_CLAIM_BOUNDARY_REFUSED"
+    }
+  ],
+  "objectives": [],
+  "preferred_regions": [
+    {
+      "id": "READER-SAFE-DEFAULT",
+      "purpose": "Inert local reading with explicit link admission",
+      "predicate": "READER.NAVIGATION.LINK_POLICY != 'DISABLED' or READER.ASSET.EXTERNAL_POLICY == 'DISABLED'",
+      "standing": "PROVISIONAL",
+      "profile_defaults": {
+        "READER.LAYOUT.MODE": "FLOW",
+        "READER.NAVIGATION.LINK_POLICY": "PROMPT",
+        "READER.ASSET.EXTERNAL_POLICY": "DISABLED"
+      }
+    }
+  ],
+  "capabilities": ["ENUMERATE", "VALIDATE", "NORMALIZE", "SELECT", "LOWER", "COMPARE", "EXPLAIN", "RECEIPT"],
+  "selection": {
+    "default_policy": "EXACT-DEFAULTS",
+    "policies": ["EXACT-DEFAULTS", "USER-LOCKED-PROFILE"],
+    "seed_required_for_non_unique": true,
+    "fallback_policy": "DECLARED_ONLY"
+  },
+  "lowering": {
+    "targets": [
+      {
+        "target_id": "MOSAIC-UI-HEADLESS-TEXT",
+        "runtime_family": "MOSAIC-UI-HEADLESS",
+        "adapter_version": "0.2.0rc1",
+        "required_capabilities": ["PLAIN_TEXT_PROJECTION", "EXACT_SOURCE_CUSTODY"],
+        "optional_capabilities": ["ACCESSIBILITY_TREE", "DRAW_STREAM"],
+        "supported_region": "READER.CONTENT.FORMAT in ['PLAIN_TEXT', 'MARKDOWN', 'HTML_SUBSET']",
+        "axis_mapping": {},
+        "preservation_criteria": ["EXACT_SOURCE_BYTES", "PLAIN_TEXT_MEANING", "LINK_TARGET_TEXT"],
+        "known_losses": ["NO_PIXEL_CLAIM", "HTML_STYLE_SUBSET_ONLY", "MARKDOWN_STYLE_SUBSET_ONLY"],
+        "fallbacks": ["PLAIN_TEXT"]
+      },
+      {
+        "target_id": "MOSAIC-UI-WIN32-RICH-DOCUMENT",
+        "runtime_family": "WIN32-RICHEDIT50W",
+        "adapter_version": "0.2.0rc1",
+        "required_capabilities": ["READ_ONLY_RICH_TEXT", "EXACT_SOURCE_CUSTODY"],
+        "optional_capabilities": ["OWNED-HWND-CAPTURE", "IACCESSIBLE-CORRESPONDENCE"],
+        "supported_region": "READER.CONTENT.FORMAT in ['PLAIN_TEXT', 'MARKDOWN', 'HTML_SUBSET']",
+        "axis_mapping": {},
+        "preservation_criteria": ["EXACT_SOURCE_BYTES", "PLAIN_TEXT_MEANING", "LINK_TARGET_TEXT"],
+        "known_losses": ["HOST_BOUNDED", "HTML_STYLE_SUBSET_ONLY", "MARKDOWN_STYLE_SUBSET_ONLY"],
+        "fallbacks": ["PLAIN_TEXT"]
+      }
+    ],
+    "allowed_results": ["EXACT", "BOUNDED", "FALLBACK", "LOSSY", "REFUSED"]
+  },
+  "adaptation": {"enabled": false, "policies": []},
+  "evidence": {
+    "required_roots": ["CONTRACT", "SUBJECT", "CONFIGURATION", "IMPLEMENTATION", "OUTPUT"],
+    "required_fields": ["SOURCE_FORMAT", "UNSUPPORTED_MARKUP", "SKIPPED_CONTENT", "LINK_TARGETS", "LOWERING_RESULT"],
+    "metrics": ["PARSE_DURATION_MS", "LAYOUT_DURATION_MS", "UNSUPPORTED_MARKUP_COUNT"],
+    "non_claims": ["EXECUTION_AUTHORITY", "NAVIGATION_AUTHORITY", "NETWORK_AUTHORITY", "PIXEL_IDENTITY", "PRODUCTION_ADMISSION"]
+  },
+  "revision": {
+    "migration": "A future browser adapter or expanded parser profile requires a new implementation root and target evidence; it does not rewrite this candidate's evidence.",
+    "unresolved_questions": ["BROWSER_REALIZER"]
+  },
+  "authority": {
+    "standing": "LOCAL_INTEGRATION_DRAFT",
+    "authority_effect": "NONE",
+    "self_admission": false,
+    "release_gate": false,
+    "track_a_dependency": "NONE",
+    "claim_boundary": "MODEL_AND_TEST_ARTIFACT_ONLY; DOES_NOT ADMIT A READER, REALIZER, RELEASE, OR DOCUMENT EFFECT"
+  }
+}

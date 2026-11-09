@@ -1,0 +1,94 @@
+{
+ "schema": "reviewer.r028.findings.v1",
+ "subject": "UCM v0.1 r028 constitutional-atlas full review transport",
+ "identity_observed": {
+  "transport_sha256": "d7f5b6deae9226e8ab596e2a530b4956a1fc4dce937e4c60c2352ab986e8838a",
+  "revision": "r028",
+  "release_root": "c3baa2763d709c2f1f0daaae93653e0c809dcecc7bb0a8aaf389c2315e1ab5ac",
+  "qualification_root": "f14106bfb3a78e3a86d83898f07b0f567dc5d0cb7913d3a377aa4bd14f6dd08b",
+  "runtime_sha256": "3e8372c2c5dd976ef02e3af2928a06b6d5946f556cd49829d1f8ecaccabcf79f",
+  "source_root": "cff86ff9d12f04385a89f43cb9e94df2310b44a7272765d60238b5c556dad3be",
+  "cold_boot_sha256": "c6977374127e0d665f7476a2467bfe62e277ede57fdfe106c045e329bf5a3154",
+  "operator_kit_sha256": "54196133106efac930ff1e02d63ae44219374fe1f6d0431a6a6171a6e00731ef",
+  "expected_values_supplied": false,
+  "predecessor": "r027: qualification 8c6feecd..., source de36dc95... both equal my r027 observations; release identity 01ab0ea8... (not observed by me in r027, SDK was absent then)"
+ },
+ "standing": "INFORMATION_ONLY",
+ "authority_effect": "NONE",
+ "real_a5": false,
+ "g0": "CLOSED",
+ "verdict": "INCOMPLETE_REVIEW",
+ "verdict_basis": "No finding at MED or above. Custody exact; replay 439/441 on 3.12.3 and 3.13.16 with only the two known environment non-passes and test-id set equal to the receipt; release (4 archives + record) and cold boot rebuild byte-identical on both; generator --check PASS; portability source manifest rebuilds byte-identical. Withheld only because the independent Tier 1 leg (and Windows/WSL legs) remains; the court is builder-authored and was read, not run, per instruction. Three LOW findings (R28-01..03) should be repaired or explicitly accepted.",
+ "findings": [
+  {
+   "id": "R28-01",
+   "severity": "LOW",
+   "class": "identity-binding",
+   "status": "OPEN",
+   "title": "Signed change capsules and publication/retrieval receipts do not bind the stated identity root to the signing key",
+   "evidence": "src/ucm/pippi_constitution.py: change_capsule_signing_body checks author_identity_root only as 64-hex (L347) and the key only as a valid key (L348); publication and retrieval signing bodies do the same for publisher_/retriever_identity_root. The builder's own test (tests/test_pippi_constitution.py L75) and the r028 court both sign with an arbitrary root (R[7], '8'*64). verify_passport already derives mosaic_id from the public key, and build_collaborator_binding uses it, so the binding is available but not applied.",
+   "contradicts": "docs/PIPPI-CONSTITUTIONAL-ATLAS.md step 7 ('binds ... identity') and test name test_signed_change_capsule_binds_base_delta_identity_and_dkn",
+   "impact": "A valid signature proves possession of some key, not that the named identity authored it; any key holder can attribute a capsule or receipt to any identity root. Mitigated by PROPOSAL_ONLY / no authority.",
+   "repair": "Require identity_root to equal the mosaic_id (or passport digest) derived from the signing key, or accept a passport and verify it; add a refusal case for a mismatched root.",
+   "escalation_note": "If the Governor treats the atlas doc's binding claim as an acceptance requirement, this is MED and r028 is HOLD_FOR_REPAIR."
+  },
+  {
+   "id": "R28-02",
+   "severity": "LOW",
+   "class": "ccp-binding",
+   "status": "OPEN",
+   "title": "CCP transition binding derives PASS_READY from a caller-asserted status string",
+   "evidence": "build_ccp_transition_binding (L507-533) accepts current_use_status from the caller and sets transition_ready = not required or status == 'ADMIT'; current_use_decision_root is checked only as 64-hex and no CCP decision record is read or validated. The court's CCP-BYPASS-REFUSED case exercises only DEFER.",
+   "impact": "The binding records readiness that no CCP decision substantiates; 'CCP bypass' is on the work order's attack list. Mitigated: effect_authorized False, INFORMATION_ONLY.",
+   "repair": "Take the CCP current-use decision record, validate it, and derive status and decision root from it; add a court/test case for an unsubstantiated ADMIT."
+  },
+  {
+   "id": "R28-03",
+   "severity": "LOW",
+   "class": "claim-discipline",
+   "status": "OPEN",
+   "title": "Retrieval receipt asserts hash verification the code never performs",
+   "evidence": "retrieval_receipt_signing_body hard-codes artifact_verified_after_retrieval: True (L492) and build_signed_retrieval_receipt sets custody_status RETRIEVED_AND_HASH_VERIFIED, but neither receives artifact bytes nor the publication receipt; artifact_sha256 is not compared with the publication receipt's artifact.",
+   "contradicts": "docs/PIPPI-CONSTITUTIONAL-ATLAS.md step 8 ('publication and retrieval receipts bind the same artifact hash')",
+   "repair": "Accept the publication receipt and the retrieved bytes (or compute the digest in-function) and require equality; otherwise label the field as a retriever attestation."
+  },
+  {
+   "id": "R28-04",
+   "severity": "INFO",
+   "status": "OPEN",
+   "title": "Observations",
+   "items": [
+    "Pipeline model lists SEALED as a terminal state but PROPOSE_PUBLICATION leaves it.",
+    "write_local_credential writes '<name>.pending' with plain write_bytes (not exclusive, follows symlinks); contents are AES-GCM encrypted and the module has no CLI or tool caller.",
+    "seal_local_credential accepts caller-supplied salt and nonce (defaults are os.urandom); caller reuse would repeat key and nonce.",
+    "Cold boot ships the mediated-agent SKILL.md only; its references (now including constitutional-atlas.md) are not at the linked relative path, though they are inside the embedded runtime. Pre-existing pattern.",
+    "program/discovery-parity-r027 is carried byte-identical but not added to the frozen registries; both registries are unchanged from r027.",
+    "Native UI constitution tab read statically only (Windows-only); it computes rows from the live atlas and pipeline and grants nothing."
+   ]
+  },
+  {
+   "id": "R28-05",
+   "severity": "INFO",
+   "status": "CARRIED",
+   "title": "Carried items",
+   "items": [
+    "R20-01: public-vocabulary-r012 work selection names a tool check (the only one of 112 selections not closing on a receipt test).",
+    "R21-01 secondary items; sim.add parameter shape checked only at evaluation.",
+    "r015-r017 and r025 never reviewed; two Windows-only tests; receipt root depends on Python patch version; wheel test needs setuptools.",
+    "Case probe writes transiently to the working directory (documented)."
+   ]
+  }
+ ],
+ "closed": [
+  {"id": "R27-02", "basis": "Full transport delivered; reconstitution, replay, rebuild, generator --check, portability source and all frozen rows performed."},
+  {"id": "R26-02", "basis": "As R27-02."},
+  {"id": "R24-01", "basis": "build_pippi_adaptive_contracts.py --check PASS on both interpreters (14 records)."},
+  {"id": "R24-02", "basis": "PORTABILITY-SOURCE-MANIFEST.json rebuilds byte-identical (1d100eed...), root cff86ff9... equals the source root and both witnesses."}
+ ],
+ "not_performed": [
+  "Tier 1 court (builder-authored; read statically, not run, per instruction)",
+  "Windows and WSL legs (builder witnesses only)",
+  "Native UI execution (Windows-only)",
+  "Negative/forgery exercises (no adversarial testing, per instruction); R28-01..03 are by source and builder tests"
+ ]
+}

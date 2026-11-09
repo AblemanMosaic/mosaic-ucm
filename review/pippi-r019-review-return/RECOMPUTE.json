@@ -1,0 +1,42 @@
+{
+ "schema": "reviewer.r019.recompute.v1",
+ "subject": "Mosaic UCM + P/PPI v0.1 r019 complete review transport",
+ "transport_sha256": "4aaa6910c9a8895f34adcfd03f49e8793fc091fa6c91c0f6e687165115e3b719",
+ "transport_manifest_root": "9ccf6b6b924344060a586fd9f4a3d412ff4095a0d89fdefb433ed9af15eb3ac9",
+ "release_root": "245699f0be125757985274dadb4ee5ccc01e4477d990426af475372712e51ead",
+ "source_manifest_root": "f6f40e0042265e31c08c4d8fbf5b09c0b69c190418d1e7a46fda7b5e004ad396",
+ "runtime_sha256": "ac0e77c6352d18e85f4b158a954811c0c2ff5b9a26f44ad68ee0c19ba13a4b96",
+ "runtime_manifest_root": "d61ff5c96fc25ab5b91b4b429db690fd1f434cf3a17f7aba570e8f7ab0c78c1e",
+ "qualification_root": "164d86d3ce2d5ede44655e45224f6991fbc4eee908658815eb8fcff4a50fe063",
+ "cold_boot_sha256": "340d89a7da6fa7104a309b184a17aa6a9c6df8ebb8791f9b09195086aa1af514",
+ "operator_kit_sha256": "65df90c82f0d813d87bd08aa895e3c5fafccbf97a83d71f30824aed7e526ef3d",
+ "standing": "INFORMATION_ONLY",
+ "authority_effect": "NONE",
+ "real_a5": false,
+ "g0": "CLOSED",
+ "tier0": {
+  "custody": "tier0/custody.json",
+  "cold_boot": "tier0/coldboot-custody.json, tier0/coldboot-meta.json",
+  "results": {
+   "source_rows": 1306,
+   "custody_rows": 89,
+   "custody_eq_denominator": true,
+   "review_eq_custody": true,
+   "noncustody_exact": true,
+   "runtime_subset_of_sdk": true
+  }
+ },
+ "tier1": {
+  "status": "NOT PERFORMED",
+  "r018_operator_return": "HOLD_FOR_REPAIR 27/29, user-run builder-authored, read only"
+ },
+ "tier2": {
+  "rebuild": "tier2/rebuild.txt (5 artifacts + cold boot byte-identical on both)",
+  "replay": "tier2/replay-summary.json, tier2/full-3.12, tier2/full-3.13 (351/353 each from source root); tier2/run1-emptycwd-parallel-* (first attempt, empty cwd, parallel)",
+  "runtime": "tier2/orient",
+  "program_builders": "tier2/build_*-3.1x.out, tier2/normalize_*-3.1x.out (all PASS)",
+  "work_selection": "tier2/normalization.json, tier2/normalization-mapping.json",
+  "planning": "tier2/plan"
+ },
+ "execution": "python3 -I -B (two sibling-import tools with -E -s -B), env -i, disposable copies; subject code only in the two authorized venvs; court read not run; no install, no network"
+}

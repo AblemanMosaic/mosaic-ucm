@@ -1,0 +1,13 @@
+test_observational_composite_keeps_roots_distinct (test_pippi_cmba_composite_positive.PippiCmbaCompositePositiveTests.test_observational_composite_keeps_roots_distinct) ... ok
+test_effect_history_binds_ccp_and_complete_gates (test_pippi_cmba_composite_positive.PippiCmbaCompositePositiveTests.test_effect_history_binds_ccp_and_complete_gates) ... {"event":"PHASE_START","observed_unix_ns":1794240770616790229,"operation_id":"op:r036:1","phase":"AUTHORIZE","schema":"mosaic.ucm.nonsemantic-progress.v0.1","sequence":1}
+{"elapsed_ms":292.431,"event":"PHASE_PASS","observed_unix_ns":1794240770909231257,"operation_id":"op:r036:1","phase":"AUTHORIZE","schema":"mosaic.ucm.nonsemantic-progress.v0.1","sequence":2}
+{"event":"PHASE_PASS","observed_unix_ns":1794240771146965809,"operation_id":"op:r036:1","phase":"DISPATCH_RECORDED","schema":"mosaic.ucm.nonsemantic-progress.v0.1","sequence":3}
+{"classification":"PASS","event":"PHASE_PASS","observed_unix_ns":1794240771628107536,"operation_id":"op:r036:1","phase":"TERMINAL","schema":"mosaic.ucm.nonsemantic-progress.v0.1","sequence":4}
+ok
+test_public_abi_exposes_profile (test_pippi_cmba_composite_positive.PippiCmbaCompositePositiveTests.test_public_abi_exposes_profile) ... ok
+test_public_cli_exposes_profile_without_writing (test_pippi_cmba_composite_positive.PippiCmbaCompositePositiveTests.test_public_cli_exposes_profile_without_writing) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 9.250s
+
+OK

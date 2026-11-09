@@ -1,0 +1,35 @@
+{
+  "authority_effect": "NONE",
+  "courthouse": {
+    "pippi_role": "REQUEST_AUTHOR_AND_RESULT_IMPORTER",
+    "remote_dispatch_authorized": false,
+    "transport_owner": "AOK_COURTHOUSE"
+  },
+  "g0": "CLOSED",
+  "invariants": [
+    "APPLICATION_OWNS_DOMAIN_COURTS_AND_VERDICT_MEANING",
+    "PIPPI_OWNS_EXACT_CUSTODY_REPLAY_AND_RETURN_BINDING",
+    "ENVELOPE_BUILDS_TWICE_BYTE_IDENTICALLY",
+    "ARCHIVE_IS_CLOSED_SORTED_AND_PATH_SAFE",
+    "STANDALONE_VERIFICATION_REQUIRES_AN_EXTERNAL_ARCHIVE_PIN",
+    "STANDALONE_VERIFIER_IMPORTS_NO_SUBJECT_CODE",
+    "LOCAL_REPLAY_USES_A_DISPOSABLE_WORKSPACE_BUT_IS_NOT_AN_OS_SANDBOX",
+    "RETURN_MUST_BIND_THE_EXACT_ENVELOPE_SHA256",
+    "REPORTED_OUTCOME_CONFERS_NO_AUTHORITY",
+    "PUBLICATION_IS_A_SEPARATE_HUMAN_AUTHORIZED_EFFECT"
+  ],
+  "publication_authorized": false,
+  "real_a5": false,
+  "schema": "mosaic.ucm.pippi-review-envelope-contract.v0.1",
+  "standing": "INFORMATION_ONLY",
+  "surfaces": [
+    "review-envelope-build",
+    "review-envelope-verify",
+    "reviews",
+    "review-run-local",
+    "review-dispatch-courthouse",
+    "review-import-return",
+    "review-compare",
+    "review-publication-proposal"
+  ]
+}

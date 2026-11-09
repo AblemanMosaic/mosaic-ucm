@@ -1,0 +1,20 @@
+{
+  "schema": "mosaic.ucm.policy-pack.v0.1",
+  "pack_id": "PIPPI_PROCESS_GOVERNANCE_V0_1",
+  "version": "0.1.0",
+  "requirements": [
+    {"id": "PROCESS.EXACT.BASELINE", "class": "MANDATORY", "statement": "Bind objective, subject, source, architecture, AMCAS, policies, identities, locality, software generation and journal head in one exact baseline."},
+    {"id": "PROCESS.ACCEPTANCE.EXTERNAL", "class": "MANDATORY", "statement": "Do not treat completion as acceptance; require a policy-bound external signed approval for an accepted milestone."},
+    {"id": "PROCESS.REPLAN.DENOMINATOR", "class": "MANDATORY", "statement": "Carry every unresolved work item into a successor plan with an explicit retained, resolved or deferred disposition."},
+    {"id": "PROCESS.HASH.SEPARATION", "class": "MANDATORY", "statement": "Keep exact state, meaning, governance, locality, receipts and complete-body commitments distinct."},
+    {"id": "PROCESS.LOCALITY.NON_GRANT", "class": "MANDATORY", "statement": "Treat DKN locality and MosaicID descriptors as commitments, never capability or namespace grants."},
+    {"id": "PROCESS.EXECUTION.EXACT_CAPSULE", "class": "MANDATORY", "statement": "Bind the executable, runner, dependency closure, inputs, environment, policies, authority, jurisdiction, effects, history paths, adapter and producer-operation identity before terminal-receipt reuse or artifact supersession."},
+    {"id": "PROCESS.STANDARDS.CONTEXTUAL", "class": "MANDATORY", "statement": "Schedule standards reviews from meaningful project events and explicit invalidations rather than blind periodic reminders."},
+    {"id": "PROCESS.STATUS.FACTUAL", "class": "MANDATORY", "statement": "Report implemented, tested, reviewed and accepted status separately from journal-derived facts without unsupported maturity percentages."},
+    {"id": "PROCESS.COURTHOUSE.BOUNDARY", "class": "MANDATORY", "statement": "Keep effect authorization, executor admission and terminal effect custody in the courthouse or other admitted external executor."}
+  ],
+  "standing": "INFORMATION_ONLY",
+  "authority_effect": "NONE",
+  "real_a5": false,
+  "g0": "CLOSED"
+}

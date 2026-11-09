@@ -1,0 +1,67 @@
+{
+ "schema": "reviewer.r022.recompute.v1",
+ "subject": "UCM + P/PPI v0.1 r022 UGEL executor integration",
+ "preflight": {
+  "transport_sha256": [
+   "f1f3a1c33b8a469529893281b226e39f4f12039853e502938892a02372a9ba37",
+   "MATCH"
+  ],
+  "revision": [
+   "r022",
+   "MATCH"
+  ],
+  "release_root": [
+   "7f1d9a16d6f71df1cd58e61eea8ce84918cdb932fa1c574ca2049f8ba02215d2",
+   "MATCH"
+  ],
+  "qualification_root": [
+   "b843c4b98b124c88081797227febb43ebb07c779a32767ed731b1b8d2e99b76f",
+   "MATCH"
+  ],
+  "runtime_sha256": [
+   "dce704f49607f98bed14c9fcae149cea0c39259efe1f9e6a0dbb1cc9adf5fedf",
+   "NO_EXPECTED_VALUE_SUPPLIED"
+  ]
+ },
+ "operator_kit_sha256": "b9e47d3415fe80dee066077108467873e8824a75cafd4b98ead43981270a34eb",
+ "cold_boot_sha256": "011e8ed38f30160beb42af746894e18617a793388e7d3639081b304f7733d0a3",
+ "ugel_source_archive_sha256_pinned_not_delivered": "70e09459418a6672cc0e1924a7f6338fd1e0a929f8dc6f5630e61d0f866307cc",
+ "standing": "INFORMATION_ONLY",
+ "authority_effect": "NONE",
+ "real_a5": false,
+ "g0": "CLOSED",
+ "tier0": {
+  "custody": "tier0/custody.json",
+  "cold_boot": "tier0/coldboot-*.json",
+  "results": {
+   "source_rows": 1509,
+   "custody_rows": 100,
+   "noncustody_exact": true,
+   "runtime_subset_of_sdk": true,
+   "predecessor_fields_eq_r021": true,
+   "transport_review_sha256_field": "ABSENT (row-checked)"
+  }
+ },
+ "tier1": {
+  "status": "NOT PERFORMED"
+ },
+ "tier2": {
+  "rebuild": "tier2/rebuild.txt",
+  "replay": {
+   "cwd": "empty, sequential",
+   "collected": 399,
+   "ids_equal_receipt": true,
+   "passed": {
+    "3.12": 397,
+    "3.13": 397
+   },
+   "ugel_tests": "3/3 both",
+   "cwd_left_empty": true
+  },
+  "runtime": "tier2/orient (189 surfaces; 6 UGEL, all PURE_COMPUTATION; ugel-orient registry root recomputes, pins equal transport)",
+  "program_builders": "tier2/*-3.1x.out (all PASS except build_pippi_adaptive_program REFUSED 62/62)",
+  "work_selection": "tier2/work-selection.json (84; UGEL-R022-01 validates and rebuilds; subject bound to r021 source, not its denominator)",
+  "planning": "tier2/plan (nothing written; UGEL_EXECUTOR BIND_EXTERNAL)"
+ },
+ "execution": "python3 -I -B, env -i, disposable copies; subject code only in authorized venvs; court read not run; no install, no network; no earlier results carried"
+}

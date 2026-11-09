@@ -1,0 +1,58 @@
+{
+ "schema": "reviewer.r018.recompute.v1",
+ "subject": "Mosaic UCM + P/PPI v0.1 r018 canonical handoff",
+ "handoff_sha256": "453289f6b634b3b2ec529a1c4ea1bcf61db23d83b5f980b7cb7dd79822104d24",
+ "delivery_manifest_root": "f02a55390cf31601a3da4e2dde5dd8a34c82e546abd04788df73974e173ed188",
+ "release_root": "a73854174ecf1fbff0e98ac9ae1c1d1aa8f85d5d0d4a239213a6d11b9bb47ddb",
+ "source_manifest_root": "7721600626a453fc842d563ad8187396a0dd4182228619be2b6cf64447f99e09",
+ "runtime_sha256": "e01267acf41ddf9f0d125af8a527a07bae2f918d6a730dd72873206a578ae283",
+ "runtime_manifest_root": "332c1314b2383973df30b3eadb6696aba45884938a5768233edc6d06bfc26dba",
+ "qualification_root": "ceb1cb9afd1e421d58f8d70c6fa5aa7aeb580166adbdab7fb0a23b66c61eb7bc",
+ "cold_boot_sha256": "9c0698ada0fe4d27929c7889498cf324d24b08f70445608c1bcb220e2c479065",
+ "review_archive_sha256_pinned_not_delivered": "f7c638dae7d764925f871cd5781eb0d5107c46bef93750dc09831b24d875e877",
+ "standing": "INFORMATION_ONLY",
+ "authority_effect": "NONE",
+ "real_a5": false,
+ "g0": "CLOSED",
+ "tier0": {
+  "custody": "tier0/custody.json (delivery manifest, release, partition, receipt bindings, per-archive META, identity, reconstitution without review custody, delta vs r014)",
+  "cold_boot": "tier0/coldboot-custody.json, tier0/coldboot-meta.json (hash and five roots equal receipt; THR and certificate bindings; embedded runtime == delivered)",
+  "input_pins": "tier0/input-pins.txt",
+  "results": {
+   "source_rows": 1192,
+   "custody_rows": 82,
+   "custody_eq_denominator": true,
+   "noncustody_exact": true,
+   "runtime_subset_of_sdk": true,
+   "cold_boot_members": 24
+  }
+ },
+ "tier1": {
+  "status": "NOT PERFORMED"
+ },
+ "tier2": {
+  "full_replay_and_rebuild": "tier2/full-3.12, tier2/full-3.13: exit 1 SOURCE_MANIFEST_BYTES_OR_SET_MISMATCH on both",
+  "partial_replay": {
+   "file": "tier2/partial-replay-classification.json",
+   "collected": 347,
+   "ids_equal_receipt": true,
+   "passed": 319,
+   "custody_absent": 26,
+   "windows_only": 2,
+   "interpreters": [
+    "3.12.3",
+    "3.13.16"
+   ]
+  },
+  "runtime": "tier2/orient (verify_runtime_tree PASS; orient/capabilities/profiles/smoke/abi-stability exit 0, identical)",
+  "program_builders": {
+   "ccp_native": "PASS",
+   "ccp_courthouse": "PASS 094b4bea...",
+   "pippi_adaptive": "needs review custody",
+   "pippi_interface": "MISMATCH:SOURCE-DENOMINATOR.json"
+  },
+  "work_selection": "tier2/work-selection (r014/r015 conform and rebuild; r016-r018 refused by governed validator; all named closure tests in receipt)",
+  "planning": "tier2/plan (pack-list, pack-inventory, install-plan; identical across interpreters; no downloads; first call writes INVENTORY.json)"
+ },
+ "execution": "python3 -I -B, env -i, empty cwd, disposable copies; subject code only in the two authorized venvs; launchers/installers read not run; no install, no network"
+}

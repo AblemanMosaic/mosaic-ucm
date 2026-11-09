@@ -1,0 +1,245 @@
+{
+  "authority_effect": "NONE",
+  "catalog_id": "MOSAIC-UI-STD-CATALOG-0.2.1-R1",
+  "components": [
+    {
+      "component_id": "window",
+      "evidence": [
+        "headless: tree root container",
+        "win32.py:396 NativeWindow"
+      ],
+      "kind": "WINDOW",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "label",
+      "evidence": [
+        "headless.py:463,471 legibility",
+        "win32.py:629 label",
+        "r012 tree: 41 keyed nodes"
+      ],
+      "kind": "LABEL",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "button",
+      "evidence": [
+        "headless.py:422,428 fill/radius",
+        "win32.py:642 button, 742 style_button",
+        "0.2.1 native conformance: filtered activation plus annotated IAccessible push-button",
+        "r012 tree: 26 keyed nodes",
+        "NOTE app.logo realized via win32.py:682 image"
+      ],
+      "kind": "BUTTON",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "text-field",
+      "evidence": [
+        "0.2.0 headless governed text commit",
+        "win32.py:635 edit",
+        "0.2.1 native conformance: EN_KILLFOCUS commit plus annotated IAccessible editable-text value",
+        "r012 tree: 19 keyed nodes"
+      ],
+      "kind": "TEXT_FIELD",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "select",
+      "evidence": [
+        "headless.py:97",
+        "win32.py:821 combo",
+        "0.2.1 native conformance: CBN_SELCHANGE plus annotated IAccessible combo-box value",
+        "r012 tree: 7 keyed nodes"
+      ],
+      "kind": "SELECT",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "checkbox",
+      "evidence": [
+        "0.2.0 headless catalog projection and governed toggle conformance",
+        "win32.py:645 checkbox",
+        "0.2.1 native conformance: BN_CLICKED toggle plus annotated checked/focusable state",
+        "used imperatively: process_details.py:142"
+      ],
+      "kind": "CHECKBOX",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "segmented",
+      "evidence": [
+        "0.2.0 deterministic headless projection and governed selection mapping",
+        "0.2.1 native conformance: owner-drawn segmented pointer/arrow selection and IAccessible value"
+      ],
+      "kind": "SEGMENTED",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "tab-bar",
+      "evidence": [
+        "0.2.0 deterministic headless projection and governed selection mapping",
+        "r012 tree: 1 unkeyed node; realized as individual BUTTONs tab.*",
+        "0.2.1 native conformance: owner-drawn tab pointer/arrow selection and IAccessible value"
+      ],
+      "kind": "TAB_BAR",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "progress",
+      "evidence": [
+        "headless.py:422,460",
+        "win32.py:841 progress",
+        "r012 tree: 1 keyed node"
+      ],
+      "kind": "PROGRESS",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "status",
+      "evidence": [
+        "headless.py:463 legibility",
+        "realized via win32.py:629 label",
+        "r012 tree: 2 keyed nodes"
+      ],
+      "kind": "STATUS",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "table",
+      "evidence": [
+        "headless: generic projection; witnessed in r012 process-details-final projections",
+        "win32.py:752 table, 802 set_rows",
+        "r012 tree: 4 keyed nodes"
+      ],
+      "kind": "TABLE",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "panel",
+      "evidence": [
+        "0.2.0 deterministic headless projection and governed dialog-decision mapping",
+        "r012 tree: 5 unkeyed structural nodes",
+        "0.2.0-r6 win32.py owner-drawn panel surface with native accessibility text"
+      ],
+      "kind": "PANEL",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "dialog",
+      "evidence": [
+        "0.2.0 deterministic generic headless projection",
+        "0.2.1 native conformance: owner-drawn dialog decision pointer/arrow activation through HeadlessUI plus IAccessible value"
+      ],
+      "kind": "DIALOG",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "tooltip",
+      "evidence": [
+        "0.2.0 deterministic generic headless projection",
+        "0.2.0-r6 win32.py owner-drawn tooltip surface with plain accessibility text"
+      ],
+      "kind": "TOOLTIP",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "badge",
+      "evidence": [
+        "0.2.0 headless catalog projection and governed step movement conformance",
+        "win32.py:1239 badge",
+        "declared via application.process_details.components"
+      ],
+      "kind": "BADGE",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "key-value",
+      "evidence": [
+        "0.2.0 headless catalog projection conformance",
+        "win32.py:1245 key_value",
+        "declared via application.process_details.components"
+      ],
+      "kind": "KEY_VALUE",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    },
+    {
+      "component_id": "stepper",
+      "evidence": [
+        "0.2.0 headless catalog projection conformance",
+        "win32.py:1256 stepper",
+        "0.2.1 native conformance: owner-drawn pointer/arrow step selection through HeadlessUI plus IAccessible value",
+        "declared via application.process_details.components"
+      ],
+      "kind": "STEPPER",
+      "realized_by": [
+        "HEADLESS",
+        "WIN32"
+      ]
+    }
+  ],
+  "realizers": [
+    "HEADLESS",
+    "WIN32"
+  ],
+  "schema": "mosaic.ui.std.catalog.v0.1",
+  "standing": "LOCAL_CANDIDATE",
+  "states": [
+    "IDLE",
+    "HOVER",
+    "FOCUSED",
+    "PRESSED",
+    "DISABLED",
+    "PENDING",
+    "REFUSED"
+  ],
+  "tier_basis": "EVIDENCE_BACKED_R012_PLUS_0.2.1_R1_CONFORMANCE; HEADLESS means deterministic semantic, geometry, accessibility, and draw projection; WIN32 draws all 17 kinds and routes the eight declared interactive kinds through one governed state machine; direct IAccessible inspection is exact-run evidence only; bounded local runtime, synthetic-DPI, visual-repeat, and interaction witnesses do not establish broad host or assistive-technology behavior"
+}

@@ -1,0 +1,53 @@
+{
+ "schema": "reviewer.r024.recompute.v1",
+ "subject": "UCM v0.1 r024 portability and determinism",
+ "identity_observed": {
+  "transport_sha256": "241ba777cd620daf8ed2a39b41f20f1cd0f5a56f969446e944b8a917f01ff179",
+  "revision": "r024",
+  "release_root": "b75285baf68dc938837acf29c1361e394e55dc268550ae0652065c300c3b4eb4",
+  "qualification_root": "852fa36e834eb03634f9be9eb81add2972ec215ebedabad291a1a5338cf36d16",
+  "runtime_sha256": "03b340f4b2e4ecbe4f576dc4431a45fb540aaf162680cacb4707f23e43b003d2",
+  "source_root": "bde77dbbd4e494756fe2ff35063a6a38669e87318d06d87bf5814864868ab4a3",
+  "expected_values_supplied": false,
+  "predecessor": "r023 90442801/c3bb27e8 (matches reviewed r023)"
+ },
+ "standing": "INFORMATION_ONLY",
+ "authority_effect": "NONE",
+ "real_a5": false,
+ "g0": "CLOSED",
+ "tier0": {
+  "custody": "tier0/custody.json",
+  "cold_boot": "tier0/coldboot-*.json",
+  "results": {
+   "source_rows": 1639,
+   "custody_rows": 113,
+   "noncustody_exact": true,
+   "runtime_subset_of_sdk": true,
+   "sdk_extra_outside_source_manifest": 5
+  }
+ },
+ "tier1": {
+  "status": "NOT PERFORMED"
+ },
+ "tier2": {
+  "rebuild": "tier2/rebuild.txt",
+  "replay": {
+   "cwd": "empty, sequential",
+   "gate": "evidence/r024-portability/PORTABILITY-GATE.json from source",
+   "collected": 419,
+   "ids_equal_receipt": true,
+   "passed": {
+    "3.12": 417,
+    "3.13": 417
+   },
+   "same_set_both": true,
+   "first_attempt": "tier2/exits-attempt1.txt (missing --portability-gate)",
+   "stray_untracked_run": "tier2/exits-stray-untracked-3.13.txt (stopped; not used)"
+  },
+  "frozen_registries_independent": "tier2/frozen-independent.json (program 21 rows, operator 11 rows; POSIX order; roots recompute)",
+  "portability": "tier2/portability (commands, live outputs equal witnesses, gate root reproduced, source doctor over 454 files)",
+  "program_builders": "tier2/*-3.1x.out (all program/registry builders PASS; build_pippi_adaptive_contracts REFUSED 11/12)",
+  "work_selection": "tier2/work-selection.json (95; six r024 cases validate and rebuild)"
+ },
+ "execution": "python3 -I -B, env -i, disposable copies; subject code only in authorized venvs; independent stdlib checks; court and launchers read only; no install, no network; no earlier results carried"
+}

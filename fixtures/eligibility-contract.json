@@ -1,0 +1,65 @@
+{
+  "allowed_effects": [],
+  "claim_ceiling": "INFORMATION_ONLY",
+  "contract_id": "eligibility-demo-v1",
+  "obligations": [
+    {
+      "assumptions": ["graph snapshot is immutable"],
+      "id": "O1_GRAPH_IDENTITY",
+      "kind": "IDENTITY",
+      "required_evidence": ["problem_root"],
+      "severity": "HIGH",
+      "source_ref": "contract:problem",
+      "statement": "The exact graph and query remain bound through every stage."
+    },
+    {
+      "assumptions": ["edge labels are exact strings"],
+      "id": "O2_LABEL_FILTER",
+      "kind": "SEMANTIC",
+      "required_evidence": ["path_or_exhaustive_witness"],
+      "severity": "HIGH",
+      "source_ref": "contract:required_labels",
+      "statement": "Only edges carrying all required labels may establish reachability."
+    },
+    {
+      "assumptions": ["reservation ledger is checked before traversal"],
+      "id": "O3_RESOURCE_BOUND",
+      "kind": "RESOURCE",
+      "required_evidence": ["reservation_receipt"],
+      "severity": "HIGH",
+      "source_ref": "contract:resource_budget",
+      "statement": "Traversal cannot begin unless its declared resource envelope is reserved."
+    },
+    {
+      "assumptions": [],
+      "id": "O4_NO_EFFECT",
+      "kind": "EFFECT",
+      "required_evidence": ["effect_none_receipt"],
+      "severity": "CRITICAL",
+      "source_ref": "contract:allowed_effects",
+      "statement": "The computation has no authority or external effect."
+    }
+  ],
+  "operation_kind": "PURE_ELIGIBILITY",
+  "problem": {
+    "edges": [
+      {"from": "A", "id": "e1", "labels": ["qualified", "local"], "to": "B"},
+      {"from": "B", "id": "e2", "labels": ["qualified", "local"], "to": "D"},
+      {"from": "A", "id": "e3", "labels": ["unqualified"], "to": "C"},
+      {"from": "C", "id": "e4", "labels": ["qualified"], "to": "D"}
+    ],
+    "max_visits": 8,
+    "nodes": ["A", "B", "C", "D"],
+    "required_labels": ["qualified", "local"],
+    "schema": "ucl.op.eligibility_problem.v1",
+    "source": "A",
+    "target": "D"
+  },
+  "resource_budget": {
+    "memory_bytes": 1048576,
+    "solver_calls": 4,
+    "steps": 1000,
+    "tool_invocations": 4
+  },
+  "schema": "ucl.op.operation_contract.v1"
+}

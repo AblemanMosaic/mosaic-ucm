@@ -1,0 +1,430 @@
+{
+ "atlas_pipeline": {
+  "atlas": {
+   "ablation_status": "HISTORICAL_EVIDENCE_REFERENCED_NOT_REEXECUTED",
+   "co_projections": 5,
+   "every_rule_has_nonempty": true,
+   "identity_equivalence_any": false,
+   "library_rules": 14,
+   "root": "02c04081edb7b8f67cee47958bede7cbbe73a0ded07494dbc518a7f2b738b9c0",
+   "rule_ids_eq_library": true,
+   "rules": 14
+  },
+  "atlas_surfaces_unknown": [],
+  "context": {
+   "CODING": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   },
+   "PACKAGING": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 10
+   },
+   "PORTABILITY_CLAIM": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   },
+   "RECOVERY": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 9
+   },
+   "RELEASE_PLANNING": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 10
+   },
+   "REMOTE_WORK": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   },
+   "REVIEW": {
+    "explicit_ok": true,
+    "full_selected": true,
+    "reasons_ok": true,
+    "required": 8
+   }
+  },
+  "explain_all_rules": true,
+  "explain_all_transitions": {
+   "BIND_CONSTITUTION": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "DIAGNOSE_RESULT": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "IMPORT_EFFECT": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "IMPORT_PUBLICATION_RECEIPT": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "ORIENT_PROJECT": "APPLY_PURE_TRANSITION_CHECKS",
+   "PREFLIGHT_WORK": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "PREPARE_DISPATCH": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "PROPOSE_PUBLICATION": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "SEAL_REVISION": "OBTAIN_CCP_CURRENT_USE_DECISION",
+   "SELECT_WORK": "OBTAIN_CCP_CURRENT_USE_DECISION"
+  },
+  "pipeline": {
+   "all_reachable": true,
+   "any_auto_grant": false,
+   "atlas_root_bound": true,
+   "ccp_not_required": [
+    "ORIENT_PROJECT"
+   ],
+   "endpoints_known": true,
+   "root": "4cf0e91387bd4e1deb718dd7426e2f4ddc159a9c200d9567a7ac2acfad536dfe",
+   "rules_known": true,
+   "states": 11,
+   "terminal_have_no_out": [],
+   "transitions": 10,
+   "unique_from": true
+  },
+  "spec/PIPPI-CONSTITUTIONAL-STANDARDS-ATLAS.json": {
+   "coldboot_eq_live": [
+    true
+   ],
+   "coldboot_paths": [
+    "PIPPI/PIPPI-CONSTITUTIONAL-STANDARDS-ATLAS.json"
+   ],
+   "runtime_eq_live": true,
+   "runtime_json_eq_live": true
+  },
+  "spec/PIPPI-PIPELINE-MODEL.json": {
+   "coldboot_eq_live": [
+    true
+   ],
+   "coldboot_paths": [
+    "PIPPI/PIPPI-PIPELINE-MODEL.json"
+   ],
+   "runtime_eq_live": true,
+   "runtime_json_eq_live": true
+  }
+ },
+ "custody": {
+  "identity_eq_rel": true,
+  "partition_root_ok": true,
+  "qual_binds": {
+   "ident": true,
+   "lin": true,
+   "rel": true,
+   "rev": true,
+   "rt": true,
+   "rtman": true,
+   "sdk": true,
+   "src": true,
+   "test_set": true,
+   "tests_unique": true
+  },
+  "qual_root_ok": true,
+  "release_root_ok": true,
+  "source_manifest_root_ok": true,
+  "transport_binds": {
+   "kit": true,
+   "qual": true,
+   "release": true,
+   "runtime": true,
+   "source": true
+  },
+  "transport_root_ok": true,
+  "transport_rows_ok": true,
+  "transport_set_closed": true
+ },
+ "frozen": {
+  "FROZEN-OPERATOR-REGISTRY.json": {
+   "all_bytes_ok": true,
+   "all_posix_order": true,
+   "all_roots_ok": true,
+   "count": 21,
+   "order_sensitive_dirs": [],
+   "registry_root": "0fe520d74d38b916952de238b3f0c941b885e2b38f729177dc4b7aa14760c929",
+   "registry_root_ok": true
+  },
+  "FROZEN-PROGRAM-REGISTRY.json": {
+   "all_bytes_ok": true,
+   "all_posix_order": true,
+   "all_roots_ok": true,
+   "count": 30,
+   "order_sensitive_dirs": [
+    "program/maturity-evolution",
+    "program/pippi-r010",
+    "program/pippi-r011"
+   ],
+   "registry_root": "a9e0198c4d018f04e7a523ced6ffbfd40ae6873a355d79bf60a423d8ccbf6b40",
+   "registry_root_ok": true
+  }
+ },
+ "generators": {
+  "build_native_closure_r033_program": "PASS 24",
+  "build_native_completion_r032_program": "DRIFT (historical; frozen rows verify)",
+  "build_native_core_r032_assets": "PASS 12/5",
+  "build_native_core_r033_assets": "PASS 9/4",
+  "build_pippi_adaptive_contracts": "PASS 14"
+ },
+ "identity": {
+  "cold_boot_sha256": "54445acfde8291734fc54bda834c883e8b9fafa2b81f4ed27e67b49d5f745707",
+  "operator_kit_sha256": "158e30b9700b96b9e7493e7e3575c3f1f2e395d43ef0af88fc1cd266721fa764",
+  "qualification_root": "c7a67b7dc03bfb454d08795ea130668c97fa20eecf6f99c1fa758bad614fad09",
+  "release_identity_root": "cf8fc55bd32cc2246cb6a7ee8ebc18e20fbd826a03c092a273d5a5b4b5c6018d",
+  "release_root": "d8c41b03aec805a400cba5d44cd20d903d4ee6d0064a53c897a3a432ea0a2354",
+  "revision": "r033",
+  "runtime_sha256": "b36529bc578e7684085b2d243d3fd597b5da5219b41cf3353165713cd920b704",
+  "source_root": "169470fe465f9e6a926874ec6df3945f071dca1f7ef488ef103657307eefd605",
+  "transport_root": "c58e039db172caf85ac36abe54d27e8565835903f63cb3e5d9b495bd7a429582",
+  "transport_sha256": "225ace8dbecef970616c5916a4daa89d1d5719730608c27ede771992c4a60be7"
+ },
+ "interpreters": [
+  "3.12.3",
+  "3.13.16"
+ ],
+ "kit": {
+  "dups": false,
+  "eq_transport": {
+   "PIPPI-v0.1-adaptive-cold-boot.zip": true,
+   "UCM-v0.1-QUALIFICATION.json": true,
+   "UCM-v0.1-runtime.zip": true,
+   "WINDOWS-NATIVE-CORE-WITNESS.json": true,
+   "WSL-NATIVE-CORE-WITNESS.json": true
+  },
+  "labels": {
+   "authority_effect": "NONE",
+   "builder_authored": true,
+   "cold_boot_sha256": "54445acfde8291734fc54bda834c883e8b9fafa2b81f4ed27e67b49d5f745707",
+   "evidence_glob": "UCM-r033-NATIVE-CLOSURE-TIER1-*.zip",
+   "g0": "CLOSED",
+   "member_count": 33,
+   "operator_executed": false,
+   "qualification_sha256": "77dbe620862c3ab69d7f874f7f8af8b5a34aa429b30c17ec929418491e889959",
+   "real_a5": false,
+   "revision": "r033",
+   "runner_path": "RUN-TIER1.py",
+   "runtime_sha256": "b36529bc578e7684085b2d243d3fd597b5da5219b41cf3353165713cd920b704",
+   "schema": "mosaic.ucm.pippi-operator-review-kit.v0.1",
+   "standing": "INFORMATION_ONLY",
+   "subject_id": "UCM_R033_NATIVE_CLOSURE",
+   "tier1_executed": false
+  },
+  "manifest_root_keys": [
+   "operator_kit_root"
+  ],
+  "manifests": [
+   "KIT-MANIFEST.json"
+  ],
+  "members": 34,
+  "methods": [
+   8
+  ],
+  "root_ok_operator_kit_root": true,
+  "rows_ok": true,
+  "set_closed": true
+ },
+ "native": {
+  "all_correspond": true,
+  "archive_verifier_r031_tree": {
+   "binding_eq_independent": true,
+   "checked": 1270,
+   "status": "PASS"
+  },
+  "compilers": [
+   "gcc 13.3.0",
+   "clang"
+  ],
+  "corpus_programs": 9,
+  "flags": "-std=c17 -O2 -Wall -Wextra -Wpedantic -Werror",
+  "linux_eq_windows_and_wsl_witness_results": true,
+  "native_source_prefix": "5eb3059d9874",
+  "reviewer_boundary_all_correspond": true,
+  "reviewer_boundary_programs": [
+   "regs256 I64_MIN",
+   "regs256 I64_MAX",
+   "regs256 zero",
+   "regs256 mixed",
+   "instr4096"
+  ]
+ },
+ "operator_kit_rebuild": "RUN.cmd, RUN.ps1, kit byte-identical on 3.12 and 3.13",
+ "parity": {
+  "capability_root": "145e0c672b81a69c853b59df0ec8c8ca4868d0dd481bd110b89bc65fc17d7c61",
+  "registry": {
+   "differing": [],
+   "each_equals_live_entry": true,
+   "missing_from_live": [],
+   "registry_surfaces": 80
+  },
+  "routes": 36
+ },
+ "portability_source_manifest": {
+  "in_source_rebuilt_eq": true,
+  "in_source_root": "169470fe465f9e6a926874ec6df3945f071dca1f7ef488ef103657307eefd605",
+  "rows_differing": 26,
+  "transport_copy_root": "13caa7b2918f561c0f4d82b226052ae5f0977fd7fa410b8c1e2ab6f00258f95d",
+  "transport_copy_sha256": "e11854a409399b1b80df739a5e3a9e762f892085ffc2c0216de0f23c066966c7"
+ },
+ "predecessor": {
+  "predecessor_engineering_revision": "r032",
+  "predecessor_qualification_root": "5b5a64e2f23e2f65ef6e053487e66066f46022c7fcca877a8a9f5c4e66827e36",
+  "predecessor_release_identity_root": "1ee0ffc5ecf43f44513c13c1bca1b95a2cc492110785732a09469fe5e89b107e",
+  "predecessor_source_root": "d52891c508a55ad7cff7ab2a201c9749407c5991bc04ac489d6a9ae12c9bc94d"
+ },
+ "r033_selections": [
+  {
+   "case_valid": true,
+   "check": "test_native_closure_r033.NativeClosureR033Tests.test_declared_profile_limits_correspond_exactly",
+   "check_in_receipt": true,
+   "denominator_root": "1aac52b0193da6da8f8e5efdbda36f5f4cfe67d404c7c6467fe1a14b26ed388e",
+   "effect": false,
+   "file": "program/native-closure-r033/R33-01-WORK-SELECTION.json",
+   "infra": false,
+   "ok": true,
+   "rebuild_eq": true,
+   "subject_root": "1aac52b0193da6da8f8e5efdbda36f5f4cfe67d404c7c6467fe1a14b26ed388e",
+   "work_class": "DIRECT_ACCEPTANCE_CLOSURE"
+  },
+  {
+   "case_valid": true,
+   "check": "test_native_closure_r033.NativeClosureR033Tests.test_cli_fallback_resolves_exact_repository_source",
+   "check_in_receipt": true,
+   "denominator_root": "1aac52b0193da6da8f8e5efdbda36f5f4cfe67d404c7c6467fe1a14b26ed388e",
+   "effect": false,
+   "file": "program/native-closure-r033/R33-02-WORK-SELECTION.json",
+   "infra": false,
+   "ok": true,
+   "rebuild_eq": true,
+   "subject_root": "1aac52b0193da6da8f8e5efdbda36f5f4cfe67d404c7c6467fe1a14b26ed388e",
+   "work_class": "DIRECT_ACCEPTANCE_CLOSURE"
+  },
+  {
+   "case_valid": true,
+   "check": "test_transtemporal_archive.TranstemporalArchiveTests.test_native_projection_and_cli_help_are_stable",
+   "check_in_receipt": true,
+   "denominator_root": "1aac52b0193da6da8f8e5efdbda36f5f4cfe67d404c7c6467fe1a14b26ed388e",
+   "effect": false,
+   "file": "program/native-closure-r033/R33-03-WORK-SELECTION.json",
+   "infra": false,
+   "ok": true,
+   "rebuild_eq": true,
+   "subject_root": "1aac52b0193da6da8f8e5efdbda36f5f4cfe67d404c7c6467fe1a14b26ed388e",
+   "work_class": "DIRECT_ACCEPTANCE_CLOSURE"
+  },
+  {
+   "case_valid": true,
+   "check": "test_native_closure_r033.NativeClosureR033Tests.test_native_projection_is_externally_pinned_and_canonical",
+   "check_in_receipt": true,
+   "denominator_root": "1aac52b0193da6da8f8e5efdbda36f5f4cfe67d404c7c6467fe1a14b26ed388e",
+   "effect": false,
+   "file": "program/native-closure-r033/R33-04-WORK-SELECTION.json",
+   "infra": false,
+   "ok": true,
+   "rebuild_eq": true,
+   "subject_root": "1aac52b0193da6da8f8e5efdbda36f5f4cfe67d404c7c6467fe1a14b26ed388e",
+   "work_class": "DIRECT_ACCEPTANCE_CLOSURE"
+  },
+  {
+   "case_valid": true,
+   "check": "test_native_closure_r033.NativeClosureR033Tests.test_r031_and_r032_programs_and_courts_are_frozen",
+   "check_in_receipt": true,
+   "denominator_root": "1aac52b0193da6da8f8e5efdbda36f5f4cfe67d404c7c6467fe1a14b26ed388e",
+   "effect": false,
+   "file": "program/native-closure-r033/R33-05-WORK-SELECTION.json",
+   "infra": false,
+   "ok": true,
+   "rebuild_eq": true,
+   "subject_root": "1aac52b0193da6da8f8e5efdbda36f5f4cfe67d404c7c6467fe1a14b26ed388e",
+   "work_class": "DIRECT_ACCEPTANCE_CLOSURE"
+  },
+  {
+   "case_valid": true,
+   "check": "test_native_closure_r033.NativeClosureR033Tests.test_r033_boundary_assets_are_exact",
+   "check_in_receipt": true,
+   "denominator_root": "1aac52b0193da6da8f8e5efdbda36f5f4cfe67d404c7c6467fe1a14b26ed388e",
+   "effect": false,
+   "file": "program/native-closure-r033/R33-06-WORK-SELECTION.json",
+   "infra": false,
+   "ok": true,
+   "rebuild_eq": true,
+   "subject_root": "1aac52b0193da6da8f8e5efdbda36f5f4cfe67d404c7c6467fe1a14b26ed388e",
+   "work_class": "DIRECT_ACCEPTANCE_CLOSURE"
+  },
+  {
+   "case_valid": true,
+   "check": "test_native_closure_r033.NativeClosureR033Tests.test_r033_operator_runner_is_reserved_for_user",
+   "check_in_receipt": true,
+   "denominator_root": "1aac52b0193da6da8f8e5efdbda36f5f4cfe67d404c7c6467fe1a14b26ed388e",
+   "effect": false,
+   "file": "program/native-closure-r033/R33-07-WORK-SELECTION.json",
+   "infra": false,
+   "ok": true,
+   "rebuild_eq": true,
+   "subject_root": "1aac52b0193da6da8f8e5efdbda36f5f4cfe67d404c7c6467fe1a14b26ed388e",
+   "work_class": "DIRECT_ACCEPTANCE_CLOSURE"
+  }
+ ],
+ "rebuild": [
+  "3.12-1 UCM-v0.1-lineage.zip IDENTICAL",
+  "3.12-1 UCM-v0.1-release.json IDENTICAL",
+  "3.12-1 UCM-v0.1-review.zip IDENTICAL",
+  "3.12-1 UCM-v0.1-runtime.zip IDENTICAL",
+  "3.12-1 UCM-v0.1-sdk.zip IDENTICAL",
+  "3.12-1 coldboot IDENTICAL",
+  "3.12-1 cbdir=[]",
+  "3.12-2 UCM-v0.1-lineage.zip IDENTICAL",
+  "3.12-2 UCM-v0.1-release.json IDENTICAL",
+  "3.12-2 UCM-v0.1-review.zip IDENTICAL",
+  "3.12-2 UCM-v0.1-runtime.zip IDENTICAL",
+  "3.12-2 UCM-v0.1-sdk.zip IDENTICAL",
+  "3.12-2 coldboot IDENTICAL",
+  "3.12-2 cbdir=[]",
+  "3.13-1 UCM-v0.1-lineage.zip IDENTICAL",
+  "3.13-1 UCM-v0.1-release.json IDENTICAL",
+  "3.13-1 UCM-v0.1-review.zip IDENTICAL",
+  "3.13-1 UCM-v0.1-runtime.zip IDENTICAL",
+  "3.13-1 UCM-v0.1-sdk.zip IDENTICAL",
+  "3.13-1 coldboot IDENTICAL",
+  "3.13-1 cbdir=[]",
+  "3.13-2 UCM-v0.1-lineage.zip IDENTICAL",
+  "3.13-2 UCM-v0.1-release.json IDENTICAL",
+  "3.13-2 UCM-v0.1-review.zip IDENTICAL",
+  "3.13-2 UCM-v0.1-runtime.zip IDENTICAL",
+  "3.13-2 UCM-v0.1-sdk.zip IDENTICAL",
+  "3.13-2 coldboot IDENTICAL",
+  "3.13-2 cbdir=[]"
+ ],
+ "replay": {
+  "3.12": {
+   "id_set_eq_receipt": true,
+   "non_pass": [
+    "test_installed_package.InstalledPackageTests.test_wheel_contains_runtime_resource_and_runs_from_unrelated_directory",
+    "test_pippi_release_packaging.PippiReleasePackagingTests.test_native_ui_imports_from_the_python_runtime_closure"
+   ],
+   "pass": 473,
+   "tests": 475
+  },
+  "3.13": {
+   "id_set_eq_receipt": true,
+   "non_pass": [
+    "test_installed_package.InstalledPackageTests.test_wheel_contains_runtime_resource_and_runs_from_unrelated_directory",
+    "test_pippi_release_packaging.PippiReleasePackagingTests.test_native_ui_imports_from_the_python_runtime_closure"
+   ],
+   "pass": 473,
+   "tests": 475
+  }
+ },
+ "schema": "reviewer.r033.recompute.v1",
+ "source_rows": 1954,
+ "work_selections": {
+  "count": 146,
+  "not_ok": [
+   "program/constitutional-atlas-r028/R28-07-WORK-SELECTION.json",
+   "program/public-vocabulary-r012/WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-01-WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-02-WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-03-WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-04-WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-05-WORK-SELECTION.json",
+   "program/transtemporal-native-r031/R31-06-WORK-SELECTION.json"
+  ]
+ }
+}

@@ -1,0 +1,88 @@
+{
+  "authority_effect": "NONE",
+  "claim_boundary": "THE_VISUAL_PROFILE_GOVERNS_LOCAL_SIGNATURE_PRESENTATION_AND_DOES_NOT_ESTABLISH_BROAD_HOST_OR_HUMAN_ACCEPTANCE",
+  "component_families": [
+    {
+      "family_id": "actions",
+      "kinds": ["BUTTON", "MENU", "NAVIGATION", "SEGMENTED", "STEPPER", "TAB_BAR"],
+      "principles": ["one unmistakable primary action per group", "icons reinforce commands without replacing accessible names", "destructive intent is visually and semantically explicit"],
+      "state_treatments": ["idle", "hover", "focused", "pressed", "disabled", "pending", "refused"]
+    },
+    {
+      "family_id": "collections",
+      "kinds": ["DATA_GRID", "LIST", "TABLE", "TREE"],
+      "principles": ["scan-first density", "stable columns and selection", "quiet dividers instead of decorative containers"],
+      "state_treatments": ["idle", "hover", "focused", "selected", "disabled", "pending", "refused"]
+    },
+    {
+      "family_id": "content",
+      "kinds": ["KEY_VALUE", "LABEL"],
+      "principles": ["clear typographic hierarchy", "secondary text remains readable", "identifiers preserve copyable full values"],
+      "state_treatments": ["idle"]
+    },
+    {
+      "family_id": "feedback",
+      "kinds": ["BADGE", "DIALOG", "NOTIFICATION", "PROGRESS", "STATUS", "TOOLTIP"],
+      "principles": ["status never depends on hue alone", "terminal outcomes are explicit", "transient feedback never hides required evidence"],
+      "state_treatments": ["idle", "focused", "pending", "refused", "disabled"]
+    },
+    {
+      "family_id": "inputs",
+      "kinds": ["CHECKBOX", "COMBOBOX", "RADIO_GROUP", "SELECT", "TEXT_FIELD"],
+      "principles": ["visible labels", "value and interaction state remain independent", "validation explains recovery"],
+      "state_treatments": ["idle", "hover", "focused", "pressed", "disabled", "refused"]
+    },
+    {
+      "family_id": "structure",
+      "kinds": ["PANEL", "WINDOW"],
+      "principles": ["full-width structural regions", "no nested decorative cards", "primary task hierarchy remains visible"],
+      "state_treatments": ["idle", "focused", "disabled"]
+    }
+  ],
+  "evidence_contract": {
+    "quality_gates": ["TOKEN_PROVENANCE", "COMPONENT_FAMILY_COVERAGE", "STATE_RECIPE_COVERAGE", "TEXT_CONTRAST", "FOCUS_VISIBILITY", "STABLE_GEOMETRY", "ICON_LABELING", "REDUCED_MOTION", "VISUAL_BASELINE", "HUMAN_VISUAL_REVIEW"],
+    "required_captures": ["BROWSER_DESKTOP", "BROWSER_MOBILE", "WIN32_DESKTOP"],
+    "required_themes": ["high-contrast-dark", "signature-dark", "signature-light"]
+  },
+  "foundations": {
+    "color": {
+      "contract": "neutral structural surfaces with restrained semantic accents",
+      "roles": ["canvas", "surface", "surface_raised", "field", "text", "text_quiet", "accent", "focus", "info", "pending", "refused"]
+    },
+    "geometry": {
+      "control_heights": [30, 36, 40],
+      "maximum_radius": 8,
+      "spacing_rhythm": [4, 8, 12, 20, 28]
+    },
+    "hierarchy": {
+      "levels": ["application", "workspace", "task", "specimen", "evidence"],
+      "rules": ["one dominant task region", "context and evidence remain subordinate", "dense operational surfaces avoid marketing composition"]
+    },
+    "iconography": {
+      "policy": "OWNED_SEMANTIC_VOCABULARY",
+      "sizes": [16, 20, 24],
+      "rules": ["familiar commands use icons", "unfamiliar icons have tooltips", "every icon command retains an accessible name"]
+    },
+    "motion": {
+      "durations_ms": [0, 120, 160],
+      "rules": ["motion communicates state change", "no looping decoration", "reduced motion substitutes immediate state change"]
+    },
+    "typography": {
+      "families": ["Segoe UI", "Cascadia Mono"],
+      "roles": ["title", "metric", "heading", "body", "mono"],
+      "weights": [400, 600]
+    }
+  },
+  "profile_id": "mosaic-signature",
+  "reference_compositions": [
+    {"composition_id": "action-controls", "name": "Action controls", "quality_bar": "command hierarchy and every applicable state are immediately distinguishable", "required_families": ["actions", "feedback"]},
+    {"composition_id": "confirmation-dialog", "name": "Confirmation and dialog", "quality_bar": "consequence, reversal, focus, and terminal evidence remain explicit", "required_families": ["actions", "feedback", "structure"]},
+    {"composition_id": "data-workspace", "name": "Data workspace", "quality_bar": "dense filtering, selection, comparison, and evidence remain scan-first", "required_families": ["actions", "collections", "content", "inputs", "structure"]},
+    {"composition_id": "evidence-inspector", "name": "Evidence inspector", "quality_bar": "provenance, standing, commitments, and claim boundaries are legible without dominating the task", "required_families": ["collections", "content", "feedback", "structure"]},
+    {"composition_id": "settings-workflow", "name": "Forms and settings", "quality_bar": "labels, validation, staged changes, confirmation, and persistence are coherent", "required_families": ["actions", "feedback", "inputs", "structure"]}
+  ],
+  "schema": "mosaic.ui.signature-visual-profile.v0.1",
+  "standing": "LOCAL_CANDIDATE",
+  "visual_profile_id": "mosaic-signature-professional",
+  "visual_profile_version": "0.1.0"
+}
